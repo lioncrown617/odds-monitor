@@ -7,7 +7,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 
 app = Flask(__name__)
 
@@ -49,14 +48,15 @@ TREND_THRESHOLD = 2
 # selenium
 # flask
 
+
 def init_driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
-    # Railway 的 Chromium 路徑
-    options.binary_location = "/usr/bin/chromium-browser"
+    options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                         "AppleWebKit/537.36 Chrome/124.0 Safari/537.36")
     return webdriver.Chrome(options=options)
 def fetch_odds(driver, url):
     try:

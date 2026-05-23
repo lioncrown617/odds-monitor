@@ -755,3 +755,13 @@ def download_log():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5001))
     app.run(debug=False, host="0.0.0.0", port=port)
+    @app.route("/test")
+def test_driver():
+    try:
+        driver = init_driver()
+        driver.get("https://www.google.com")
+        title = driver.title
+        driver.quit()
+        return jsonify({"ok": True, "title": title})
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)})

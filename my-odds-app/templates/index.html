@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 HKJC 大戶熱錢監察系統</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d0d0d; color: #e0e0e0; font-family: 'Segoe UI', sans-serif; font-size: 13px; }
+h2 { text-align: center; padding: 14px; font-size: 18px; background: #1a1a2e; color: #f0c040; border-bottom: 2px solid #f0c040; letter-spacing: 1px; }
+.subtitle { text-align: center; font-size: 11px; color: #888; padding: 4px; background: #111; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 12px 16px; background: #111827; border-bottom: 1px solid #333; }
+.controls label { font-size: 12px; color: #aaa; margin-right: 4px; }
+.controls input, .controls select { background: #1e293b; color: #e0e0e0; border: 1px solid #444; border-radius: 6px; padding: 6px 10px; font-size: 13px; }
+.controls select { cursor: pointer; min-width: 160px; }
+.btn { padding: 7px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: bold; transition: 0.2s; }
+.btn-start { background: #16a34a; color: #fff; }
+.btn-start:hover { background: #15803d; }
+.btn-stop { background: #dc2626; color: #fff; }
+.btn-stop:hover { background: #b91c1c; }
+.status-bar { display: flex; flex-wrap: wrap; gap: 16px; padding: 8px 16px; background: #0f172a; border-bottom: 1px solid #1e293b; font-size: 12px; }
+.status-bar span { color: #94a3b8; }
+.status-bar b { color: #f0c040; }
+.status-ok { color: #4ade80 !important; }
+.status-err { color: #f87171 !important; }
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; padding: 10px 16px; }
+.panel { background: #111827; border: 1px solid #1e293b; border-radius: 8px; padding: 10px; }
+.panel h3 { font-size: 13px; color: #f0c040; margin-bottom: 8px; border-bottom: 1px solid #1e293b; padding-bottom: 4px; }
+.panel-item { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #1a2035; font-size: 12px; }
+.panel-item:last-child { border-bottom: none; }
+.panel-item .horse-no { background: #1e40af; color: #fff; border-radius: 4px; padding: 1px 6px; font-weight: bold; margin-right: 6px; }
+.panel-item .info { color: #94a3b8; font-size: 11px; }
+.empty-msg { color: #4b5563; font-size: 12px; text-align: center; padding: 10px; }
+.alerts-box { margin: 0 16px 10px; background: #111827; border: 1px solid #1e293b; border-radius: 8px; }
+.alerts-box h3 { font-size: 13px; color: #f87171; padding: 8px 12px; border-bottom: 1px solid #1e293b; }
+.alerts-box .alert-note { font-size: 11px; color: #6b7280; padding: 4px 12px 6px; }
+.alert-item { display: flex; gap: 8px; align-items: center; padding: 5px 12px; border-bottom: 1px solid #1a2035; font-size: 12px; }
+.alert-item:last-child { border-bottom: none; }
+.alert-time { color: #6b7280; min-width: 55px; }
+.alert-no { background: #7c3aed; color: #fff; border-radius: 4px; padding: 1px 6px; font-weight: bold; }
+.alert-msg { color: #fbbf24; }
+.table-wrap { overflow-x: auto; margin: 0 16px 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+thead th { background: #1e293b; color: #94a3b8; padding: 6px 8px; text-align: center; white-space: nowrap; position: sticky; top: 0; z-index: 10; }
+tbody tr { border-bottom: 1px solid #1a2035; transition: background 0.15s; }
+tbody tr:hover { background: #1e293b44; }
+tbody tr.suspicious { outline: 2px solid #7c3aed; outline-offset: -2px; }
+tbody tr.highlighted { background: #1e3a5f55; }
+td { padding: 5px 8px; text-align: center; white-space: nowrap; }
+td.horse-no-cell { font-weight: bold; font-size: 14px; cursor: pointer; }
+td.horse-no-cell:hover { color: #f0c040; }
+.hot { color: #ef4444; font-weight: bold; }
+.warm { color: #f97316; }
+.up { color: #4ade80; }
+.rise { color: #60a5fa; }
+.diluted { color: #f87171; }
+.neutral { color: #6b7280; }
+.badge-new { background: #dc2626; color: #fff; font-size: 10px; border-radius: 4px; padding: 1px 4px; margin-left: 4px; }
+.chart-section { margin: 0 16px 16px; background: #111827; border: 1px solid #1e293b; border-radius: 8px; padding: 12px; }
+.chart-section h3 { font-size: 13px; color: #f0c040; margin-bottom: 10px; }
+.chart-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.chart-tab { padding: 4px 12px; border-radius: 4px; border: 1px solid #374151; background: #1e293b; color: #94a3b8; cursor: pointer; font-size: 12px; }
+.chart-tab.active { background: #1e40af; color: #fff; border-color: #3b82f6; }
+canvas { width: 100% !important; max-height: 260px; }
+.tip { text-align: center; color: #4b5563; font-size: 11px; padding: 8px; }
+</style>
+</head>
+<body>
+<h2>🏇 HKJC 大戶熱錢監察系統</h2>
+<div class="subtitle">v2 · 改良SMS公式 · 洗碼偵測</div>
+
+<div class="controls">
+  <div>
+    <label>📅 日期</label>
+    <input type="date" id="raceDate">
+  </div>
+  <div>
+    <label>🏟 場地</label>
+    <select id="venueSelect">
+      <option value="ST">ST - 沙田</option>
+      <option value="HV">HV - 跑馬地</option>
+    </select>
+  </div>
+  <div>
+    <label>🔢 場次</label>
+    <select id="raceNo">
+      <optgroup label="普通場次">
+        <option value="1">第 1 場</option>
+        <option value="2">第 2 場</option>
+        <option value="3">第 3 場</option>
+        <option value="4">第 4 場</option>
+        <option value="5">第 5 場</option>
+        <option value="6">第 6 場</option>
+        <option value="7">第 7 場</option>
+        <option value="8">第 8 場</option>
+        <option value="9">第 9 場</option>
+        <option value="10">第 10 場</option>
+        <option value="11">第 11 場</option>
+        <option value="12">第 12 場</option>
+      </optgroup>
+      <optgroup label="⭐ 特別賽事">
+        <option value="S1">S1 - 特別賽事 1</option>
+        <option value="S2">S2 - 特別賽事 2</option>
+        <option value="S3">S3 - 特別賽事 3</option>
+        <option value="S4">S4 - 特別賽事 4</option>
+        <option value="S5">S5 - 特別賽事 5</option>
+        <option value="S6">S6 - 特別賽事 6</option>
+        <option value="S7">S7 - 特別賽事 7</option>
+        <option value="S8">S8 - 特別賽事 8</option>
+      </optgroup>
+    </select>
+  </div>
+  <div>
+    <label>⏱ 間隔(秒)</label>
+    <input type="number" id="interval" min="15" max="120" value="30" style="width:70px">
+  </div>
+  <button class="btn btn-start" onclick="startMonitor()">▶ 開始監察</button>
+  <button class="btn btn-stop" onclick="stopMonitor()">■ 停止</button>
+</div>
+
+<div class="status-bar">
+  <span>場次：<b id="statusRace">—</b></span>
+  <span>更新：<b id="updateCount">0</b></span>
+  <span>最後更新：<b id="lastUpdate">—</b></span>
+  <span>基準時間：<b id="baseTime">—</b></span>
+  <span>💰 彩池：<b id="winPool">—</b></span>
+  <span>狀態：<b id="statusText" class="status-ok">等待中</b></span>
+</div>
+
+<div class="panels">
+  <div class="panel">
+    <h3>🏆 SMS資金頭三位</h3>
+    <div id="topDown"><div class="empty-msg">等待數據...</div></div>
+  </div>
+  <div class="panel">
+    <h3>📈 賠率回升頭三位</h3>
+    <div id="topUp"><div class="empty-msg">等待數據...</div></div>
+  </div>
+  <div class="panel">
+    <h3>🔔 疑似洗碼受益馬 <span class="badge-new">新</span></h3>
+    <div id="topSuspicious"><div class="empty-msg">等待數據...</div></div>
+    <div class="info" style="font-size:11px;color:#6b7280;margin-top:6px;">賠率由監察最低點反彈&gt;50%且仍有資金流入，可能是被洗碼目標</div>
+  </div>
+</div>
+
+<div class="alerts-box">
+  <h3>🚨 大戶異動警報（最新50條）</h3>
+  <div class="alert-note">🚨單次吸金≥30% ⚡賠率加速連跌 💥突發大注 🔔疑似洗碼受益</div>
+  <div id="alertsList"><div class="empty-msg">等待數據...</div></div>
+</div>
+
+<div style="padding: 8px 16px; font-size: 12px; color: #4b5563;">
+  📊 即時監察表 &nbsp;·&nbsp; 紫框=疑似洗碼 · 改良SMS=F^1.2×(1+D/10)×(1+E有效/10)×Wt
+</div>
+
+<div class="table-wrap">
+<table id="oddsTable">
+  <thead>
+    <tr>
+      <th>色</th><th>馬號</th><th>馬名</th><th>檔</th><th>騎師</th><th>練馬師</th>
+      <th>基準賠</th><th>⭐WIN</th><th>賠率變動</th><th>賠率跌速</th><th>走勢</th>
+      <th>基準投注</th><th>現時投注</th><th>累積增減</th><th>本次流入</th><th>加速度</th>
+      <th>累積真實流入</th><th>🔥超額吸金</th><th>🏆SMS</th><th>由低反彈%</th><th>🚨警報</th>
+    </tr>
+  </thead>
+  <tbody id="oddsBody">
+    <tr><td colspan="21" style="text-align:center;color:#4b5563;padding:20px;">請設定場次後按「開始監察」</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="chart-section">
+  <h3>📈 走勢圖</h3>
+  <div class="chart-tabs">
+    <button class="chart-tab active" onclick="switchChart('odds',this)">獨贏賠率</button>
+    <button class="chart-tab" onclick="switchChart('bet',this)">💰 估算投注額</button>
+    <button class="chart-tab" onclick="switchChart('flow',this)">💧 每次流入</button>
+    <button class="chart-tab" onclick="switchChart('absorb',this)">🔥 超額吸金率</button>
+    <button class="chart-tab" onclick="switchChart('sms',this)">🏆 SMS評分</button>
+  </div>
+  <canvas id="trendChart"></canvas>
+  <div class="tip">點擊馬號高亮單匹 ↓</div>
+</div>
+
+<div class="tip" style="padding:12px;">💡 SMS評分持續上升是最強買入訊號；由低反彈%持續升高需警惕洗碼</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+let chart = null;
+let currentChartType = 'odds';
+let lastData = null;
+let highlightedHorse = null;
+let polling = null;
+
+const COLORS = [
+  '#ef4444','#f97316','#eab308','#22c55e','#06b6d4',
+  '#3b82f6','#8b5cf6','#ec4899','#14b8a6','#f59e0b',
+  '#84cc16','#a855f7','#0ea5e9','#10b981'
+];
+
+function todayStr() {
+  return new Date().toISOString().slice(0,10);
+}
+
+document.getElementById('raceDate').value = todayStr();
+
+async function startMonitor() {
+  const date = document.getElementById('raceDate').value;
+  const venue = document.getElementById('venueSelect').value;
+  const race_no = document.getElementById('raceNo').value;
+  const interval = document.getElementById('interval').value;
+  const res = await fetch('/start', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({date, venue, race_no, interval})
+  });
+  const j = await res.json();
+  if (j.ok) {
+    document.getElementById('statusText').textContent = '監察中...';
+    document.getElementById('statusText').className = 'status-ok';
+    if (!polling) polling = setInterval(fetchData, parseInt(interval)*1000);
+    fetchData();
+  } else {
+    alert(j.msg || '啟動失敗');
+  }
+}
+
+async function stopMonitor() {
+  await fetch('/stop', {method:'POST'});
+  if (polling) { clearInterval(polling); polling = null; }
+  document.getElementById('statusText').textContent = '已停止';
+  document.getElementById('statusText').className = 'status-err';
+}
+
+async function fetchData() {
+  try {
+    const res = await fetch('/data');
+    const d = await res.json();
+    lastData = d;
+    updateStatus(d);
+    updatePanels(d);
+    updateAlerts(d.alerts);
+    updateTable(d.rows);
+    renderChart(d);
+  } catch(e) {
+    document.getElementById('statusText').textContent = '連接錯誤';
+    document.getElementById('statusText').className = 'status-err';
+  }
+}
+
+function updateStatus(d) {
+  document.getElementById('updateCount').textContent = d.update_count;
+  document.getElementById('lastUpdate').textContent = d.last_update || '—';
+  document.getElementById('baseTime').textContent = d.base_time || '—';
+  document.getElementById('winPool').textContent = d.win_pool || '—';
+  document.getElementById('statusRace').textContent =
+    d.running ? `${d.venue_name} 第${d.race_no}場` : '—';
+  const st = document.getElementById('statusText');
+  st.textContent = d.status;
+  st.className = d.has_error ? 'status-err' : 'status-ok';
+}
+
+function updatePanels(d) {
+  renderTopPanel('topDown', d.top_down, r =>
+    `<span class="horse-no">${r.no}</span>${r.name}
+     <span class="info">賠:${r.win} SMS:${r.sms.toFixed(1)} 流入:${fmtAmt(r.cum_inflow)}</span>`);
+  renderTopPanel('topUp', d.top_up, r =>
+    `<span class="horse-no">${r.no}</span>${r.name}
+     <span class="info">賠:${r.win} 回升:${r.rise}% 基準:${r.base}</span>`);
+  renderTopPanel('topSuspicious', d.top_suspicious, r =>
+    `<span class="horse-no">${r.no}</span>${r.name}
+     <span class="info">賠:${r.win} 最低:${r.min_odds} 反彈:${r.rise_pct}%</span>`);
+}
+
+function renderTopPanel(id, arr, fmt) {
+  const el = document.getElementById(id);
+  if (!arr || arr.length === 0) {
+    el.innerHTML = '<div class="empty-msg">暫無數據</div>'; return;
+  }
+  el.innerHTML = arr.map(r =>
+    `<div class="panel-item">${fmt(r)}</div>`
+  ).join('');
+}
+
+function fmtAmt(v) {
+  v = Math.abs(v);
+  if (v >= 1e6) return '$'+(v/1e6).toFixed(2)+'M';
+  if (v >= 1e3) return '$'+(v/1e3).toFixed(1)+'K';
+  return '$'+v;
+}
+
+function updateAlerts(alerts) {
+  const el = document.getElementById('alertsList');
+  if (!alerts || alerts.length === 0) {
+    el.innerHTML = '<div class="empty-msg">暫無警報</div>'; return;
+  }
+  el.innerHTML = alerts.slice(0,50).map(a =>
+    `<div class="alert-item">
+      <span class="alert-time">${a.time}</span>
+      <span class="alert-no">${a.no}</span>
+      <span>${a.name}</span>
+      <span style="color:#94a3b8">@${a.win}</span>
+      <span class="alert-msg">${a.msg}</span>
+    </div>`
+  ).join('');
+}
+
+function updateTable(rows) {
+  const tbody = document.getElementById('oddsBody');
+  if (!rows || rows.length === 0) return;
+  tbody.innerHTML = rows.map((r,i) => {
+    const color = COLORS[i % COLORS.length];
+    const susp = r.is_suspicious ? ' suspicious' : '';
+    const hl = highlightedHorse === r.no ? ' highlighted' : '';
+    return `<tr class="${susp}${hl}">
+      <td><div style="width:14px;height:14px;border-radius:50%;background:${color};margin:auto;"></div></td>
+      <td class="horse-no-cell" onclick="toggleHighlight('${r.no}')">${r.no}</td>
+      <td style="text-align:left">${r.name}</td>
+      <td>${r.draw}</td>
+      <td>${r.jockey}</td>
+      <td>${r.trainer}</td>
+      <td>${r.base_win}</td>
+      <td style="font-weight:bold;color:#f0c040">${r.win}</td>
+      <td class="${r.win > r.base_win ? 'rise' : r.win < r.base_win ? 'hot' : 'neutral'}">${r.chg}</td>
+      <td class="${r.odrop_css}">${r.odrop}</td>
+      <td class="${r.trend_css}">${r.trend}</td>
+      <td>${r.base_bet}</td>
+      <td>${r.est_bet} <span style="color:#6b7280">${r.est_pct}</span></td>
+      <td class="${r.cum_diff_css}">${r.cum_diff} <span style="color:#6b7280">${r.cum_diff_pct}</span></td>
+      <td class="${r.flow_css}">${r.flow}</td>
+      <td class="${r.accel_css}">${r.accel}</td>
+      <td class="up">${r.cum_inflow}</td>
+      <td class="${r.absorb_css}">${r.absorb}</td>
+      <td class="${r.sms_css}">${r.sms}</td>
+      <td class="${r.rise_from_min > 50 ? 'hot' : 'neutral'}">${r.rise_from_min > 0 ? r.rise_from_min+'%' : '—'}</td>
+      <td class="hot" style="font-size:11px">${r.alert}</td>
+    </tr>`;
+  }).join('');
+}
+
+function toggleHighlight(no) {
+  highlightedHorse = highlightedHorse === no ? null : no;
+  if (lastData) {
+    updateTable(lastData.rows);
+    renderChart(lastData);
+  }
+}
+
+function switchChart(type, btn) {
+  currentChartType = type;
+  document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (lastData) renderChart(lastData);
+}
+
+function renderChart(d) {
+  const ts = d.timestamps;
+  if (!ts || ts.length === 0) return;
+  const horses = d.horses || {};
+  const typeMap = {
+    odds: d.history,
+    bet: d.bet_history,
+    flow: d.flow_history,
+    absorb: d.absorb_history,
+    sms: d.sms_history
+  };
+  const src = typeMap[currentChartType] || d.history;
+  const datasets = Object.entries(src).map(([no, vals], i) => {
+    const color = COLORS[i % COLORS.length];
+    const isHL = highlightedHorse === no;
+    return {
+      label: `${no} ${horses[no] || ''}`,
+      data: vals,
+      borderColor: color,
+      backgroundColor: color + '22',
+      borderWidth: isHL ? 3 : (highlightedHorse ? 0.5 : 1.5),
+      pointRadius: isHL ? 4 : 2,
+      tension: 0.3,
+      fill: false,
+    };
+  });
+  if (chart) {
+    chart.data.labels = ts;
+    chart.data.datasets = datasets;
+    chart.update('none');
+  } else {
+    const ctx = document.getElementById('trendChart').getContext('2d');
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: { labels: ts, datasets },
+      options: {
+        animation: false,
+        responsive: true,
+        plugins: {
+          legend: { labels: { color: '#94a3b8', font: { size: 11 }, boxWidth: 12 } },
+          tooltip: { mode: 'index', intersect: false }
+        },
+        scales: {
+          x: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1e293b' } },
+          y: { ticks: { color: '#6b7280', font: { size: 10 } }, grid: { color: '#1e293b' } }
+        }
+      }
+    });
+  }
+}
+</script>
+</body>
+</html>

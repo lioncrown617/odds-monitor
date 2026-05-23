@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HKJC 大戶熱錢監察系統 Pro</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body{margin:0;background:#0f172a;color:#e5e7eb;font-family:Arial,Helvetica,sans-serif}
+    .wrap{max-width:1650px;margin:0 auto;padding:16px}
+    .title{font-size:28px;font-weight:700;margin-bottom:6px}
+    .sub{color:#94a3b8;margin-bottom:14px}
+    .toolbar,.grid2,.grid3{display:grid;gap:12px}
+    .toolbar{grid-template-columns:repeat(8,1fr)}
+    .grid2{grid-template-columns:1.35fr 1fr}
+    .grid3{grid-template-columns:repeat(3,1fr)}
+    .card{background:#111827;border:1px solid #334155;border-radius:14px;padding:14px}
+    .card h3{margin:0 0 10px;font-size:18px}
+    label{display:block;font-size:12px;color:#94a3b8;margin-bottom:6px}
+    input,select,button{
+      width:100%;padding:10px;border-radius:10px;border:1px solid #475569;
+      background:#0b1220;color:#fff;box-sizing:border-box
+    }
+    button{cursor:pointer;font-weight:700}
+    .btn-start{background:#065f46}
+    .btn-stop{background:#7f1d1d}
+    .pool-tabs{display:flex;gap:8px;margin:12px 0 16px}
+    .pool-tab{width:auto;padding:10px 16px;background:#1e293b}
+    .pool-tab.active{background:#2563eb}
+    .stat{font-size:13px;line-height:1.8}
+    .list-item{padding:8px 0;border-bottom:1px solid #1f2937;font-size:14px}
+    .hot{color:#f43f5e;font-weight:700}
+    .up{color:#22c55e;font-weight:700}
+    .rise{color:#f59e0b;font-weight:700}
+    .neutral{color:#cbd5e1}
+    .suspicious{outline:2px solid #a855f7}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:8px 6px;border-bottom:1px solid #1f2937;text-align:center}
+    th{position:sticky;top:0;background:#172033;z-index:2}
+    .table-wrap{max-height:520px;overflow:auto;border-radius:10px}
+    .heatmap{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+    .heat-cell{
+      min-height:62px;border-radius:10px;padding:6px;font-size:12px;
+      display:flex;align-items:center;justify-content:center;text-align:center
+    }
+    .alert-row{padding:8px 10px;border-bottom:1px solid #1f2937;font-size:13px}
+    .muted{color:#94a3b8}
+    canvas{background:#0b1220;border-radius:10px;padding:8px}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="title">🏇 HKJC 大戶熱錢監察系統 Pro</div>
+  <div class="sub">WIN / 連贏Q / 位置Q 即時監察 · 大戶落飛 · 關聯資金追蹤</div>
+
+  <div class="toolbar card">
+    <div>
+      <label>日期</label>
+      <input type="date" id="raceDate">
+    </div>
+    <div>
+      <label>場地</label>
+      <select id="venue">
+        <option value="ST">ST - 沙田</option>
+        <option value="HV">HV - 跑馬地</option>
+      </select>
+    </div>
+    <div>
+      <label>場次</label>
+      <input type="number" id="raceNo" value="1" min="1" max="12">
+    </div>
+    <div>
+      <label>間隔(秒)</label>
+      <input type="number" id="interval" value="20" min="15">
+    </div>
+    <div>
+      <label>彩池</label>
+      <select id="poolType">
+        <option value="WIN">WIN</option>
+        <option value="Q">連贏Q</option>
+        <option value="QP">位置Q</option>
+      </select>
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button class="btn-start" onclick="startMonitor()">▶ 開始監察</button>
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button class="btn-stop" onclick="stopMonitor()">■ 停止</button>
+    </div>
+    <div class="stat">
+      <div>更新：<b id="updateCount">0</b></div>
+      <div>最後更新：<b id="lastUpdate">—</b></div>
+      <div>狀態：<b id="statusText">等待中</b></div>
+    </div>
+  </div>
+
+  <div class="pool-tabs">
+    <button class="pool-tab active" onclick="switchTab('WIN',this)">WIN</button>
+    <button class="pool-tab" onclick="switchTab('Q',this)">連贏Q</button>
+    <button class="pool-tab" onclick="switchTab('QP',this)">位置Q</button>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>🏆 熱錢頭三位</h3>
+      <div id="topRankings">等待數據...</div>
+    </div>
+    <div class="card">
+      <h3>🎯 關聯馬匹曝露榜</h3>
+      <div id="horseExposure">等待數據...</div>
+    </div>
+    <div class="card">
+      <h3>🚨 大戶異動警報</h3>
+      <div id="alerts">等待數據...</div>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:12px;">
+    <div class="card">
+      <h3>📊 即時監察表</h3>
+      <div class="table-wrap">
+        <table id="mainTable">
+          <thead>
+            <tr>
+              <th>色</th>
+              <th id="col1">馬號/馬對</th>
+              <th id="col2">名稱</th>
+              <th>基準賠</th>
+              <th>現賠</th>
+              <th>賠率變動</th>
+              <th>本次流入</th>
+              <th>累積流入</th>
+              <th>吸金率</th>
+              <th>SMS</th>
+              <th>警報</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="11">請先開始監察</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🔥 熱力表</h3>
+      <div class="heatmap" id="heatmapBox">等待數據...</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px;">
+    <h3>📈 走勢圖</h3>
+    <canvas id="trendChart" height="120"></canvas>
+  </div>
+</div>
+
+<script>
+let currentTab = 'WIN';
+let trendChart = null;
+
+function switchTab(tab, el){
+  currentTab = tab;
+  document.querySelectorAll('.pool-tab').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('poolType').value = tab;
+  document.getElementById('col1').textContent = tab === 'WIN' ? '馬號' : '馬對';
+  document.getElementById('col2').textContent = tab === 'WIN' ? '馬名' : '組合';
+  refreshData();
+}
+
+async function startMonitor(){
+  const payload = {
+    date: document.getElementById('raceDate').value,
+    venue: document.getElementById('venue').value,
+    race_no: document.getElementById('raceNo').value,
+    interval: document.getElementById('interval').value,
+    pool_type: document.getElementById('poolType').value
+  };
+  await fetch('/start', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  });
+}
+
+async function stopMonitor(){
+  await fetch('/stop', {method:'POST'});
+}
+
+function renderList(elId, rows, formatter){
+  const el = document.getElementById(elId);
+  if(!rows || !rows.length){ el.innerHTML = '<div class="muted">等待數據...</div>'; return; }
+  el.innerHTML = rows.map(formatter).join('');
+}
+
+function renderTable(rows){
+  const body = document.getElementById('tableBody');
+  if(!rows || !rows.length){
+    body.innerHTML = '<tr><td colspan="11">等待數據...</td></tr>';
+    return;
+  }
+  body.innerHTML = rows.map(r => `
+    <tr class="${r.is_suspicious ? 'suspicious' : ''}">
+      <td>${r.trend || '—'}</td>
+      <td>${r.no || r.key || ''}</td>
+      <td>${r.name || ''}</td>
+      <td>${r.base_win || '—'}</td>
+      <td>${r.win || '—'}</td>
+      <td class="${r.odrop_css || 'neutral'}">${r.chg || '—'}</td>
+      <td class="${r.flow_css || 'neutral'}">${r.flow || '—'}</td>
+      <td>${r.cum_inflow || '—'}</td>
+      <td class="${r.absorb_css || 'neutral'}">${r.absorb || '—'}</td>
+      <td class="${r.sms_css || 'neutral'}">${r.sms || '—'}</td>
+      <td>${r.alert || ''}</td>
+    </tr>
+  `).join('');
+}
+
+function renderHeatmap(items){
+  const box = document.getElementById('heatmapBox');
+  if(!items || !items.length){
+    box.innerHTML = '<div class="muted">等待數據...</div>';
+    return;
+  }
+  box.innerHTML = items.map(p => {
+    const score = Math.min(Math.max(p.heat || 0, 0), 100);
+    const bg = `rgba(239,68,68,${0.15 + score/120})`;
+    return `<div class="heat-cell" style="background:${bg}">
+      <div><div><b>${p.key}</b></div><div>${p.odds || ''}</div><div>${p.flow || ''}</div></div>
+    </div>`;
+  }).join('');
+}
+
+function renderChart(labels, series){
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  if(trendChart) trendChart.destroy();
+  trendChart = new Chart(ctx,{
+    type:'line',
+    data:{
+      labels:labels || [],
+      datasets:[{
+        label:'強度/賠率',
+        data:series || [],
+        borderColor:'#38bdf8',
+        backgroundColor:'rgba(56,189,248,.15)',
+        tension:.25
+      }]
+    },
+    options:{
+      responsive:true,
+      plugins:{legend:{labels:{color:'#e5e7eb'}}},
+      scales:{
+        x:{ticks:{color:'#cbd5e1'}},
+        y:{ticks:{color:'#cbd5e1'}}
+      }
+    }
+  });
+}
+
+async function refreshData(){
+  const res = await fetch(`/data?pool_type=${currentTab}`);
+  const data = await res.json();
+
+  document.getElementById('updateCount').textContent = data.update_count || 0;
+  document.getElementById('lastUpdate').textContent = data.last_update || '—';
+  document.getElementById('statusText').textContent = data.status || '—';
+
+  const topList = currentTab === 'WIN' ? (data.top_down || []) : (data.pair_top || []);
+  renderList('topRankings', topList, x => `
+    <div class="list-item">
+      <span class="hot">${x.no || x.key || ''}</span> ${x.name || ''}
+      <div class="muted">賠率 ${x.win || '—'} · 流入 ${x.cum_inflow || '—'} · SMS ${x.sms || '—'}</div>
+    </div>
+  `);
+
+  renderList('horseExposure', data.horse_exposure || [], x => `
+    <div class="list-item">
+      <span class="up">${x.no}</span> ${x.name || ''}
+      <div class="muted">關聯流入 ${x.exposure} · 涉及馬對 ${x.pair_count}</div>
+    </div>
+  `);
+
+  renderList('alerts', data.alerts || data.pair_alerts || [], x => `
+    <div class="alert-row">
+      <span class="muted">${x.time || ''}</span> ${x.no || x.key || ''} ${x.name || ''} ${x.msg || ''}
+    </div>
+  `);
+
+  renderTable(data.rows || data.pair_rows || []);
+  renderHeatmap(data.heatmap_pairs || []);
+  renderChart(data.timestamps || [], data.chart_series || []);
+}
+
+setInterval(refreshData, 5000);
+window.onload = () => {
+  document.getElementById('raceDate').value = new Date().toISOString().slice(0,10);
+  refreshData();
+};
+</script>
+</body>
+</html>

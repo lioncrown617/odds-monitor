@@ -752,10 +752,15 @@ def download_log():
     if os.path.exists(path):
         return send_file(path, as_attachment=True)
     return jsonify({"error": "Log 不存在，請先開始監察"}), 404
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))
-    app.run(debug=False, host="0.0.0.0", port=port)
-    @app.route("/test")
+    @app.route("/download_log")
+def download_log():
+    path = get_log_path()
+    if os.path.exists(path):
+        return send_file(path, as_attachment=True)
+    return jsonify({"error": "Log 不存在，請先開始監察"}), 404
+
+
+@app.route("/test")
 def test_driver():
     try:
         driver = init_driver()
@@ -765,3 +770,8 @@ def test_driver():
         return jsonify({"ok": True, "title": title})
     except Exception as e:
         return jsonify({"ok": False, "error": str(e)})
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5001))
+    app.run(debug=False, host="0.0.0.0", port=port)

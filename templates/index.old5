@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏇 HKJC 大戶熱錢監察</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:#0d1117; color:#e6edf3; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; }
+header { background:#161b22; border-bottom:2px solid #f0c040; padding:11px 18px;
+         display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+header h1 { font-size:16px; color:#f0c040; }
+#status-badge { padding:5px 14px; border-radius:12px; font-size:12px; font-weight:600;
+  background:#21262d; border:1px solid #30363d; transition:all 0.3s; }
+#status-badge.running { border-color:#238636; color:#3fb950; }
+#status-badge.stopped { border-color:#da3633; color:#f85149; }
+#status-badge.error   { border-color:#f85149; color:#f85149;
+  animation:blink 0.8s ease-in-out infinite; }
+@keyframes blink {
+  0%,100%{ opacity:1; box-shadow:0 0 0 0 rgba(248,81,73,0); }
+  50%     { opacity:0.5; box-shadow:0 0 10px 4px rgba(248,81,73,0.5); }
+}
+.container { max-width:1900px; margin:0 auto; padding:12px; }
+.config-panel { background:#161b22; border:1px solid #30363d; border-radius:8px;
+  padding:12px 16px; margin-bottom:10px; display:flex; flex-wrap:wrap; gap:10px; align-items:flex-end; }
+.config-panel label { display:block; color:#8b949e; font-size:11px; margin-bottom:3px; }
+.config-panel input,.config-panel select { background:#0d1117; border:1px solid #30363d;
+  color:#e6edf3; padding:6px 9px; border-radius:6px; font-size:12px; width:100%; }
+.field { min-width:110px; }
+.btn { padding:6px 15px; border-radius:6px; border:none; cursor:pointer; font-size:12px; font-weight:600; }
+.btn-start { background:#238636; color:#fff; } .btn-start:hover { background:#2ea043; }
+.btn-stop  { background:#da3633; color:#fff; } .btn-stop:hover  { background:#f85149; }
+
+/* Info bar */
+.info-bar { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.info-card { background:#161b22; border:1px solid #30363d; border-radius:6px;
+  padding:6px 11px; flex:1; min-width:100px; }
+.info-card .lbl { color:#8b949e; font-size:10px; }
+.info-card .val { font-size:13px; font-weight:600; color:#f0c040; margin-top:1px; }
+.pool-card { background:#1a1a00; border:1px solid #f0c040; border-radius:6px;
+  padding:6px 12px; flex:2; min-width:160px; }
+.pool-card .lbl { color:#f0c040; font-size:10px; }
+.pool-card .val { font-size:19px; font-weight:700; color:#ffe066; margin-top:1px; }
+.status-card { background:#161b22; border:1px solid #30363d; border-radius:6px;
+  padding:6px 11px; flex:2; min-width:140px; transition:border-color 0.3s; }
+.status-card.error { border-color:#f85149; background:#1a1010;
+  animation:blink-card 0.8s ease-in-out infinite; }
+@keyframes blink-card {
+  0%,100%{ box-shadow:0 0 0 0 rgba(248,81,73,0); }
+  50%     { box-shadow:0 0 12px 3px rgba(248,81,73,0.35); }
+}
+.status-card .lbl { color:#8b949e; font-size:10px; }
+.status-card .val { font-size:12px; font-weight:600; color:#3fb950; margin-top:1px; }
+.status-card.error .val { color:#f85149; }
+
+/* 警報欄 */
+.alert-bar { background:#1a0a0a; border:1px solid #da3633; border-radius:8px;
+  padding:8px 14px; margin-bottom:10px; display:none; }
+.alert-bar.show { display:block; }
+.alert-bar h4 { color:#f85149; font-size:12px; margin-bottom:6px; }
+.alert-item { display:flex; gap:10px; align-items:center; padding:3px 0;
+  border-bottom:1px solid #2a1010; font-size:11px; }
+.alert-item:last-child { border-bottom:none; }
+.alert-time { color:#8b949e; min-width:55px; }
+.alert-horse { color:#f0c040; font-weight:600; min-width:80px; }
+.alert-msg { color:#f85149; }
+
+/* 圖例 */
+.legend-bar { display:flex; gap:12px; font-size:11px; margin-bottom:8px; flex-wrap:wrap; color:#8b949e; }
+.ld { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:3px; vertical-align:middle; }
+
+/* 主表格 */
+.table-wrap { overflow-x:auto; border-radius:8px; border:1px solid #30363d; margin-bottom:10px; }
+table { width:100%; border-collapse:collapse; }
+thead th { background:#161b22; padding:6px 8px; text-align:left;
+  border-bottom:2px solid #30363d; color:#8b949e; font-size:10px; white-space:nowrap; }
+thead th.g { color:#f0c040; }
+thead th.b { color:#58a6ff; }
+thead th.gr{ color:#3fb950; }
+thead th.or{ color:#ff9f43; }
+thead th.pk{ color:#bc8cff; }
+.sl { border-left:2px solid #30363d !important; }
+tbody tr { border-bottom:1px solid #21262d; transition:background 0.15s; cursor:pointer; }
+tbody tr:hover { background:#1c2128; }
+tbody td { padding:6px 8px; white-space:nowrap; font-size:11px; }
+tr.hot  { background:rgba(248,81,73,0.07); }
+tr.warm { background:rgba(210,153,34,0.07); }
+tr.rise { background:rgba(63,185,80,0.07); }
+tr.alert-row { background:rgba(248,81,73,0.13) !important; }
+.badge { padding:1px 6px; border-radius:10px; font-size:10px; font-weight:600; }
+.badge.hot    { background:rgba(248,81,73,0.2);  color:#f85149; }
+.badge.warm   { background:rgba(210,153,34,0.2); color:#d29922; }
+.badge.rise   { background:rgba(63,185,80,0.2);  color:#3fb950; }
+.badge.neutral{ color:#484f58; }
+.up      { color:#3fb950; font-weight:600; }
+.hot-c   { color:#ff9f43; font-weight:700; }
+.purple  { color:#bc8cff; font-weight:700; }
+.diluted { color:#8b949e; font-style:italic; }
+.neutral { color:#484f58; }
+.alert-c { color:#f85149; font-weight:700; font-size:10px; }
+.curr-win { font-weight:700; font-size:13px; }
+.cdot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:3px; vertical-align:middle; }
+
+/* 走勢圖 */
+.chart-section { background:#161b22; border:1px solid #30363d; border-radius:8px;
+  padding:12px; margin-bottom:10px; }
+.chart-section h3 { color:#e6edf3; font-size:13px; margin-bottom:7px; }
+.chart-tabs { display:flex; gap:5px; margin-bottom:8px; flex-wrap:wrap; }
+.tab-btn { padding:4px 12px; border-radius:6px; border:1px solid #30363d;
+  background:#21262d; color:#8b949e; cursor:pointer; font-size:11px; }
+.tab-btn.active { background:#f0c04022; border-color:#f0c040; color:#f0c040; font-weight:700; }
+.chart-controls { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px; }
+.horse-btn { padding:3px 8px; border-radius:12px; border:1px solid #30363d;
+  background:#21262d; color:#8b949e; cursor:pointer; font-size:11px; transition:all 0.15s; }
+.horse-btn.active { font-weight:700; }
+.chart-wrap { position:relative; height:340px; }
+.chart-hint { font-size:10px; color:#484f58; margin-top:5px; }
+
+/* 底部面板 */
+.bottom-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px; }
+@media(max-width:700px){ .bottom-grid{ grid-template-columns:1fr; } }
+.picks-panel { background:#161b22; border:1px solid #30363d; border-radius:8px; padding:11px; }
+.picks-panel h3 { font-size:12px; margin-bottom:7px; padding-bottom:5px; border-bottom:1px solid #30363d; }
+.picks-panel.down h3 { color:#ff9f43; }
+.picks-panel.up   h3 { color:#3fb950; }
+.pick-item { display:flex; align-items:flex-start; gap:8px; padding:5px 0; border-bottom:1px solid #21262d; }
+.pick-item:last-child{border-bottom:none;}
+.medal { font-size:15px; }
+.pick-name { font-weight:600; font-size:12px; }
+.pick-no   { font-size:10px; color:#8b949e; margin-top:2px; }
+.pick-stats{ margin-left:auto; text-align:right; }
+.pick-win  { font-size:14px; font-weight:700; }
+.pick-win.down{color:#f85149;} .pick-win.up{color:#3fb950;}
+.pick-sms  { font-size:10px; color:#ff9f43; margin-top:1px; }
+.note { font-size:10px; color:#484f58; margin-bottom:8px; line-height:1.6; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏇 HKJC 大戶熱錢監察系統</h1>
+  <span id="status-badge" class="stopped">● 未啟動</span>
+</header>
+<div class="container">
+
+  <div class="config-panel">
+    <div class="field"><label>📅 賽馬日期</label><input type="date" id="inp-date"></div>
+    <div class="field"><label>🏟 場地</label>
+      <select id="inp-venue">
+        <option value="ST">ST - 沙田</option>
+        <option value="HV">HV - 跑馬地</option>
+      </select>
+    </div>
+    <div class="field" style="min-width:75px"><label>🔢 場次</label>
+      <input type="number" id="inp-race" min="1" max="12" value="1"></div>
+    <div class="field" style="min-width:95px"><label>⏱ 間隔(秒)</label>
+      <input type="number" id="inp-interval" min="15" max="300" value="30"></div>
+    <div style="display:flex;gap:7px;align-items:flex-end">
+      <button class="btn btn-start" onclick="startMonitor()">▶ 開始監察</button>
+      <button class="btn btn-stop"  onclick="stopMonitor()">■ 停止</button>
+    </div>
+  </div>
+
+  <div class="info-bar">
+    <div class="info-card"><div class="lbl">場次</div><div class="val" id="info-race">—</div></div>
+    <div class="info-card"><div class="lbl">更新次數</div><div class="val" id="info-count">—</div></div>
+    <div class="info-card"><div class="lbl">最後更新</div><div class="val" id="info-time">—</div></div>
+    <div class="info-card"><div class="lbl">基準時間</div><div class="val" id="info-base">—</div></div>
+    <div class="pool-card"><div class="lbl">💰 獨贏彩池（實時）</div><div class="val" id="info-pool">—</div></div>
+    <div class="status-card" id="status-card">
+      <div class="lbl">⚡ 系統狀態</div>
+      <div class="val" id="info-status">等待中</div>
+    </div>
+  </div>
+
+  <!-- 警報欄 -->
+  <div class="alert-bar" id="alert-bar">
+    <h4>🚨 大戶異動警報（最新20條）</h4>
+    <div id="alert-list"></div>
+  </div>
+
+  <div class="legend-bar">
+    <span><span class="ld" style="background:#bc8cff"></span><b style="color:#bc8cff">🏆 SMS大戶評分</b>（累積流入×賠率跌幅×超額吸金，越高越可疑）</span>
+    <span><span class="ld" style="background:#ff9f43"></span><b style="color:#ff9f43">🔥 超額吸金</b>（本次佔新增彩池 > 現時份額，正差越大越強）</span>
+    <span><span class="ld" style="background:#3fb950"></span><b style="color:#3fb950">▲ 真實流入</b></span>
+    <span><span class="ld" style="background:#8b949e"></span><b style="color:#8b949e">～ 份額被攤薄</b>（非真實流出）</span>
+    <span style="background:rgba(248,81,73,0.13);padding:2px 7px;border-radius:4px;color:#f85149">整行紅色=有警報觸發</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>色</th><th>馬號</th><th>馬名</th><th>檔</th><th>騎師</th><th>練馬師</th>
+          <th class="g">基準賠</th>
+          <th class="g">⭐ WIN</th>
+          <th class="g">賠率變動</th>
+          <th class="g">賠率跌速</th>
+          <th class="g">走勢</th>
+          <th class="b sl">基準投注</th>
+          <th class="b">現時投注</th>
+          <th class="b">累積增減</th>
+          <th class="gr sl">本次流入</th>
+          <th class="gr">加速度</th>
+          <th class="gr">累積真實流入</th>
+          <th class="or sl">🔥 超額吸金率</th>
+          <th class="pk sl">🏆 SMS評分</th>
+          <th class="pk">🚨 警報</th>
+        </tr>
+      </thead>
+      <tbody id="odds-tbody">
+        <tr><td colspan="20" style="text-align:center;padding:28px;color:#484f58">請設定場次後按「開始監察」</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    💡 <b style="color:#bc8cff">SMS大戶評分</b> = 累積真實流入(萬) × (1+賠率累跌/10) × (1+超額吸金/10)。三個條件同時成立才高分，有效排除冷門馬百分比虛高問題。<br>
+    💡 <b style="color:#ff9f43">超額吸金率</b>：本次流入佔彩池新增量，超出現時份額才是真正熱錢。例如佔池8%但吸金25%，超額+17%代表有人超比例買入。<br>
+    💡 <b style="color:#f85149">警報條件</b>：單次吸金≥30% / 賠率加速連跌 / 突發大注超過累積50%。
+  </div>
+
+  <!-- 走勢圖 -->
+  <div class="chart-section">
+    <h3>📈 走勢圖</h3>
+    <div class="chart-tabs">
+      <button class="tab-btn active" onclick="switchTab('odds',   this)">獨贏賠率</button>
+      <button class="tab-btn"        onclick="switchTab('bet',    this)">💰 估算投注額</button>
+      <button class="tab-btn"        onclick="switchTab('flow',   this)">💧 每次流入</button>
+      <button class="tab-btn"        onclick="switchTab('absorb', this)">🔥 超額吸金率</button>
+      <button class="tab-btn"        onclick="switchTab('sms',    this)">🏆 SMS評分</button>
+    </div>
+    <div class="chart-controls" id="horse-btns"></div>
+    <div class="chart-wrap"><canvas id="oddsChart"></canvas></div>
+    <p class="chart-hint">💡 SMS評分圖可看出哪匹馬大戶評分持續上升，是最強買入訊號。點擊馬號按鈕高亮單匹。</p>
+  </div>
+
+  <!-- 底部精選 -->
+  <div class="bottom-grid">
+    <div class="picks-panel down">
+      <h3>🏆 大戶資金流入頭三位（SMS排名）</h3>
+      <div id="picks-down"><p style="color:#484f58;font-size:11px">等待數據...</p></div>
+    </div>
+    <div class="picks-panel up">
+      <h3>📈 賠率回升（份額被攤薄）頭三位</h3>
+      <div id="picks-up"><p style="color:#484f58;font-size:11px">等待數據...</p></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("inp-date").value = new Date().toISOString().slice(0,10);
+
+let pollTimer        = null;
+let oddsChart        = null;
+let allHistory       = {};
+let allBetHistory    = {};
+let allFlowHistory   = {};
+let allAbsorbHistory = {};
+let allSmsHistory    = {};
+let allNames         = {};
+let allTimestamps    = [];
+let activeHorses     = new Set();
+let currentTab       = "odds";
+const medals = ["🥇","🥈","🥉"];
+
+const COLOR_POOL = [
+  "#f0c040","#58a6ff","#f85149","#3fb950","#bc8cff",
+  "#ff9f43","#00d2d3","#ff6b9d","#48dbfb","#1dd1a1",
+  "#ffeaa7","#fd79a8","#a29bfe","#55efc4","#e17055"
+];
+const colorMap = {};
+function getColor(no) {
+  if (!colorMap[no]) colorMap[no] = COLOR_POOL[Object.keys(colorMap).length % COLOR_POOL.length];
+  return colorMap[no];
+}
+function hexA(hex, a) {
+  if (a >= 1) return hex;
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+function fmtM(v) {
+  if (v==null) return "—";
+  const a=Math.abs(v), s=v<0?"-":"+";
+  if (a>=1000000) return `${s}$${(a/1000000).toFixed(2)}M`;
+  if (a>=1000)    return `${s}$${(a/1000).toFixed(1)}K`;
+  return `${s}$${a}`;
+}
+
+// Chart
+function initChart() {
+  Chart.register(ChartDataLabels);
+  const ctx = document.getElementById("oddsChart").getContext("2d");
+  oddsChart = new Chart(ctx, {
+    type: "line",
+    data: { labels:[], datasets:[] },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      animation:{ duration:350 },
+      interaction:{ mode:"index", intersect:false },
+      layout:{ padding:{ right:70 } },
+      plugins: {
+        datalabels: {
+          display: ctx => {
+            const d=ctx.dataset.data; let last=-1;
+            for(let i=d.length-1;i>=0;i--){ if(d[i]!=null){last=i;break;} }
+            return ctx.dataIndex===last && !ctx.dataset.hidden;
+          },
+          align:"right", anchor:"end",
+          color: ctx => ctx.dataset.borderColor,
+          font:{ size:11, weight:"bold" },
+          formatter: v => {
+            if(v==null) return "";
+            if(currentTab==="odds") return `${v}`;
+            if(currentTab==="absorb"||currentTab==="sms") return `${v>0?"+":""}${typeof v==="number"?v.toFixed(1):v}`;
+            return fmtM(v).replace("+","");
+          },
+          padding:{ left:4 },
+        },
+        legend:{
+          labels:{ color:"#8b949e", font:{size:10}, boxWidth:10,
+            usePointStyle:true, pointStyle:"circle",
+            generateLabels: c=>c.data.datasets.map((ds,i)=>({
+              text:ds.label, fillStyle:ds.borderColor, strokeStyle:ds.borderColor,
+              lineWidth:2, hidden:ds.hidden, index:i, datasetIndex:i, pointStyle:"circle",
+            }))
+          }
+        },
+        tooltip:{
+          backgroundColor:"#161b22", borderColor:"#30363d", borderWidth:1,
+          titleColor:"#e6edf3", bodyColor:"#8b949e",
+          callbacks:{
+            title: items=>`🕐 ${items[0].label}`,
+            label: ctx=>{
+              const v=ctx.parsed.y;
+              if(currentTab==="odds")   return ` 馬${ctx.dataset.label}  賠率：${v??"—"}`;
+              if(currentTab==="absorb") return ` 馬${ctx.dataset.label}  超額吸金：${v>0?"+":""}${v}%`;
+              if(currentTab==="sms")    return ` 馬${ctx.dataset.label}  SMS評分：${v}`;
+              return ` 馬${ctx.dataset.label}  ${currentTab==="bet"?"投注":"流入"}：${fmtM(v)}`;
+            },
+            labelColor: ctx=>({borderColor:ctx.dataset.borderColor,backgroundColor:ctx.dataset.borderColor})
+          }
+        }
+      },
+      scales:{
+        x:{ ticks:{color:"#8b949e",font:{size:10},maxRotation:45}, grid:{color:"#21262d"} },
+        y:{ reverse:false,
+          ticks:{color:"#8b949e",font:{size:10}},
+          grid:{color:"#21262d"},
+          title:{display:true, text:"獨贏賠率（低＝熱門）", color:"#8b949e", font:{size:10}}
+        }
+      }
+    }
+  });
+}
+
+function switchTab(tab, btn) {
+  currentTab=tab;
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const y=oddsChart.options.scales.y;
+  if      (tab==="odds")   { y.reverse=true;  y.title.text="獨贏賠率（低＝熱門）"; }
+  else if (tab==="bet")    { y.reverse=false; y.title.text="估算投注額"; }
+  else if (tab==="flow")   { y.reverse=false; y.title.text="每次流入金額（正=流入）"; }
+  else if (tab==="absorb") { y.reverse=false; y.title.text="超額吸金率 %（正=超比例）"; }
+  else                     { y.reverse=false; y.title.text="SMS大戶評分（越高越強）"; }
+  updateChart();
+}
+
+function updateChart() {
+  if (!oddsChart) return;
+  const src = currentTab==="odds"?   allHistory
+            : currentTab==="bet"?    allBetHistory
+            : currentTab==="flow"?   allFlowHistory
+            : currentTab==="absorb"? allAbsorbHistory
+            :                        allSmsHistory;
+  const horses=Object.keys(src);
+  if(!horses.length) return;
+  oddsChart.data.labels=allTimestamps;
+  const hasA=activeHorses.size>0;
+  oddsChart.data.datasets=horses.map(no=>{
+    const color=getColor(no),isH=activeHorses.has(no),isA=!hasA||isH;
+    const alpha=hasA&&!isH?0.07:1;
+    return {
+      label: no+" "+(allNames[no]||""),
+      data:  src[no],
+      borderColor:          hexA(color,alpha),
+      backgroundColor:      hexA(color,alpha*0.06),
+      pointBackgroundColor: hexA(color,alpha),
+      pointBorderColor:     isH?"#fff":hexA(color,alpha),
+      pointBorderWidth:     isH?1.5:0,
+      borderWidth:          isH?3:1.5,
+      pointRadius:          isH?5:2,
+      tension:0.35, hidden:!isA, spanGaps:true,
+    };
+  });
+  oddsChart.update("active");
+}
+
+function buildHorseBtns(horses) {
+  const wrap=document.getElementById("horse-btns");
+  if(wrap.children.length===Object.keys(horses).length+1) return;
+  wrap.innerHTML="";
+  const ab=document.createElement("button");
+  ab.className="horse-btn active"; ab.textContent="全部";
+  ab.style.cssText="border-color:#8b949e;color:#e6edf3;background:#30363d";
+  ab.onclick=()=>toggleAll(ab); wrap.appendChild(ab);
+  Object.entries(horses).forEach(([no,name])=>{
+    const color=getColor(no);
+    const btn=document.createElement("button");
+    btn.className="horse-btn"; btn.dataset.no=no;
+    btn.textContent=`${no} ${name}`;
+    btn.style.cssText=`border-color:${color};color:${color}`;
+    btn.onclick=()=>toggleHorse(no,btn,color);
+    wrap.appendChild(btn);
+  });
+}
+function toggleAll(btn) {
+  activeHorses.clear();
+  document.querySelectorAll(".horse-btn").forEach(b=>{b.classList.remove("active");b.style.background="";});
+  btn.classList.add("active"); btn.style.background="#30363d"; updateChart();
+}
+function toggleHorse(no,btn,color) {
+  const ab=document.querySelector(".horse-btn:first-child");
+  ab.classList.remove("active"); ab.style.background="";
+  if(activeHorses.has(no)){activeHorses.delete(no);btn.classList.remove("active");btn.style.background="";}
+  else{activeHorses.add(no);btn.classList.add("active");btn.style.background=color+"33";}
+  if(activeHorses.size===0) toggleAll(ab); else updateChart();
+}
+
+// API
+function startMonitor() {
+  const payload={
+    date:document.getElementById("inp-date").value,
+    venue:document.getElementById("inp-venue").value,
+    race_no:document.getElementById("inp-race").value,
+    interval:document.getElementById("inp-interval").value,
+  };
+  fetch("/start",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+    .then(r=>r.json()).then(d=>{
+      if(d.ok){
+        setStatus(true,false); activeHorses.clear();
+        Object.keys(colorMap).forEach(k=>delete colorMap[k]);
+        if(!oddsChart) initChart();
+        else{oddsChart.data.labels=[];oddsChart.data.datasets=[];oddsChart.update();}
+        startPolling(parseInt(payload.interval)*1000);
+      } else { alert(d.msg); }
+    });
+}
+function stopMonitor(){
+  fetch("/stop",{method:"POST"}).then(()=>{setStatus(false,false);if(pollTimer)clearInterval(pollTimer);});
+}
+function setStatus(running,hasError){
+  const badge=document.getElementById("status-badge");
+  const card =document.getElementById("status-card");
+  if(!running){ badge.textContent="● 已停止"; badge.className="stopped"; card.classList.remove("error"); }
+  else if(hasError){ badge.textContent="⚠ 抓取異常"; badge.className="error"; card.classList.add("error"); }
+  else { badge.textContent="● 監察中"; badge.className="running"; card.classList.remove("error"); }
+}
+function startPolling(ms){
+  if(pollTimer) clearInterval(pollTimer);
+  fetchData(); pollTimer=setInterval(fetchData,ms);
+}
+function fetchData(){ fetch("/data").then(r=>r.json()).then(renderAll); }
+
+function renderAll(d) {
+  document.getElementById("info-race").textContent  = d.race_date?`${d.race_date} ${d.venue_name} 第${d.race_no}場`:"—";
+  document.getElementById("info-count").textContent = d.update_count||"—";
+  document.getElementById("info-time").textContent  = d.last_update||"—";
+  document.getElementById("info-base").textContent  = d.base_time||"—";
+  document.getElementById("info-pool").textContent  = d.win_pool||"—";
+  document.getElementById("info-status").textContent= d.status||"—";
+  setStatus(d.running, d.has_error);
+
+  // 警報欄
+  const alertBar=document.getElementById("alert-bar");
+  const alertList=document.getElementById("alert-list");
+  if(d.alerts && d.alerts.length>0){
+    alertBar.classList.add("show");
+    alertList.innerHTML=d.alerts.map(a=>`
+      <div class="alert-item">
+        <span class="alert-time">${a.time}</span>
+        <span class="alert-horse">馬${a.no} ${a.name}</span>
+        <span style="color:#8b949e;min-width:40px">$${a.win}</span>
+        <span class="alert-msg">${a.msg}</span>
+      </div>`).join("");
+  } else {
+    alertBar.classList.remove("show");
+  }
+
+  // 主表格
+  const tbody=document.getElementById("odds-tbody");
+  if(!d.rows||!d.rows.length){
+    tbody.innerHTML=`<tr><td colspan="20" style="text-align:center;padding:28px;color:#484f58">${d.status}</td></tr>`;
+  } else {
+    tbody.innerHTML=d.rows.map(r=>{
+      const color=getColor(r.no);
+      const chgClass=r.chg.includes("+")&&!r.chg.startsWith("0(")?"chg-up":r.chg.includes("-")?"chg-dn":"";
+      const badge=r.trend==="—"
+        ?`<span class="badge neutral">—</span>`
+        :`<span class="badge ${r.trend_css}">${
+          r.trend==="急跌"?"🔴 急跌":r.trend==="持跌"?"🟡 持跌":
+          r.trend==="持升"?"🟢 持升":"🟢 回升"}</span>`;
+      const rowCls=(r.alert?"alert-row ":"")+(r.absorb_css==="hot"?"hotmoney ":"")+r.trend_css;
+      const fCls  = r.flow_css==="up"?"up":"diluted";
+      const aCls  = r.accel_css==="hot"?"hot-c":r.accel_css==="up"?"up":"diluted";
+      const abCls = r.absorb_css==="hot"?"hot-c":r.absorb_css==="up"?"up":r.absorb_css==="diluted"?"diluted":"neutral";
+      const odCls = r.odrop_css==="hot"?"hot-c":r.odrop_css==="up"?"up":"diluted";
+      const sCls  = r.sms_css==="hot"?"hot-c":r.sms_css==="up"?"up":"neutral";
+      return `<tr class="${rowCls}" onclick="highlightHorse('${r.no}')">
+        <td><span class="cdot" style="background:${color}"></span></td>
+        <td><b style="color:${color}">${r.no}</b></td>
+        <td>${r.name}</td><td>${r.draw}</td>
+        <td style="font-size:10px">${r.jockey}</td>
+        <td style="font-size:10px">${r.trainer}</td>
+        <td style="color:#8b949e">${r.base_win}</td>
+        <td class="curr-win" style="color:${color}">${r.win}</td>
+        <td class="${r.chg.startsWith('-')?'diluted':r.chg.startsWith('+')?'up':'neutral'}" style="font-size:10px">${r.chg}</td>
+        <td class="${odCls}" style="font-size:10px">${r.odrop}</td>
+        <td>${badge}</td>
+        <td style="color:#8b949e" class="sl">${r.base_bet}</td>
+        <td style="color:${color};font-weight:600">${r.est_bet} <span style="color:#8b949e;font-size:10px">${r.est_pct}</span></td>
+        <td class="${r.cum_diff_css==='up'?'up':'diluted'}" style="font-size:10px">${r.cum_diff} ${r.cum_diff_pct}</td>
+        <td class="${fCls} sl">${r.flow}</td>
+        <td class="${aCls}" style="font-size:10px">${r.accel}</td>
+        <td style="color:#3fb950;font-weight:600">${r.cum_inflow}</td>
+        <td class="${abCls} sl">${r.absorb}</td>
+        <td class="${sCls} sl">${r.sms}</td>
+        <td class="alert-c">${r.alert}</td>
+      </tr>`;
+    }).join("");
+  }
+
+  // 圖表資料
+  if(d.history&&d.timestamps){
+    allHistory       = d.history;
+    allBetHistory    = d.bet_history||{};
+    allFlowHistory   = d.flow_history||{};
+    allAbsorbHistory = d.absorb_history||{};
+    allSmsHistory    = d.sms_history||{};
+    allNames         = d.horses||{};
+    allTimestamps    = d.timestamps;
+    buildHorseBtns(allNames);
+    updateChart();
+  }
+
+  // 頭三位（SMS排名）
+  document.getElementById("picks-down").innerHTML = d.top_down&&d.top_down.length
+    ? d.top_down.map((h,i)=>`
+        <div class="pick-item">
+          <span class="medal">${medals[i]}</span>
+          <div>
+            <div class="pick-name">${h.name}</div>
+            <div class="pick-no">馬號${h.no} │ 基準:${h.base} │ 連跌:${h.streak}次 │ 累跌:${h.drop}%</div>
+            <div class="pick-no" style="color:#3fb950">累積流入: ${h.cum_inflow>0?"+$"+(h.cum_inflow>=1000?(h.cum_inflow/1000).toFixed(1)+"K":h.cum_inflow):"—"}</div>
+          </div>
+          <div class="pick-stats">
+            <div class="pick-win down">${h.win}</div>
+            <div class="pick-sms">SMS ${h.sms}</div>
+          </div>
+        </div>`).join("")
+    : `<p style="color:#484f58;font-size:11px">暫無數據...</p>`;
+
+  document.getElementById("picks-up").innerHTML = d.top_up&&d.top_up.length
+    ? d.top_up.map((h,i)=>`
+        <div class="pick-item">
+          <span class="medal">${medals[i]}</span>
+          <div>
+            <div class="pick-name">${h.name}</div>
+            <div class="pick-no">馬號${h.no} │ 基準:${h.base} │ 連升:${h.streak}次 │ 累升:${h.rise}%</div>
+          </div>
+          <div class="pick-stats">
+            <div class="pick-win up">${h.win}</div>
+          </div>
+        </div>`).join("")
+    : `<p style="color:#484f58;font-size:11px">暫無數據...</p>`;
+}
+
+function highlightHorse(no){
+  const btn=document.querySelector(`.horse-btn[data-no="${no}"]`);
+  if(btn) btn.click();
+}
+</script>
+</body>
+</html>

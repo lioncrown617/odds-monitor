@@ -764,4 +764,5 @@ def download_log():
     return jsonify({"error": "Log 不存在，請先開始監察"}), 404
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5001))
     app.run(debug=False, port=5001)

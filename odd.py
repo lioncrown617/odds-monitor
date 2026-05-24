@@ -10,7 +10,7 @@ from flask import Flask, render_template, jsonify, request, send_file
 
 app = Flask(__name__)
 
-NODE_API = "http://localhost:3000/odds"
+NODE_API = os.environ.get("NODE_API", "http://localhost:3000/odds")
 
 def _deque5():
     return deque(maxlen=5)

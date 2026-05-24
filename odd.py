@@ -762,6 +762,6 @@ def download_log():
     if os.path.exists(path):
         return send_file(path, as_attachment=True)
     return jsonify({"error": "Log 不存在，請先開始監察"}), 404
-
 if __name__ == "__main__":
-    app.run(debug=False, port=5001)
+    port = int(os.environ.get("PORT", 5001))
+    app.run(debug=False, host="0.0.0.0", port=port)

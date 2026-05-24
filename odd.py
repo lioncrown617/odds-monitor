@@ -277,7 +277,7 @@ def calc_flow_and_signals(est_bets, win_pool_str, data):
         if tc_val >= ACCEL_DROP_MIN and odds_accel > 0.5:
             alert_flags.append(f"⚡賠率加速跌({odds_drop:.1f}%)")
         cum_in = cum_flow.get(no, 0.0)
-        if cum_in > 0 and flow > 0 and flow > cum_in * 0.5 and flow > 5000:
+        if flow > 1000:
             alert_flags.append(f"💥突發大注{fmt_money(flow)}")
         try:
             min_o = state["min_odds"].get(no, curr_odds)

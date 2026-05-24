@@ -19,7 +19,10 @@ COPY --from=node-builder /app/server.js ./server.js
 # 安裝 Python 依賴
 COPY requirements.txt .
 RUN pip install --no-cache-dir flask requests gunicorn
-
+FROM node:20-slim AS node-builder
+# cache-bust: 20260524-2
+WORKDIR /app
+...
 # 複製所有程式
 COPY . .
 

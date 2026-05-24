@@ -1,5 +1,11 @@
 [phases.setup]
-aptPkgs = ["chromium", "chromium-driver"]
+nixPkgs = ["nodejs", "python311"]
+
+[phases.install]
+cmds = [
+  "pip install flask requests",
+  "cd hkjc-bridge && npm install"
+]
 
 [start]
-cmd = "gunicorn odd:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120"
+cmd = "node hkjc-bridge/server.js & sleep 3 && python odd.py"

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>🏇 HKJC 大戶熱錢監察系統 v2</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0d1117;color:#e6edf3;font-family:'Segoe UI',sans-serif;font-size:13px}
+  h2{font-size:1.3em;color:#58a6ff;margin-bottom:6px}
+  .top-bar{background:#161b22;border-bottom:1px solid #30363d;padding:10px 16px;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+  .top-bar h1{font-size:1.1em;color:#f0883e;margin-right:10px}
+  .top-bar label{color:#8b949e;font-size:12px}
+  .top-bar input,.top-bar select{background:#0d1117;border:1px solid #30363d;color:#e6edf3;padding:4px 8px;border-radius:6px;font-size:12px}
+  .btn{padding:5px 14px;border:none;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600}
+  .btn-start{background:#238636;color:#fff}
+  .btn-stop{background:#da3633;color:#fff}
+  .status-bar{background:#161b22;border-bottom:1px solid #30363d;padding:6px 16px;display:flex;flex-wrap:wrap;gap:16px;font-size:12px;color:#8b949e}
+  .status-bar span b{color:#e6edf3}
+  .status-ok{color:#3fb950}
+  .status-err{color:#f85149}
+
+  .main{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+
+  .summary-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .panel{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px}
+  .panel h3{font-size:12px;color:#8b949e;margin-bottom:8px;border-bottom:1px solid #21262d;padding-bottom:6px}
+  .panel .item{padding:4px 0;border-bottom:1px solid #21262d;font-size:12px}
+  .panel .item:last-child{border-bottom:none}
+
+  .alert-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .alert-frame{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px;max-height:280px;overflow-y:auto}
+  .alert-frame h3{font-size:12px;font-weight:700;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #21262d}
+  .af-absorb h3{color:#ffa657;border-bottom-color:#ffa65740}
+  .af-accel  h3{color:#ff7b72;border-bottom-color:#ff7b7240}
+  .af-bigbet h3{color:#d2a8ff;border-bottom-color:#d2a8ff40}
+  .af-wash   h3{color:#3fb950;border-bottom-color:#3fb95040}
+
+  .al-item{padding:5px 6px;margin-bottom:5px;border-radius:5px;font-size:11.5px;line-height:1.5}
+  .al-time{color:#8b949e;font-size:10px}
+  .al-horse{font-weight:700;color:#58a6ff}
+
+  /* 單次吸金 — 統一顏色 */
+  .al-absorb{background:#1e1408;border-left:3px solid #ffa657}
+
+  /* 突發大注 — 按該馬注碼分3色 */
+  .bigbet-low {background:#1e1c08;border-left:3px solid #e3b341}   /* >=10K  黃 */
+  .bigbet-mid {background:#241408;border-left:3px solid #f0883e}   /* >=50K  橙 */
+  .bigbet-high{background:#240808;border-left:3px solid #f85149}   /* >=100K 紅 */
+
+  .al-accel{background:#1e0f0f;border-left:3px solid #ff7b72}
+  .al-wash {background:#0f2318;border-left:3px solid #3fb950}
+
+  .table-section{grid-column:1/-1}
+  .table-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:11.5px}
+  thead th{background:#161b22;color:#8b949e;padding:6px 8px;border-bottom:1px solid #30363d;white-space:nowrap;position:sticky;top:0;z-index:2}
+  tbody tr{border-bottom:1px solid #21262d;transition:background 0.15s}
+  tbody tr:hover{background:#1c2a3a !important;outline:2px solid #58a6ff;outline-offset:-1px}
+  tbody td{padding:5px 8px;white-space:nowrap}
+  .susp{outline:2px solid #a371f7;outline-offset:-1px}
+  .hot{color:#f85149;font-weight:700}
+  .warm{color:#f0883e}
+  .up{color:#3fb950}
+  .rise{color:#58a6ff}
+  .diluted{color:#8b949e}
+  .neutral{color:#e6edf3}
+
+  .chart-section{grid-column:1/-1;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px}
+  .chart-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;align-items:center}
+  .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .chart-grid canvas{background:#0d1117;border-radius:6px;max-height:200px}
+  .chip{background:#21262d;border:1px solid #30363d;padding:3px 10px;border-radius:20px;cursor:pointer;font-size:11px;color:#8b949e}
+  .chip.active{background:#388bfd30;border-color:#388bfd;color:#58a6ff}
+  .empty{color:#484f58;font-size:12px;padding:8px 0}
+
+  /* 突發大注 tier legend */
+  .bigbet-legend{display:flex;gap:10px;margin-bottom:6px;font-size:10.5px}
+  .bigbet-legend span{padding:2px 8px;border-radius:4px}
+  .bl-low {background:#1e1c08;border:1px solid #e3b341;color:#e3b341}
+  .bl-mid {background:#241408;border:1px solid #f0883e;color:#f0883e}
+  .bl-high{background:#240808;border:1px solid #f85149;color:#f85149}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP BAR ══ -->
+<div class="top-bar">
+  <h1>🏇 HKJC 大戶熱錢監察系統 <small style="color:#8b949e;font-size:0.75em">v2 · 改良SMS · 洗碼偵測</small></h1>
+  <label>📅 日期 <input type="date" id="race_date"/></label>
+  <label>🏟 場地
+    <select id="venue">
+      <option value="ST">ST - 沙田</option>
+      <option value="HV">HV - 跑馬地</option>
+      <option value="S1">S1 - 特別賽事 1</option><option value="S2">S2</option>
+      <option value="S3">S3</option><option value="S4">S4</option>
+      <option value="S5">S5</option><option value="S6">S6</option>
+      <option value="S7">S7</option><option value="S8">S8</option>
+    </select>
+  </label>
+  <label>🔢 場次
+    <select id="race_no">
+      <option value="1">第 1 場</option><option value="2">第 2 場</option>
+      <option value="3">第 3 場</option><option value="4">第 4 場</option>
+      <option value="5">第 5 場</option><option value="6">第 6 場</option>
+      <option value="7">第 7 場</option><option value="8">第 8 場</option>
+      <option value="9">第 9 場</option><option value="10">第 10 場</option>
+      <option value="11">第 11 場</option><option value="12">第 12 場</option>
+    </select>
+  </label>
+  <label>⏱ 間隔(秒) <input type="number" id="interval" value="30" min="15" max="120" style="width:60px"/></label>
+  <button class="btn btn-start" onclick="startMonitor()">▶ 開始監察</button>
+  <button class="btn btn-stop"  onclick="stopMonitor()">■ 停止</button>
+</div>
+
+<!-- ══ STATUS BAR ══ -->
+<div class="status-bar">
+  <span>場次：<b id="s_race">—</b></span>
+  <span>更新：<b id="s_count">0</b></span>
+  <span>最後更新：<b id="s_last">—</b></span>
+  <span>基準時間：<b id="s_base">—</b></span>
+  <span>💰 彩池：<b id="s_pool">—</b></span>
+  <span>狀態：<b id="s_status" class="status-ok">等待中</b></span>
+  <span><a href="/download_log" style="color:#388bfd;text-decoration:none">📥 下載Log</a></span>
+</div>
+
+<!-- ══ MAIN ══ -->
+<div class="main">
+
+  <!-- summary -->
+  <div class="summary-row">
+    <div class="panel">
+      <h3>🏆 SMS資金頭三位</h3>
+      <div id="top_down"><span class="empty">等待數據...</span></div>
+    </div>
+    <div class="panel">
+      <h3>📈 賠率回升頭三位</h3>
+      <div id="top_up"><span class="empty">等待數據...</span></div>
+    </div>
+    <div class="panel">
+      <h3>🔔 疑似洗碼受益馬 <span style="background:#238636;color:#fff;font-size:10px;padding:1px 6px;border-radius:10px">新</span></h3>
+      <div id="top_suspicious"><span class="empty">等待數據...</span></div>
+      <div style="color:#484f58;font-size:10px;margin-top:6px">賠率由監察最低點反彈&gt;50%且仍有資金流入，可能是被洗碼目標</div>
+    </div>
+  </div>
+
+  <!-- ══ 4 ALERT FRAMES ══ -->
+  <div class="alert-row">
+
+    <!-- 1. 單次吸金 — 統一顏色 -->
+    <div class="alert-frame af-absorb">
+      <h3>🚨 單次吸金 ≥30%</h3>
+      <div id="af_absorb"><span class="empty">等待數據...</span></div>
+    </div>
+
+    <!-- 2. 賠率加速跌 -->
+    <div class="alert-frame af-accel">
+      <h3>⚡ 賠率加速連跌</h3>
+      <div id="af_accel"><span class="empty">等待數據...</span></div>
+    </div>
+
+    <!-- 3. 突發大注 — 該馬注碼分3色 -->
+    <div class="alert-frame af-bigbet">
+      <h3>💥 突發大注</h3>
+      <div class="bigbet-legend">
+        <span class="bl-low">🟡 ≥10K</span>
+        <span class="bl-mid">🟠 ≥50K</span>
+        <span class="bl-high">🔴 ≥100K</span>
+      </div>
+      <div id="af_bigbet"><span class="empty">等待數據...</span></div>
+    </div>
+
+    <!-- 4. 疑似洗碼受益 -->
+    <div class="alert-frame af-wash">
+      <h3>🔔 疑似洗碼受益</h3>
+      <div id="af_wash"><span class="empty">等待數據...</span></div>
+    </div>
+
+  </div>
+
+  <!-- ══ REALTIME TABLE ══ -->
+  <div class="table-section">
+    <div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px">
+      <h2 style="font-size:13px;margin-bottom:8px">📊 即時監察表
+        <small style="color:#8b949e;font-size:11px">· 紫框=疑似洗碼 · 改良SMS=F^1.2×(1+D/10)×(1+E有效/10)×Wt · 滑鼠懸停高亮</small>
+      </h2>
+      <div class="table-wrap">
+        <table id="main_table">
+          <thead>
+            <tr>
+              <th>色</th><th>馬號</th><th>馬名</th><th>檔</th><th>騎師</th><th>練馬師</th>
+              <th>基準賠</th><th>⭐WIN</th><th>賠率變動</th><th>賠率跌速</th><th>走勢</th>
+              <th>基準投注</th><th>現時投注</th><th>累積增減</th><th>本次流入</th><th>加速度</th>
+              <th>累積真實流入</th><th>🔥超額吸金</th><th>🏆SMS</th><th>由低反彈%</th><th>🚨警報</th>
+            </tr>
+          </thead>
+          <tbody id="table_body">
+            <tr><td colspan="21" style="text-align:center;color:#484f58;padding:20px">請設定場次後按「開始監察」</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CHART ══ -->
+  <div class="chart-section">
+    <h2 style="font-size:13px;margin-bottom:8px">📈 走勢圖</h2>
+    <div class="chart-controls">
+      <span style="color:#8b949e;font-size:12px">點擊馬號高亮單匹 ↓</span>
+      <div id="horse_chips"></div>
+    </div>
+    <div class="chart-grid">
+      <div><div style="color:#8b949e;font-size:11px;margin-bottom:4px">獨贏賠率</div><canvas id="c_odds"></canvas></div>
+      <div><div style="color:#8b949e;font-size:11px;margin-bottom:4px">💰 估算投注額</div><canvas id="c_bet"></canvas></div>
+      <div><div style="color:#8b949e;font-size:11px;margin-bottom:4px">💧 每次流入</div><canvas id="c_flow"></canvas></div>
+      <div><div style="color:#8b949e;font-size:11px;margin-bottom:4px">🏆 SMS評分</div><canvas id="c_sms"></canvas></div>
+    </div>
+    <div style="color:#484f58;font-size:11px;margin-top:8px">💡 SMS評分持續上升是最強買入訊號；由低反彈%持續升高需警惕洗碼</div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+// ══ GLOBALS ══
+const COLORS=['#58a6ff','#3fb950','#f0883e','#d2a8ff','#ff7b72','#ffa657','#79c0ff','#56d364',
+              '#ffa198','#e3b341','#80ccff','#aff5b4','#ffd8b2','#f0c3ff','#ffb3ae','#ffe9b0'];
+let charts={}, activeHorses=new Set(), allHorses=[], lastData=null, refreshTimer=null;
+
+// ══ INIT DATE ══
+document.getElementById('race_date').value = new Date().toISOString().slice(0,10);
+
+// ══ START / STOP ══
+async function startMonitor(){
+  const body={
+    date:     document.getElementById('race_date').value,
+    venue:    document.getElementById('venue').value,
+    race_no:  document.getElementById('race_no').value,
+    interval: parseInt(document.getElementById('interval').value)||30
+  };
+  const r=await fetch('/start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json();
+  if(d.ok){ document.getElementById('s_status').textContent='啟動中...'; scheduleRefresh(); }
+  else alert(d.msg);
+}
+async function stopMonitor(){
+  await fetch('/stop',{method:'POST'});
+  if(refreshTimer){clearTimeout(refreshTimer);refreshTimer=null;}
+  document.getElementById('s_status').textContent='已停止';
+}
+function scheduleRefresh(){
+  refreshTimer=setTimeout(async()=>{ await refreshData(); scheduleRefresh(); },5000);
+}
+
+// ══ MAIN REFRESH ══
+async function refreshData(){
+  let d;
+  try{ const r=await fetch('/data'); d=await r.json(); }catch(e){ return; }
+  lastData=d;
+  updateStatus(d);
+  updateSummary(d);
+  updateAlertFrames(d.alerts||[]);
+  updateTable(d);
+  updateChips(d);
+  updateCharts(d);
+}
+
+// ══ STATUS ══
+function updateStatus(d){
+  document.getElementById('s_race').textContent=(d.venue_name||'—')+' 第'+d.race_no+'場';
+  document.getElementById('s_count').textContent=d.update_count||0;
+  document.getElementById('s_last').textContent=d.last_update||'—';
+  document.getElementById('s_base').textContent=d.base_time||'—';
+  document.getElementById('s_pool').textContent=d.win_pool||'—';
+  const el=document.getElementById('s_status');
+  el.textContent=d.status||'—';
+  el.className=d.has_error?'status-err':'status-ok';
+}
+
+// ══ SUMMARY ══
+function updateSummary(d){
+  renderTopDown(d.top_down||[]);
+  renderTopUp(d.top_up||[]);
+  renderTopSusp(d.top_suspicious||[]);
+}
+function renderTopDown(arr){
+  const el=document.getElementById('top_down');
+  if(!arr.length){el.innerHTML='<span class="empty">等待數據...</span>';return;}
+  el.innerHTML=arr.map(h=>
+    `<div class="item"><b style="color:#f0883e">#${h.no} ${h.name}</b> WIN:${h.win} 基準:${h.base} SMS:<span class="hot">${h.sms}</span> 累流入:$${(h.cum_inflow/1000).toFixed(1)}K</div>`
+  ).join('');
+}
+function renderTopUp(arr){
+  const el=document.getElementById('top_up');
+  if(!arr.length){el.innerHTML='<span class="empty">等待數據...</span>';return;}
+  el.innerHTML=arr.map(h=>
+    `<div class="item"><b style="color:#58a6ff">#${h.no} ${h.name}</b> WIN:${h.win} 基準:${h.base} 反彈:<span class="up">+${h.rise}%</span></div>`
+  ).join('');
+}
+function renderTopSusp(arr){
+  const el=document.getElementById('top_suspicious');
+  if(!arr.length){el.innerHTML='<span class="empty">等待數據...</span>';return;}
+  el.innerHTML=arr.map(h=>
+    `<div class="item"><b style="color:#a371f7">#${h.no} ${h.name}</b> WIN:${h.win} 最低:${h.min_odds} 反彈:<span style="color:#a371f7">+${h.rise_pct}%</span> 流入:$${(h.cum_inflow/1000).toFixed(1)}K</div>`
+  ).join('');
+}
+
+// ══ 4 ALERT FRAMES ══
+function updateAlertFrames(alerts){
+  const absorb=[],accel=[],bigbet=[],wash=[];
+  alerts.forEach(a=>{
+    const m=a.msg||'';
+    if(m.includes('單次吸金'))   absorb.push(a);
+    else if(m.includes('賠率加速跌')) accel.push(a);
+    else if(m.includes('突發大注'))   bigbet.push(a);
+    else if(m.includes('疑似洗碼'))   wash.push(a);
+  });
+  renderAbsorbFrame(absorb);
+  renderSimpleFrame('af_accel','al-accel',accel);
+  renderBigbetFrame(bigbet);
+  renderSimpleFrame('af_wash','al-wash',wash);
+}
+
+// 單次吸金：統一顏色
+function renderAbsorbFrame(arr){
+  const el=document.getElementById('af_absorb');
+  if(!arr.length){el.innerHTML='<span class="empty">等待數據...</span>';return;}
+  el.innerHTML=arr.slice(0,30).map(a=>`
+    <div class="al-item al-absorb">
+      <span class="al-time">${a.time}</span>
+      <span class="al-horse"> #${a.no} ${a.name}</span>
+      WIN:${a.win} | 流入:$${fmtK(a.flow_amt)} | 彩池增:$${fmtK(a.pool_inc)}
+      <div style="color:#ffa657;font-size:10.5px">${a.msg}</div>
+    </div>`).join('');
+}
+
+// ══ 突發大注：解析該馬當次注碼，分三色 ══
+// 後端 alert msg 格式：「💥突發大注$XXX.XK」或「💥突發大注$X.XXM」
+// 同時 a.flow_amt 就是該馬當次流入金額（單位：元）
+// 優先用 flow_amt；若為0則嘗試從 msg 解析
+function parseBigbetAmt(a){
+  // flow_amt 是該馬當次本次流入，直接使用
+  const direct = Math.abs(a.flow_amt||0);
+  if(direct > 0) return direct;
+  // fallback：從 msg 解析金額字串，如 $12.5K / $1.2M / $50000
+  const m = (a.msg||'').match(/\$([\d.]+)(K|M)?/i);
+  if(m){
+    let v=parseFloat(m[1]);
+    if(m[2]==='K'||m[2]==='k') v*=1000;
+    if(m[2]==='M'||m[2]==='m') v*=1000000;
+    return v;
+  }
+  return 0;
+}
+
+function bigbetTier(amt){
+  if(amt>=100000) return {cls:'bigbet-high', badge:'🔴 ≥100K'};
+  if(amt>=50000)  return {cls:'bigbet-mid',  badge:'🟠 ≥50K'};
+  if(amt>=10000)  return {cls:'bigbet-low',  badge:'🟡 ≥10K'};
+  // 低於10K也顯示但用最低階樣式
+  return              {cls:'bigbet-low',  badge:'🟡 <10K'};
+}
+
+function renderBigbetFrame(arr){
+  const el=document.getElementById('af_bigbet');
+  if(!arr.length){el.innerHTML='<span class="empty">等待數據...</span>';return;}
+  el.innerHTML=arr.slice(0,30).map(a=>{
+    const amt=parseBigbetAmt(a);
+    const {cls,badge}=bigbetTier(amt);
+    return `<div class="al-item ${cls}">
+      <span class="al-time">${a.time}</span>
+      <b style="font-size:11px">${badge}</b>
+      <span class="al-horse"> #${a.no} ${a.name}</span>
+      WIN:${a.win}
+      <span style="font-weight:700;color:inherit"> 注碼:$${fmtK(amt)}</span>
+      <div style="font-size:10.5px;opacity:0.85;margin-top:2px">${a.msg}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderSimpleFrame(elId,cls,arr){
+  const el=document.getElementById(elId);
+  if(!arr.length){el.innerHTML='<span class="empty">等待數據...</span>';return;}
+  el.innerHTML=arr.slice(0,30).map(a=>`
+    <div class="al-item ${cls}">
+      <span class="al-time">${a.time}</span>
+      <span class="al-horse"> #${a.no} ${a.name}</span>
+      WIN:${a.win} | 流入:$${fmtK(a.flow_amt)}
+      <div style="font-size:10.5px;opacity:0.85">${a.msg}</div>
+    </div>`).join('');
+}
+
+function fmtK(v){
+  const a=Math.abs(v||0);
+  if(a>=1000000) return (a/1000000).toFixed(2)+'M';
+  if(a>=1000)    return (a/1000).toFixed(1)+'K';
+  return a.toFixed(0);
+}
+
+// ══ REALTIME TABLE ══
+function updateTable(d){
+  const rows=d.rows||[];
+  const tbody=document.getElementById('table_body');
+  if(!rows.length){
+    tbody.innerHTML='<tr><td colspan="21" style="text-align:center;color:#484f58;padding:20px">等待數據...</td></tr>';
+    return;
+  }
+  tbody.innerHTML=rows.map((r,i)=>{
+    const susp=r.is_suspicious?'susp':'';
+    const color=COLORS[i%COLORS.length];
+    return `<tr class="${susp}" data-no="${r.no}">
+      <td><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:${color}"></span></td>
+      <td style="color:#58a6ff;cursor:pointer" onclick="toggleHorse('${r.no}')">${r.no}</td>
+      <td>${r.name}</td>
+      <td>${r.draw||'—'}</td>
+      <td>${r.jockey||'—'}</td>
+      <td>${r.trainer||'—'}</td>
+      <td>${r.base_win||'—'}</td>
+      <td><b>${r.win}</b></td>
+      <td class="${r.chg&&r.chg.includes('-')?'hot':'up'}">${r.chg||'—'}</td>
+      <td class="${r.odrop_css||'neutral'}">${r.odrop||'—'}</td>
+      <td class="${r.trend_css||'neutral'}">${r.trend||'—'}</td>
+      <td>${r.base_bet||'—'}</td>
+      <td>${r.est_bet||'—'}</td>
+      <td class="${r.cum_diff_css||'neutral'}">${r.cum_diff||'—'} ${r.cum_diff_pct||''}</td>
+      <td class="${r.flow_css||'neutral'}">${r.flow||'—'}</td>
+      <td class="${r.accel_css||'neutral'}">${r.accel||'—'}</td>
+      <td class="up">${r.cum_inflow||'—'}</td>
+      <td class="${r.absorb_css||'neutral'}">${r.absorb||'—'}</td>
+      <td class="${r.sms_css||'neutral'}">${r.sms||'—'}</td>
+      <td>${r.rise_from_min>0?'<span style="color:#a371f7">+'+r.rise_from_min+'%</span>':'—'}</td>
+      <td style="font-size:10.5px">${r.alert||''}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ══ HORSE CHIPS ══
+function updateChips(d){
+  if(!d.rows||!d.rows.length) return;
+  const horses=d.rows.map(r=>({no:r.no,name:r.name}));
+  if(JSON.stringify(horses)===JSON.stringify(allHorses)) return;
+  allHorses=horses;
+  document.getElementById('horse_chips').innerHTML=horses.map((h,i)=>
+    `<span class="chip ${activeHorses.has(h.no)?'active':''}" onclick="toggleHorse('${h.no}')" style="border-color:${COLORS[i%COLORS.length]}">#${h.no} ${h.name}</span>`
+  ).join(' ');
+}
+function toggleHorse(no){
+  if(activeHorses.has(no)) activeHorses.delete(no);
+  else activeHorses.add(no);
+  if(lastData){ updateChips(lastData); updateCharts(lastData); }
+}
+
+// ══ CHARTS ══
+function makeChart(id){
+  return new Chart(document.getElementById(id).getContext('2d'),{
+    type:'line',
+    data:{labels:[],datasets:[]},
+    options:{
+      animation:false,responsive:true,maintainAspectRatio:true,
+      plugins:{legend:{labels:{color:'#8b949e',font:{size:10},boxWidth:10}}},
+      scales:{
+        x:{ticks:{color:'#8b949e',font:{size:9},maxTicksLimit:8},grid:{color:'#21262d'}},
+        y:{ticks:{color:'#8b949e',font:{size:9}},grid:{color:'#21262d'}}
+      }
+    }
+  });
+}
+function initCharts(){
+  charts.odds=makeChart('c_odds');
+  charts.bet =makeChart('c_bet');
+  charts.flow=makeChart('c_flow');
+  charts.sms =makeChart('c_sms');
+}
+function updateCharts(d){
+  if(!d.timestamps||!d.timestamps.length) return;
+  const rows=d.rows||[];
+  const filter=activeHorses.size>0;
+  function ds(hk){
+    return rows.filter(r=>!filter||activeHorses.has(r.no)).map((r,i)=>({
+      label:'#'+r.no+' '+r.name,
+      data:(d[hk]||{})[r.no]||[],
+      borderColor:COLORS[i%COLORS.length],
+      backgroundColor:'transparent',
+      pointRadius:1,borderWidth:1.5,tension:0.3
+    }));
+  }
+  [['odds','history'],['bet','bet_history'],['flow','flow_history'],['sms','sms_history']].forEach(([k,hk])=>{
+    charts[k].data.labels=d.timestamps;
+    charts[k].data.datasets=ds(hk);
+    charts[k].update('none');
+  });
+}
+
+// ══ BOOT ══
+initCharts();
+scheduleRefresh();
+</script>
+</body>
+</html>

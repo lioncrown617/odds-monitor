@@ -170,7 +170,8 @@ app.get('/meetings', async (req, res) => {
         res.json({ ok: false, error: e.message });
     }
 });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`✅ Running on port ${PORT}`));
 
-app.listen(3000, () => {
-    console.log('✅ HKJC bridge running on http://localhost:3000');
 });
+// Change the last line in server.js from:

@@ -17,3 +17,6 @@
     "hkjc-api": "^1.0.5"
   }
 }
+"scripts": {
+  "start": "node server.js"
+}

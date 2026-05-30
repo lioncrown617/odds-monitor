@@ -4,6 +4,14 @@ import time
 import threading
 from datetime import datetime
 from collections import defaultdict, deque
+from zoneinfo import ZoneInfo
+
+HKT = ZoneInfo("Asia/Hong_Kong")
+
+# Replace every occurrence of:
+
+# With:
+now = datetime.now(HKT).strftime('%H:%M:%S')
 
 import requests
 from flask import Flask, render_template, jsonify, request, send_file

@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir flask requests gunicorn
 
 COPY . .
 
-CMD node server.js & sleep 3 && gunicorn odd:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120
+CMD node server.js & sleep 5 && gunicorn odd:app --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 4 --timeout 120

@@ -1,3 +1,8395 @@
+Last login: Mon May 25 10:23:40 on ttys002
+lioncrown@lioncrowndeMacBook-Neo ~ % cd weinstein_scanner 
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % ls -tlr
+total 152
+-rw-r--r--  1 lioncrown  staff  6933 25  5 10:43 weinstein_scanner.py
+-rw-r--r--  1 lioncrown  staff  7564 25  5 10:49 wei2.py
+-rw-r--r--  1 lioncrown  staff   939 25  5 11:02 t1.py
+-rw-r--r--  1 lioncrown  staff  8185 25  5 11:08 wei.py
+-rw-r--r--  1 lioncrown  staff  7347 25  5 11:10 wei3.py
+-rw-r--r--  1 lioncrown  staff  6731 25  5 11:11 w6.py
+-rw-r--r--  1 lioncrown  staff   175 25  5 11:14 weinstein_stage2_20260522.csv
+-rw-r--r--  1 lioncrown  staff   175 25  5 11:17 weinstein_stage2_20260525.csv
+-rw-r--r--  1 lioncrown  staff   251 25  5 11:24 weinstein_stage2_20260523.csv
+-rw-r--r--  1 lioncrown  staff  6944 25  5 11:26 w2.py
+-rw-r--r--  1 lioncrown  staff   175 25  5 11:27 weinstein_stage2_20260530.csv
+-rw-r--r--  1 lioncrown  staff  7181 25  5 11:35 w.py
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % vi wgui.py
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % python3 wgui.py
+2026-05-25 12:25:50,259 | 2021 | 6154989568 | [open_context_base.py:410] _init_connect_sync: New connect ready: conn=7464532155844564071(1) context=<futu.quote.open_quote_context.OpenQuoteContext object at 0x10bd10d70>
+2026-05-25 12:26:22,958 | 2021 | 6188642304 | [open_context_base.py:518] on_disconnect: Disconnected: conn=0(1) reason=CallClose
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % 
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % ls -tlr
+total 216
+-rw-r--r--  1 lioncrown  staff   6933 25  5 10:43 weinstein_scanner.py
+-rw-r--r--  1 lioncrown  staff   7564 25  5 10:49 wei2.py
+-rw-r--r--  1 lioncrown  staff    939 25  5 11:02 t1.py
+-rw-r--r--  1 lioncrown  staff   8185 25  5 11:08 wei.py
+-rw-r--r--  1 lioncrown  staff   7347 25  5 11:10 wei3.py
+-rw-r--r--  1 lioncrown  staff   6731 25  5 11:11 w6.py
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:14 weinstein_stage2_20260522.csv
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:17 weinstein_stage2_20260525.csv
+-rw-r--r--  1 lioncrown  staff    251 25  5 11:24 weinstein_stage2_20260523.csv
+-rw-r--r--  1 lioncrown  staff   6944 25  5 11:26 w2.py
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:27 weinstein_stage2_20260530.csv
+-rw-r--r--  1 lioncrown  staff   7181 25  5 11:35 w.py
+-rw-r--r--  1 lioncrown  staff  28563 25  5 12:31 wgui.py
+-rw-r--r--  1 lioncrown  staff   1574 25  5 15:24 weinstein_stage2_20260524.csv
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % view weinstein_stage2_20260524.csv 
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % top
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % ls -tlr
+total 216
+-rw-r--r--  1 lioncrown  staff   6933 25  5 10:43 weinstein_scanner.py
+-rw-r--r--  1 lioncrown  staff   7564 25  5 10:49 wei2.py
+-rw-r--r--  1 lioncrown  staff    939 25  5 11:02 t1.py
+-rw-r--r--  1 lioncrown  staff   8185 25  5 11:08 wei.py
+-rw-r--r--  1 lioncrown  staff   7347 25  5 11:10 wei3.py
+-rw-r--r--  1 lioncrown  staff   6731 25  5 11:11 w6.py
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:14 weinstein_stage2_20260522.csv
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:17 weinstein_stage2_20260525.csv
+-rw-r--r--  1 lioncrown  staff    251 25  5 11:24 weinstein_stage2_20260523.csv
+-rw-r--r--  1 lioncrown  staff   6944 25  5 11:26 w2.py
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:27 weinstein_stage2_20260530.csv
+-rw-r--r--  1 lioncrown  staff   7181 25  5 11:35 w.py
+-rw-r--r--  1 lioncrown  staff  28563 25  5 12:31 wgui.py
+-rw-r--r--  1 lioncrown  staff   1574 25  5 15:24 weinstein_stage2_20260524.csv
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner %     
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % top
+
+Processes: 657 total, 3 running, 654 sleeping, 2623 threads                                                    18:23:48
+Load Avg: 1.84, 1.42, 1.39  CPU usage: 18.32% user, 19.43% sys, 62.24% idle
+SharedLibs: 513M resident, 112M data, 77M linkedit. MemRegions: 0 total, 0B resident, 0B private, 1046M shared.
+PhysMem: 7554M used (1585M wired, 1819M compressor), 169M unused.
+VM: 285T vsize, 6144M framework vsize, 0(0) swapins, 0(0) swapouts. Networks: packets: 739794/338M in, 617371/136M out.
+Disks: 1457218/31G read, 721613/13G written.
+
+PID   COMMAND      %CPU      TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP PPID STATE    BOOSTS
+1432  FTNN         33.4      10:06.38 27     4    684-  444M-  0B     180M-  1432 1    sleeping *2+[2530]
+405   WindowServer 31.6      46:37.67 18     5    2544- 389M-  25M+   188M-  405  1    sleeping *0[1]
+0     kernel_task  18.3      31:11.19 474/6  0    0     45M+   0B     0B     0    0    running   0[0]
+336   fseventsd    11.1      00:51.40 12     1    167   4816K+ 0B     1440K- 336  1    sleeping *0[1]
+408   loginwindow  9.7       00:48.71 6      5    652+  49M+   0B     23M-   408  1    sleeping *0[561]
+606   WindowManage 5.6       01:15.08 6      3    324-  16M+   0B     5856K- 606  1    sleeping *0[16278+]
+3646  top          5.0       09:13.95 1/1    0    38-   8416K  0B     3264K  3646 1723 running  *0[1]
+4720  top          5.0       00:05.90 1/1    0    30    7568K  0B     0B     4720 1729 running  *0[1]
+730   Finder       4.6       01:58.63 7      4    505   127M+  64K-   48M-   730  1    sleeping *0[864+]
+3859  Google Chrom 4.4       17:59.18 17     1    206   415M   0B     64M+   657  657  sleeping *39294+[655]
+361   mds          4.0       01:10.26 11     8    319+  29M+   0B     19M-   361  1    sleeping *0[1]
+657   Google Chrom 3.3       05:59.13 45     3    883   177M   0B     64M-   657  1    sleeping *2460[2153]
+752   replayd      2.9       00:02.07 6      5    109-  8513K+ 0B     4240K- 752  1    sleeping  0[52]
+574   mds_stores   2.9       02:35.51 8      6    133   19M-   0B     11M-   574  1    sleeping *0[1]
+413   runningboard 2.7       01:21.53 7      6    801-  9344K+ 0B     1200K- 413  1    sleeping *9+[1]
+719   Calendar     2.6       01:04.66 6      4    344   54M+   0B     24M-   719  1    sleeping *0[3255]
+669   Terminal     2.4       03:23.96 11     4    445-  119M-  21M+   25M    669  1    sleeping *0[2506+]
+375   launchservic 2.3       00:16.27 8      7    538-  6032K+ 0B     768K-  375  1    sleeping *1+[51150+]
+727   ControlCente 2.3       00:08.63 10     6    563+  31M    0B     14M-   727  1    sleeping *3+[2993+]
+534   com.apple.Ap 1.9       04:49.24 12     10   2232+ 32M    0B     9184K  534  1    sleeping  0[1]
+332   logd         1.8       01:21.26 5      4    2101- 21M-   0B     24M-   332  1    sleeping *0[1]
+726   Dock         1.6       00:10.22 4      2    470-  54M-   0B     48M-   726  1    sleeping *1[9205]
+  [已還原2026年5月25日 下午7:51:31]
+Last login: Mon May 25 19:51:27 on console
+Restored session: 2026年 5月25日 星期一 18時23分48秒 CST
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % 
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % ls -tlkr
+total 180
+-rw-r--r--  1 lioncrown  staff   6933 25  5 10:43 weinstein_scanner.py
+-rw-r--r--  1 lioncrown  staff   7564 25  5 10:49 wei2.py
+-rw-r--r--  1 lioncrown  staff    939 25  5 11:02 t1.py
+-rw-r--r--  1 lioncrown  staff   8185 25  5 11:08 wei.py
+-rw-r--r--  1 lioncrown  staff   7347 25  5 11:10 wei3.py
+-rw-r--r--  1 lioncrown  staff   6731 25  5 11:11 w6.py
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:14 weinstein_stage2_20260522.csv
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:17 weinstein_stage2_20260525.csv
+-rw-r--r--  1 lioncrown  staff    251 25  5 11:24 weinstein_stage2_20260523.csv
+-rw-r--r--  1 lioncrown  staff   6944 25  5 11:26 w2.py
+-rw-r--r--  1 lioncrown  staff    175 25  5 11:27 weinstein_stage2_20260530.csv
+-rw-r--r--  1 lioncrown  staff   7181 25  5 11:35 w.py
+-rw-r--r--  1 lioncrown  staff  28563 25  5 12:31 wgui.py
+-rw-r--r--  1 lioncrown  staff   1574 25  5 15:24 weinstein_stage2_20260524.csv
+-rw-r--r--  1 lioncrown  staff  34557 25  5 15:45 wgui2.py
+-rw-r--r--  1 lioncrown  staff   1279 25  5 16:31 t.py
+-rw-r--r--  1 lioncrown  staff  32250 25  5 18:15 wgui3.py
+lioncrown@lioncrowndeMacBook-Neo weinstein_scanner % cd ..
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % cd hkjc-bridge 
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls -tlr
+total 104
+-rw-r--r--   1 lioncrown  staff   3054 24  5 19:48 server.js.old
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 20:06 node_modules
+-rw-r--r--   1 lioncrown  staff    382 24  5 20:06 package.json
+-rw-r--r--   1 lioncrown  staff  33758 24  5 20:06 package-lock.json
+-rw-r--r--   1 lioncrown  staff   5235 24  5 20:12 server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % node server.js
+✅ HKJC bridge running on http://localhost:3000
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R2 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+^C
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % pwd
+/Users/lioncrown/hkjc-bridge
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % cd ..
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr odd.py
+-rw-r--r--  1 lioncrown  staff  32998 24  5 23:11 odd.py
+lioncrown@lioncrowndeMacBook-Neo ~ % top
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % vi odd.py
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % cd hkjc-bridge 
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % sl -tlr
+zsh: command not found: sl
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls 
+node_modules		package-lock.json	package.json		server.js		server.js.old
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % node server.js
+✅ HKJC bridge running on http://localhost:3000
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+[INFO] HV R1 2026-05-27
+
+  [已還原2026年5月26日 下午8:19:38]
+Last login: Tue May 26 20:19:26 on console
+Restored session: 2026年 5月25日 星期一 22時14分04秒 CST
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls -tlr
+total 104
+-rw-r--r--   1 lioncrown  staff   3054 24  5 19:48 server.js.old
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 20:06 node_modules
+-rw-r--r--   1 lioncrown  staff    382 24  5 20:06 package.json
+-rw-r--r--   1 lioncrown  staff  33758 24  5 20:06 package-lock.json
+-rw-r--r--   1 lioncrown  staff   5235 24  5 20:12 server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % cd ..
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % cd hkjc-bridge 
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls -tlr
+total 104
+-rw-r--r--   1 lioncrown  staff   3054 24  5 19:48 server.js.old
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 20:06 node_modules
+-rw-r--r--   1 lioncrown  staff    382 24  5 20:06 package.json
+-rw-r--r--   1 lioncrown  staff  33758 24  5 20:06 package-lock.json
+-rw-r--r--   1 lioncrown  staff   5235 24  5 20:12 server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % cd ..
+lioncrown@lioncrowndeMacBook-Neo ~ % vi odd.py
+lioncrown@lioncrowndeMacBook-Neo ~ % sl -tlr
+zsh: command not found: sl
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % cd logs
+lioncrown@lioncrowndeMacBook-Neo logs % ls -tlr
+total 46024
+-rw-r--r--  1 lioncrown  staff   141141 22  5 23:16 20260522_ST_RS1_log.json
+-rw-r--r--  1 lioncrown  staff  1912294 23  5 20:23 20260523_ST_RS1_log.json
+-rw-r--r--  1 lioncrown  staff   565478 23  5 21:01 20260523_ST_RS2_log.json
+-rw-r--r--  1 lioncrown  staff   805546 23  5 21:31 20260523_ST_RS3_log.json
+-rw-r--r--  1 lioncrown  staff   853939 23  5 22:08 20260523_ST_RS4_log.json
+-rw-r--r--  1 lioncrown  staff   195349 23  5 22:42 20260523_ST_RS5_log.json
+-rw-r--r--  1 lioncrown  staff   914164 23  5 23:18 20260523_ST_RS6_log.json
+-rw-r--r--  1 lioncrown  staff   371415 23  5 23:51 20260523_ST_RS7_log.json
+-rw-r--r--  1 lioncrown  staff   636542 24  5 13:38 20260524_ST_R03_log.json
+-rw-r--r--  1 lioncrown  staff   669807 24  5 14:23 20260524_ST_R04_log.json
+-rw-r--r--  1 lioncrown  staff   655911 24  5 14:36 20260524_ST_R05_log.json
+-rw-r--r--  1 lioncrown  staff  1081162 24  5 14:59 20260524_ST_R06_log.json
+-rw-r--r--  1 lioncrown  staff   377872 24  5 15:38 20260524_ST_R07_log.json
+-rw-r--r--  1 lioncrown  staff   348379 24  5 16:07 20260524_ST_R08_log.json
+-rw-r--r--  1 lioncrown  staff   536788 24  5 16:58 20260524_ST_R09_log.json
+-rw-r--r--  1 lioncrown  staff   426202 24  5 17:28 20260524_ST_R10_log.json
+-rw-r--r--  1 lioncrown  staff   670393 24  5 18:03 20260524_ST_R11_log.json
+-rw-r--r--  1 lioncrown  staff   232896 24  5 19:56 20260524_S2_R03_log.json
+-rw-r--r--  1 lioncrown  staff    39288 24  5 19:56 20260524_HV_R03_log.json
+-rw-r--r--  1 lioncrown  staff   519712 24  5 19:58 20260524_HV_R04_log.json
+-rw-r--r--  1 lioncrown  staff   167627 24  5 20:01 20260524_HV_R11_log.json
+-rw-r--r--  1 lioncrown  staff   116977 24  5 20:02 20260524_S1_R11_log.json
+-rw-r--r--  1 lioncrown  staff    39334 24  5 20:02 20260524_S1_R01_log.json
+-rw-r--r--  1 lioncrown  staff   122943 24  5 20:05 20260524_S2_R07_log.json
+-rw-r--r--  1 lioncrown  staff   661782 24  5 20:13 20260524_ST_R01_log.json
+-rw-r--r--  1 lioncrown  staff  1179509 24  5 23:12 20260524_ST_R02_log.json
+-rw-r--r--  1 lioncrown  staff  4303402 24  5 23:42 20260524_S2_R02_log.json
+-rw-r--r--  1 lioncrown  staff  4963210 24  5 23:53 20260524_S2_R01_log.json
+lioncrown@lioncrowndeMacBook-Neo logs % du -sg .
+1	.
+lioncrown@lioncrowndeMacBook-Neo logs % du -sk .
+23012	.
+lioncrown@lioncrowndeMacBook-Neo logs % top
+lioncrown@lioncrowndeMacBook-Neo logs % ls -tlr
+total 46024
+-rw-r--r--  1 lioncrown  staff   141141 22  5 23:16 20260522_ST_RS1_log.json
+-rw-r--r--  1 lioncrown  staff  1912294 23  5 20:23 20260523_ST_RS1_log.json
+-rw-r--r--  1 lioncrown  staff   565478 23  5 21:01 20260523_ST_RS2_log.json
+-rw-r--r--  1 lioncrown  staff   805546 23  5 21:31 20260523_ST_RS3_log.json
+-rw-r--r--  1 lioncrown  staff   853939 23  5 22:08 20260523_ST_RS4_log.json
+-rw-r--r--  1 lioncrown  staff   195349 23  5 22:42 20260523_ST_RS5_log.json
+-rw-r--r--  1 lioncrown  staff   914164 23  5 23:18 20260523_ST_RS6_log.json
+-rw-r--r--  1 lioncrown  staff   371415 23  5 23:51 20260523_ST_RS7_log.json
+-rw-r--r--  1 lioncrown  staff   636542 24  5 13:38 20260524_ST_R03_log.json
+-rw-r--r--  1 lioncrown  staff   669807 24  5 14:23 20260524_ST_R04_log.json
+-rw-r--r--  1 lioncrown  staff   655911 24  5 14:36 20260524_ST_R05_log.json
+-rw-r--r--  1 lioncrown  staff  1081162 24  5 14:59 20260524_ST_R06_log.json
+-rw-r--r--  1 lioncrown  staff   377872 24  5 15:38 20260524_ST_R07_log.json
+-rw-r--r--  1 lioncrown  staff   348379 24  5 16:07 20260524_ST_R08_log.json
+-rw-r--r--  1 lioncrown  staff   536788 24  5 16:58 20260524_ST_R09_log.json
+-rw-r--r--  1 lioncrown  staff   426202 24  5 17:28 20260524_ST_R10_log.json
+-rw-r--r--  1 lioncrown  staff   670393 24  5 18:03 20260524_ST_R11_log.json
+-rw-r--r--  1 lioncrown  staff   232896 24  5 19:56 20260524_S2_R03_log.json
+-rw-r--r--  1 lioncrown  staff    39288 24  5 19:56 20260524_HV_R03_log.json
+-rw-r--r--  1 lioncrown  staff   519712 24  5 19:58 20260524_HV_R04_log.json
+-rw-r--r--  1 lioncrown  staff   167627 24  5 20:01 20260524_HV_R11_log.json
+-rw-r--r--  1 lioncrown  staff   116977 24  5 20:02 20260524_S1_R11_log.json
+-rw-r--r--  1 lioncrown  staff    39334 24  5 20:02 20260524_S1_R01_log.json
+-rw-r--r--  1 lioncrown  staff   122943 24  5 20:05 20260524_S2_R07_log.json
+-rw-r--r--  1 lioncrown  staff   661782 24  5 20:13 20260524_ST_R01_log.json
+-rw-r--r--  1 lioncrown  staff  1179509 24  5 23:12 20260524_ST_R02_log.json
+-rw-r--r--  1 lioncrown  staff  4303402 24  5 23:42 20260524_S2_R02_log.json
+-rw-r--r--  1 lioncrown  staff  4963210 24  5 23:53 20260524_S2_R01_log.json
+lioncrown@lioncrowndeMacBook-Neo logs % cd ..
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x   8 lioncrown  staff    256 24  5 20:18 hkjc-bridge
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+lioncrown@lioncrowndeMacBook-Neo ~ % cd hkjc-bridge 
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls -tlr
+total 104
+-rw-r--r--   1 lioncrown  staff   3054 24  5 19:48 server.js.old
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 20:06 node_modules
+-rw-r--r--   1 lioncrown  staff    382 24  5 20:06 package.json
+-rw-r--r--   1 lioncrown  staff  33758 24  5 20:06 package-lock.json
+-rw-r--r--   1 lioncrown  staff   5235 24  5 20:12 server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % vi server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % top
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % node -v
+v24.16.0
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % top
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % vi server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls -tlr
+total 104
+-rw-r--r--   1 lioncrown  staff   3054 24  5 19:48 server.js.old
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 20:06 node_modules
+-rw-r--r--   1 lioncrown  staff    382 24  5 20:06 package.json
+-rw-r--r--   1 lioncrown  staff  33758 24  5 20:06 package-lock.json
+-rw-r--r--   1 lioncrown  staff   5235 24  5 20:12 server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % top
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % ls -tlr
+total 104
+-rw-r--r--   1 lioncrown  staff   3054 24  5 19:48 server.js.old
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 20:06 node_modules
+-rw-r--r--   1 lioncrown  staff    382 24  5 20:06 package.json
+-rw-r--r--   1 lioncrown  staff  33758 24  5 20:06 package-lock.json
+-rw-r--r--   1 lioncrown  staff   5235 24  5 20:12 server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % vi server.js
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % top
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % top
+
+Processes: 580 total, 2 running, 578 sleeping, 2498 threads                                                    21:49:03
+Load Avg: 1.64, 1.95, 1.82  CPU usage: 18.24% user, 21.12% sys, 60.64% idle
+SharedLibs: 317M resident, 80M data, 61M linkedit. MemRegions: 0 total, 0B resident, 0B private, 896M shared.
+PhysMem: 6582M used (1338M wired, 1523M compressor), 1138M unused.
+VM: 251T vsize, 6144M framework vsize, 0(0) swapins, 0(0) swapouts. 
+Networks: packets: 1017692/1258M in, 166977/24M out. Disks: 529949/11G read, 196362/3697M written.
+
+PID   COMMAND      %CPU  TIME     #TH   #WQ  #PORT MEM    PURG   CMPRS  PGRP PPID STATE    BOOSTS             %CPU_ME
+392   WindowServer 29.8  18:12.48 19    6    2285- 371M-  12M+   181M-  392  1    sleeping *0[1]              1.17495
+642   FTNN         28.3  05:38.87 29    5    645-  397M-  0B     147M-  642  1    sleeping *2+[723]           1.99044
+0     kernel_task  17.3  08:58.71 473/6 0    0     38M+   0B     0B     0    0    running   0[0]              0.00000
+323   fseventsd    12.4  00:10.60 12    1    147   4864K+ 0B     1296K- 323  1    sleeping *0[1]              0.00000
+395   loginwindow  11.3  00:02.41 8     5    505-  28M+   0B     4880K- 395  1    sleeping *0[407]            4.53200
+594   WindowManage 4.7   00:21.86 7     4    294-  15M-   0B     6096K- 594  1    sleeping *0[6670+]          0.15449
+1831  top          4.2   00:28.04 1/1   0    35    6320K  0B     1712K  1831 839  running  *0[1]              0.00000
+402   coreaudiod   4.1   02:13.81 16    8    642-  18M+   0B     9680K- 402  1    sleeping *0[1]              3.68136
+649   Finder       3.7   00:21.83 7     5    500   81M-   0B     61M-   649  1    sleeping *0[168+]           0.18883
+348   mds          3.6   00:24.00 8     5    270-  27M-   0B     18M-   348  1    sleeping *0[1]              3.28612
+400   runningboard 3.5   00:18.93 12    11   807-  9232K+ 0B     1520K- 400  1    sleeping *7+[1]             1.91635
+585   mds_stores   3.4   01:45.42 13    11   132   43M-   0B     9936K- 585  1    sleeping *0[1]              0.00000
+646   ControlCente 3.2   00:06.77 10    6    582+  37M+   0B     16M-   646  1    sleeping *15+[1537]         3.30417
+362   launchservic 3.1   00:02.71 8     7    475-  5568K  0B     912K-  362  1    sleeping *1+[6227+]         3.52117
+324   mediaremoted 2.5   00:02.24 8     5    205+  6209K+ 0B     1776K- 324  1    sleeping *1033[68]          0.00000
+645   Dock         2.3   00:04.62 5     3    344-  54M+   960K   47M-   645  1    sleeping *1-[1106]          0.62449
+319   logd         1.9   00:17.87 5     4    1861- 20M-   0B     29M-   319  1    sleeping *0[1]              0.00000
+385   notifyd      1.6   00:04.23 3     2    786-  3664K- 0B     416K-  385  1    sleeping *0[1]              0.00000
+354   coreduetd    1.5   00:01.31 6     5    83+   6080K  640K   1888K  354  1    sleeping *4+[103]           0.00000
+636   Terminal     1.5   00:49.17 12    5    423-  112M   21M    46M-   636  1    sleeping *0[540+]           0.03170
+489   com.apple.Ap 1.3   01:14.66 12    10   2222  32M    0B     10M    489  1    sleeping  0[1]              0.00000
+  [已還原2026年5月27日 下午7:30:36]
+Last login: Wed May 27 19:30:30 on console
+Restored session: 2026年 5月26日 星期二 21時49分03秒 CST
+lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % cd ..
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1344
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+drwxr-xr-x  30 lioncrown  staff    960 24  5 23:06 logs
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py
+drwxr-xr-x  26 lioncrown  staff    832 24  5 23:51 templates
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwx------@ 29 lioncrown  staff    928 25  5 19:53 Downloads
+drwxr-xr-x   8 lioncrown  staff    256 26  5 21:29 hkjc-bridge
+lioncrown@lioncrowndeMacBook-Neo ~ % python3 odd.py
+ * Serving Flask app 'odd'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.99.127:5001
+Press CTRL+C to quit
+127.0.0.1 - - [27/May/2026 19:31:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:31:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:31:51] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [27/May/2026 19:32:01] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:02] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:32:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:04] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:05] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:33:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:34:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:35:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:36:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:37:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:38:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:39:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:40:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:41:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:42:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:43:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:44:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:45:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:46:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:47:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:48:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:49:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:50:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:26] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R03_log.json
+127.0.0.1 - - [27/May/2026 19:51:27] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:39] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:42] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:43] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:55] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R04_log.json
+127.0.0.1 - - [27/May/2026 19:51:57] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:51:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:15] "GET /download_log HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:52:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:53:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:54:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:55:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:56:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:57:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:58:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 19:59:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:00:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:01:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:02:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:03:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:04:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:05:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:06:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:07:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:08:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:09:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:10:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:11:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:12:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:04] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R04_log.json
+[LOG] 已儲存：logs/20260527_HV_R04_log.json
+[LOG] 已儲存：logs/20260527_HV_R04_log.json
+127.0.0.1 - - [27/May/2026 20:13:08] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:13:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:14:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:15:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:16:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:17:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:18:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:19:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:20:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:21:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:22:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:23:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:24:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:25:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:26:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:27:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:28:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:29:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:30:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:31:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:32:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:33:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:34:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:35:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:36:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:37:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:38:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:39:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:40:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:41:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:42:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:43:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:44:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:45:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:46:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:47:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:48:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:49:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:50:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:51:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:52:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:53:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:54:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:55:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:29] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R05_log.json
+127.0.0.1 - - [27/May/2026 20:56:32] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:56:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:57:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:58:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 20:59:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:00:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:01:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:02:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:03:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:04:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:05:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:06:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:07:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:08:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:09:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:10:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:11:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:12:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:13:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:14:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:15:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:16:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:17:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:18:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:19:58] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R06_log.json
+127.0.0.1 - - [27/May/2026 21:20:02] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:20:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:21:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:22:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:23:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:24:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:25:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:26:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:27:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:28:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:29:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:30:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:31:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:32:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:33:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:34:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:35:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:36:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:37:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:38:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:39:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:40:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:41:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:42:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:43:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:44:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:45:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:46:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:47:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:48:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:49:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:50:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:51:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:52:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:53:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:54:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:55:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:56:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:57:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:58:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 21:59:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:12] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R07_log.json
+127.0.0.1 - - [27/May/2026 22:00:16] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:00:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:01:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:02:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:03:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:04:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:05:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:06:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:07:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:08:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:09:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:10:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:11:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:12:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:13:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:14:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:15:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:16:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:17:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:18:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:19:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:20:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:21:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:22:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:23:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:24:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:25:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:26:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:27:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:28:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:29:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:30:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:25] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:25] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R08_log.json
+127.0.0.1 - - [27/May/2026 22:31:26] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:26] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:27] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:27] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:30] "POST /start HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:31:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:32:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:33:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:34:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:35:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:36:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:37:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:38:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:39:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:40:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:41:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:42:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:43:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:44:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:45:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:46:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:47:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:48:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:49:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:50:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:51:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:52:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:53:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:54:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:55:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:35] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:56:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:12] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:14] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:16] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:18] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:20] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:22] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:24] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:26] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:28] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:30] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:32] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:34] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:37] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:39] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:41] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:43] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:45] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:47] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:49] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:51] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:53] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:55] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:57] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:57:59] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:01] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:03] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:05] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:07] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:09] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:11] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:13] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:15] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:17] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:19] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:21] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:23] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:25] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:27] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:29] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:31] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:33] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:36] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:38] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:40] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:42] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:44] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:46] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:48] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:50] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:52] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:54] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:56] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:58:58] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:00] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:02] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:04] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:06] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:08] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:10] "GET /data HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:10] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:11] "POST /stop HTTP/1.1" 200 -
+127.0.0.1 - - [27/May/2026 22:59:12] "POST /stop HTTP/1.1" 200 -
+[LOG] 已儲存：logs/20260527_HV_R09_log.json
+127.0.0.1 - - [27/May/2026 22:59:12] "POST /stop HTTP/1.1" 200 -
+
+  [已還原2026年5月30日 上午10:59:47]
+Last login: Sat May 30 10:59:34 on console
+Restored session: 2026年 5月27日 星期三 23時36分51秒 CST
+lioncrown@lioncrowndeMacBook-Neo ~ % ls -tlr
+total 1408
+drwxr-xr-x+  4 lioncrown  staff    128 12  5 20:13 Public
+drwx------   3 lioncrown  staff     96 12  5 20:13 Movies
+drwx------+  3 lioncrown  staff     96 12  5 20:13 Documents
+drwx------+  4 lioncrown  staff    128 12  5 20:13 Pictures
+drwx------+  5 lioncrown  staff    160 17  5 11:23 Desktop
+drwx------+  4 lioncrown  staff    128 17  5 15:48 Music
+-rw-r--r--   1 lioncrown  staff   3703 17  5 16:50 odd1.py
+-rw-r--r--   1 lioncrown  staff  13179 17  5 18:31 app1.py
+-rw-r--r--   1 lioncrown  staff  16451 17  5 19:08 odd8.py
+drwx------@ 86 lioncrown  staff   2752 17  5 21:22 Library
+-rw-r--r--   1 lioncrown  staff  16449 18  5 20:57 railway.py
+-rw-r--r--@  1 lioncrown  staff  19022 19  5 20:32 odd2.py
+-rw-r--r--@  1 lioncrown  staff  22093 19  5 21:18 odd3.py
+-rw-r--r--@  1 lioncrown  staff  22290 20  5 21:58 odd.bak
+-rw-r--r--   1 lioncrown  staff   4476 21  5 21:16 money_flow.py
+-rw-r--r--   1 lioncrown  staff   3231 21  5 21:23 money.py
+-rw-r--r--   1 lioncrown  staff   3792 21  5 21:27 scraper.py
+drwxr-xr-x   4 lioncrown  staff    128 21  5 21:28 __pycache__
+-rw-r--r--   1 lioncrown  staff  23573 21  5 21:59 odd.v2.py
+-rw-r--r--   1 lioncrown  staff  25618 21  5 22:31 odd.norci.py
+-rw-r--r--   1 lioncrown  staff  37773 21  5 23:37 q.py
+-rw-r--r--   1 lioncrown  staff  24774 22  5 22:00 odd.py.nolog
+-rw-r--r--   1 lioncrown  staff     19 23  5 12:49 Procfile
+-rw-r--r--   1 lioncrown  staff     42 23  5 15:55 requirements.txt
+-rw-r--r--   1 lioncrown  staff    150 23  5 15:55 nixpacks.toml
+-rw-r--r--   1 lioncrown  staff    160 23  5 16:04 railway.json
+-rw-r--r--@  1 lioncrown  staff  32214 23  5 16:13 odd.py.railway
+-rw-r--r--   1 lioncrown  staff    709 23  5 16:19 Dockerfile
+-rw-r--r--   1 lioncrown  staff  31761 24  5 13:26 odd.py.old
+drwxr-xr-x   8 lioncrown  staff    256 24  5 13:31 my-odds-app
+-rw-r--r--@  1 lioncrown  staff  31324 24  5 14:20 odd.py.20260524.1
+-rw-r--r--   1 lioncrown  staff   8413 24  5 14:33 odd.py.railway.cpgz
+-rw-r--r--   1 lioncrown  staff  31384 24  5 16:29 odd.py.ok
+-rw-r--r--   1 lioncrown  staff  33736 24  5 17:44 odd.py.freeze
+-rw-r--r--   1 lioncrown  staff  35029 24  5 18:37 odd.ok
+-rw-r--r--   1 lioncrown  staff  30221 24  5 19:07 odd.py.graphql
+-rw-r--r--   1 lioncrown  staff  35192 24  5 19:28 odd.py.graphql2
+-rw-r--r--   1 lioncrown  staff     78 24  5 19:40 package.json
+-rw-r--r--   1 lioncrown  staff  33108 24  5 19:40 package-lock.json
+drwxr-xr-x  77 lioncrown  staff   2464 24  5 19:40 node_modules
+-rw-r--r--   1 lioncrown  staff  31513 24  5 19:51 odd.py.night
+-rw-r--r--   1 lioncrown  staff  32998 24  5 23:11 odd.py.veryok
+drwxr-xr-x  19 lioncrown  staff    608 25  5 18:22 weinstein_scanner
+drwxr-xr-x   8 lioncrown  staff    256 26  5 21:29 hkjc-bridge
+drwx------@ 31 lioncrown  staff    992 30  5 15:33 Downloads
+drwxr-xr-x  27 lioncrown  staff    864 30  5 15:37 templates
+-rw-r--r--   1 lioncrown  staff  32257 30  5 15:39 odd.py
+drwxr-xr-x  39 lioncrown  staff   1248 30  5 15:39 logs
+lioncrown@lioncrowndeMacBook-Neo ~ % vi odd.py
+
 import os
 import json
 import time
@@ -12,6 +8404,7 @@ app = Flask(__name__)
 
 NODE_API = os.environ.get("NODE_API", "http://localhost:3000/odds")
 
+
 def _deque5():
     return deque(maxlen=5)
 
@@ -21,850 +8414,7 @@ def _deque60():
 def _inf():
     return float("inf")
 
+
 state = {
     "running": False,
-    "data": [],
-    "base_data": {},
-    "base_time": "",
-    "base_est_bet": {},
-    "prev_data": {},
-    "prev_est_bet": {},
-    "prev_flow": {},
-    "prev_pool": 0.0,
-    "prev_odds_drop": {},
-    "trend_counter": defaultdict(int),
-    "cum_drop": defaultdict(float),
-    "cum_rise": defaultdict(float),
-    "cum_flow": defaultdict(float),
-    "update_count": 0,
-    "last_update": "",
-    "race_date": "",
-    "venue": "",
-    "venue_name": "",
-    "race_no": "",
-    "interval": 3,
-    "current_interval": 3,
-    "url": "",
-    "status": "等待設定...",
-    "has_error": False,
-    "top_down": [],
-    "top_up": [],
-    "top_suspicious": [],
-    "top_steady": [],
-    "top_rci": [],
-    "alerts": [],
-    "history": defaultdict(list),
-    "bet_history": defaultdict(list),
-    "flow_history": defaultdict(list),
-    "absorb_history": defaultdict(list),
-    "sms_history": defaultdict(list),
-    "timestamps": [],
-    "win_pool": "",
-    "win_pool_history": [],
-    "_accels": {},
-    "_absorb": {},
-    "_sms": {},
-    "_alerts": {},
-    "e_history": defaultdict(_deque5),
-    "inflow_ts_history": defaultdict(_deque60),
-    "min_odds": defaultdict(_inf),
-    "alert_cooldown": defaultdict(dict),
-    "steady_scores": {},
-    "last_error_detail": "",
-}
-
-TREND_THRESHOLD = 2
-ALERT_ABSORB_THRESH = 30.0
-ACCEL_DROP_MIN = 2
-
-monitor_thread = None
-
-VENUE_NAME_MAP = {
-    "ST": "沙田",
-    "HV": "跑馬地",
-    **{f"S{i}": f"特別賽事 S{i}" for i in range(1, 9)}
-}
-
-def parse_pool(pool_str):
-    try:
-        return float(str(pool_str).replace("$", "").replace(",", "").strip())
-    except:
-        return 0.0
-
-def fmt_money(amt):
-    a = abs(amt)
-    if a >= 1_000_000:
-        return f"${a/1_000_000:.2f}M"
-    elif a >= 1_000:
-        return f"${a/1_000:.1f}K"
-    return f"${a:.0f}"
-
-def fetch_odds_api(date_str, venue, race_no):
-    try:
-        resp = requests.get(NODE_API, params={
-            "date":   date_str,
-            "venue":  venue,
-            "raceno": race_no,
-        }, timeout=8)
-        resp.raise_for_status()
-        data = resp.json()
-        if not data.get("ok"):
-            state["last_error_detail"] = data.get("error", "Node API 錯誤")
-            return None, ""
-        results  = data.get("results", [])
-        win_pool = data.get("win_pool", "")
-        if not results:
-            state["last_error_detail"] = "無賽馬數據"
-            return None, ""
-        return results, win_pool
-    except Exception as e:
-        state["last_error_detail"] = str(e)
-        return None, ""
-
-def calc_est_bets(data, pool_str):
-    real_map = {}
-    has_real = False
-    for r in data:
-        amt = float(r.get("win_investment", 0) or 0)
-        real_map[r["no"]] = amt
-        if amt > 0:
-            has_real = True
-    if has_real:
-        return real_map
-    pool_num  = parse_pool(pool_str)
-    net_pool  = pool_num * (1 - 0.175)
-    total_inv = sum(1.0 / float(r["win"]) for r in data if r["win"] not in ("", "SCR"))
-    result = {}
-    for r in data:
-        try:
-            share = (1.0 / float(r["win"])) / total_inv if total_inv > 0 else 0
-            result[r["no"]] = net_pool * share
-        except:
-            result[r["no"]] = 0.0
-    return result
-
-def calc_trends(data):
-    prev = state["prev_data"]
-    base = state["base_data"]
-    tc   = state["trend_counter"]
-    cd   = state["cum_drop"]
-    cr   = state["cum_rise"]
-    for r in data:
-        no = r["no"]
-        try:
-            curr = float(r["win"])
-            if curr < state["min_odds"][no]:
-                state["min_odds"][no] = curr
-            if no in prev:
-                diff = curr - float(prev[no])
-                if diff < 0:
-                    tc[no] = tc[no] + 1 if tc[no] > 0 else 1
-                elif diff > 0:
-                    tc[no] = tc[no] - 1 if tc[no] < 0 else -1
-            if no in base:
-                base_w = float(base[no])
-                pct = (base_w - curr) / base_w * 100
-                if pct > 0:
-                    cd[no] = round(pct, 1)
-                    cr[no] = 0.0
-                else:
-                    cr[no] = round(abs(pct), 1)
-                    cd[no] = 0.0
-        except:
-            pass
-
-def calc_sms_v2(no, cum_flow_val, cum_drop_val):
-    F = max(cum_flow_val / 10000.0, 0)
-    if F == 0:
-        return 0.0
-    D      = max(cum_drop_val, 0)
-    e_hist = list(state["e_history"][no])
-    pos_e  = [max(e, 0) for e in e_hist]
-    E_eff  = sum(pos_e) / len(pos_e) if pos_e else 0
-    now_ts = time.time()
-    recent_inflow = sum(
-        amt for ts, amt in state["inflow_ts_history"][no]
-        if now_ts - ts <= 900
-    )
-    Wt = 1.5 if cum_flow_val > 0 and recent_inflow / cum_flow_val > 0.5 else 1.0
-    recent_flows = list(state["flow_history"][no])[-3:]
-    if len(recent_flows) >= 3 and all(f <= 0 for f in recent_flows):
-        Wt *= 0.5
-    if len(recent_flows) >= 3:
-        accels_local = [recent_flows[i] - recent_flows[i-1] for i in range(1, len(recent_flows))]
-        if all(f < 0 for f in recent_flows) and all(a < 0 for a in accels_local):
-            Wt *= 0.7
-    return round((F ** 1.2) * (1 + D / 10) * (1 + E_eff / 10) * Wt, 2)
-
-def calc_rci(no, cum_flow_val, cum_rise_val):
-    if cum_flow_val < 300000 or cum_rise_val < 30:
-        return 0.0
-    F = cum_flow_val / 10000.0
-    R = cum_rise_val / 10.0
-    recent_flows = list(state["flow_history"][no])[-3:]
-    if sum(1 for f in recent_flows if f > 0) < 1:
-        return 0.0
-    return round(F * R, 2)
-
-def calc_flow_and_signals(est_bets, win_pool_str, data):
-    prev_bets    = state["prev_est_bet"]
-    prev_fl      = state["prev_flow"]
-    prev_pool    = state["prev_pool"]
-    prev_drop    = state["prev_odds_drop"]
-    cum_flow     = state["cum_flow"]
-    cum_drop_pct = state["cum_drop"]
-    now_ts       = time.time()
-
-    curr_pool_num = parse_pool(win_pool_str)
-    pool_increase = max((curr_pool_num - prev_pool) * (1 - 0.175), 0)
-    total_inv = sum(1.0 / float(r["win"]) for r in data if r["win"] not in ("", "SCR"))
-    flows = {}; accels = {}; absorbs = {}; sms = {}; alerts = {}
-
-    for r in data:
-        no      = r["no"]
-        win_str = r["win"]
-        if win_str in ("", "SCR"):
-            continue
-        try:
-            curr_odds = float(win_str)
-        except:
-            continue
-
-        amt      = est_bets.get(no, 0.0)
-        prev_amt = prev_bets.get(no, None)
-        flow     = 0.0 if prev_amt is None else amt - prev_amt
-
-        prev_flow_val = prev_fl.get(no, None)
-        accel = 0.0 if prev_flow_val is None else flow - prev_flow_val
-
-        if prev_amt is not None and flow > 0:
-            cum_flow[no] = cum_flow.get(no, 0.0) + flow
-            state["inflow_ts_history"][no].append((now_ts, flow))
-
-        try:
-            share_pct = (1.0 / curr_odds) / total_inv * 100 if total_inv > 0 else 0
-        except:
-            share_pct = 0.0
-
-        absorb_pct = 0.0
-        excess     = 0.0
-        if pool_increase > 500 and prev_amt is not None:
-            absorb_pct = (flow / pool_increase) * 100
-            excess     = absorb_pct - share_pct
-        state["e_history"][no].append(excess)
-
-        prev_o_val = float(state["prev_data"].get(no, curr_odds) or curr_odds)
-        try:
-            odds_drop = (prev_o_val - curr_odds) / prev_o_val * 100 if prev_o_val > 0 else 0.0
-        except:
-            odds_drop = 0.0
-        odds_accel = odds_drop - prev_drop.get(no, 0.0)
-
-        sms_score   = calc_sms_v2(no, cum_flow.get(no, 0.0), cum_drop_pct.get(no, 0.0))
-        alert_flags = []
-
-        if pool_increase > 500 and prev_amt is not None and absorb_pct >= ALERT_ABSORB_THRESH:
-            alert_flags.append(f"🚨單次吸金{absorb_pct:.0f}%")
-
-        tc_val = state["trend_counter"].get(no, 0)
-        if tc_val >= ACCEL_DROP_MIN and odds_accel > 0.5:
-            alert_flags.append(f"⚡賠率加速跌({odds_drop:.1f}%)")
-
-        if flow >= 10000:
-            alert_flags.append(f"💥突發大注{fmt_money(flow)}")
-
-        try:
-            min_o = state["min_odds"].get(no, curr_odds)
-            rise_from_min = (curr_odds - min_o) / min_o * 100 if min_o > 0 else 0
-            if rise_from_min > 50 and cum_flow.get(no, 0) > 100000:
-                alert_flags.append(f"🔔疑似洗碼受益(反彈{rise_from_min:.0f}%)")
-        except:
-            pass
-
-        recent_flows = list(state["flow_history"][no])[-3:]
-        if len(recent_flows) >= 3:
-            accels_local = [recent_flows[i] - recent_flows[i-1] for i in range(1, len(recent_flows))]
-            if all(f < 0 for f in recent_flows) and all(a < 0 for a in accels_local):
-                alert_flags.append("🌊資金退潮警告")
-
-        flows[no]   = flow
-        accels[no]  = accel
-        absorbs[no] = {
-            "flow":       round(flow),
-            "absorb_pct": round(absorb_pct, 1),
-            "share_pct":  round(share_pct, 1),
-            "excess":     round(excess, 1),
-            "pool_inc":   round(pool_increase),
-            "odds_drop":  round(odds_drop, 2),
-            "odds_accel": round(odds_accel, 2),
-            "is_rescue":  False,
-        }
-        sms[no]    = sms_score
-        alerts[no] = alert_flags
-
-    return flows, accels, absorbs, sms, alerts
-
-def get_trend_label(no):
-    tc        = state["trend_counter"]
-    prev      = state["prev_data"]
-    data_dict = {r["no"]: r for r in state["data"]}
-    count     = tc.get(no, 0)
-    try:
-        curr = float(data_dict[no]["win"])
-        p    = float(prev[no]) if no in prev else curr
-        pct  = (p - curr) / p * 100 if p > 0 else 0
-    except:
-        pct = 0
-    if count >= TREND_THRESHOLD and pct >= 10: return "急跌", "hot"
-    elif count >= TREND_THRESHOLD and pct > 0: return "持跌", "warm"
-    elif count <= -TREND_THRESHOLD:            return "持升", "rise"
-    elif pct < 0:                              return "回升", "rise"
-    return "—", "neutral"
-
-def calc_top3():
-    data    = state["data"]
-    base    = state["base_data"]
-    sms_map = state["_sms"]
-    absorbs = state["_absorb"]
-    tc      = state["trend_counter"]
-    cd      = state["cum_drop"]
-    cr      = state["cum_rise"]
-    cum_f   = state["cum_flow"]
-
-    sms_all       = []  # ← 全場 SMS 排行（修正）
-    up            = []
-    suspicious    = []
-    steady_list   = []
-    rci_list      = []
-
-    for r in data:
-        no     = r["no"]
-        sms    = sms_map.get(no, 0.0)
-        ab     = absorbs.get(no, {})
-        cum_in = cum_f.get(no, 0.0)
-
-        # ── 全場 SMS（不再限於賠率下跌）──
-        if sms > 0:
-            sms_all.append({
-                "no":         no,
-                "name":       r["name"],
-                "win":        r["win"],
-                "base":       base.get(no, "—"),
-                "streak":     max(tc.get(no, 0), 0),
-                "drop":       cd.get(no, 0),
-                "cum_inflow": round(cum_in),
-                "sms":        sms,
-                "excess":     ab.get("excess", 0),
-            })
-
-        # 賠率回升
-        streak_u = max(-tc.get(no, 0), 0)
-        rise     = cr.get(no, 0)
-        if streak_u > 0 or rise > 0:
-            up.append({
-                "no":     no,
-                "name":   r["name"],
-                "win":    r["win"],
-                "base":   base.get(no, "—"),
-                "streak": streak_u,
-                "rise":   rise,
-            })
-
-        # 疑似洗碼
-        try:
-            curr_o   = float(r["win"])
-            min_o    = state["min_odds"].get(no, curr_o)
-            rise_pct = (curr_o - min_o) / min_o * 100 if min_o > 0 else 0
-            if rise_pct > 50 and cum_in > 100000:
-                suspicious.append({
-                    "no":         no,
-                    "name":       r["name"],
-                    "win":        r["win"],
-                    "min_odds":   round(min_o, 1),
-                    "rise_pct":   round(rise_pct, 1),
-                    "cum_inflow": round(cum_in),
-                })
-        except:
-            pass
-
-        # 穩定吸金
-        try:
-            curr_o2 = float(r["win"])
-            steady  = 0.0
-            if curr_o2 >= 15 and cum_in >= 200000:
-                flow_hist = list(state["flow_history"].get(no, []))[-5:]
-                if sum(1 for f in flow_hist if f > 0) >= 3:
-                    steady = round(cum_in / 10000.0 * (curr_o2 / 20.0), 2)
-            if steady > 0:
-                steady_list.append({
-                    "no":         no,
-                    "name":       r["name"],
-                    "win":        r["win"],
-                    "base":       base.get(no, "—"),
-                    "cum_inflow": round(cum_in),
-                    "steady":     steady,
-                })
-        except:
-            pass
-
-        # RCI
-        try:
-            rise_pct2 = cr.get(no, 0.0)
-            rci_score = calc_rci(no, cum_in, rise_pct2)
-            if rci_score > 0:
-                rci_list.append({
-                    "no":         no,
-                    "name":       r["name"],
-                    "win":        r["win"],
-                    "base":       base.get(no, "—"),
-                    "cum_inflow": round(cum_in),
-                    "rise_pct":   round(rise_pct2, 1),
-                    "rci":        rci_score,
-                })
-        except:
-            pass
-
-    # ── top_down 改為全場 SMS 排行 ──
-    state["top_down"]       = sorted(sms_all,    key=lambda x: x["sms"],      reverse=True)[:5]
-    state["top_up"]         = sorted(up,          key=lambda x: x["rise"],     reverse=True)[:3]
-    state["top_suspicious"] = sorted(suspicious,  key=lambda x: x["rise_pct"], reverse=True)[:3]
-    state["top_steady"]     = sorted(steady_list, key=lambda x: x["steady"],   reverse=True)[:3]
-    state["top_rci"]        = sorted(rci_list,    key=lambda x: x["rci"],      reverse=True)[:3]
-
-def update_global_alerts(alerts_map, now):
-    now_ts   = time.time()
-    cooldown = state["alert_cooldown"]
-    for no, flags in alerts_map.items():
-        if flags:
-            name     = next((r["name"] for r in state["data"] if r["no"] == no), no)
-            win      = next((r["win"]  for r in state["data"] if r["no"] == no), "—")
-            ab       = state["_absorb"].get(no, {})
-            flow_amt = ab.get("flow", 0)
-            pool_inc = ab.get("pool_inc", 0)
-            for f in flags:
-                msg_type  = f[:4]
-                is_bigbet = f.startswith("💥")
-                if not is_bigbet:
-                    if now_ts - cooldown[no].get(msg_type, 0) < 600:
-                        continue
-                    cooldown[no][msg_type] = now_ts
-                state["alerts"].insert(0, {
-                    "time": now, "no": no, "name": name, "win": win,
-                    "msg":  f, "flow_amt": flow_amt, "pool_inc": pool_inc,
-                })
-    state["alerts"] = state["alerts"][:200]
-
-def record_history(data, now, est_bets, flows, absorbs, sms):
-    state["timestamps"].append(now)
-    for r in data:
-        no = r["no"]
-        try:    state["history"][no].append(float(r["win"]))
-        except: state["history"][no].append(None)
-        state["bet_history"][no].append(round(est_bets.get(no, 0)))
-        state["flow_history"][no].append(round(flows.get(no, 0)))
-        state["absorb_history"][no].append(absorbs[no]["excess"] if no in absorbs else 0)
-        state["sms_history"][no].append(sms.get(no, 0))
-
-def get_log_path():
-    date_str = state["race_date"].replace("-", "")
-    venue    = state["venue"]
-    race_no  = state["race_no"].zfill(2)
-    os.makedirs("logs", exist_ok=True)
-    return f"logs/{date_str}_{venue}_R{race_no}_log.json"
-
-def _load_log():
-    path = get_log_path()
-    if os.path.exists(path):
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except:
-            pass
-    return {"meta": {}, "snapshots": [], "alerts": [], "summary": {}}
-
-def _save_log(log_data):
-    try:
-        with open(get_log_path(), "w", encoding="utf-8") as f:
-            json.dump(log_data, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        print(f"[LOG ERROR] {e}")
-
-def append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool):
-    log = _load_log()
-    if not log["meta"]:
-        log["meta"] = {
-            "race_date":  state["race_date"],
-            "venue":      state["venue"],
-            "venue_name": state["venue_name"],
-            "race_no":    state["race_no"],
-            "base_time":  state["base_time"],
-            "start_time": now,
-        }
-    snapshot = {"time": now, "win_pool": win_pool, "horses": []}
-    for r in data:
-        no    = r["no"]
-        ab    = absorbs.get(no, {})
-        rci_s = calc_rci(no, state["cum_flow"].get(no, 0.0), state["cum_rise"].get(no, 0.0))
-        try:
-            co = float(r["win"]); ci = state["cum_flow"].get(no, 0.0); st = 0.0
-            if co >= 15 and ci >= 200000:
-                fh = list(state["flow_history"].get(no, []))[-5:]
-                if sum(1 for f in fh if f > 0) >= 3:
-                    st = round(ci / 10000.0 * (co / 20.0), 2)
-        except:
-            st = 0.0
-        snapshot["horses"].append({
-            "no": r["no"], "name": r["name"], "win": r["win"], "place": r["place"],
-            "base_win":   state["base_data"].get(no, "—"),
-            "est_bet":    round(est_bets.get(no, 0)),
-            "flow":       round(flows.get(no, 0)),
-            "cum_flow":   round(state["cum_flow"].get(no, 0)),
-            "absorb_pct": ab.get("absorb_pct", 0),
-            "excess":     ab.get("excess", 0),
-            "pool_inc":   ab.get("pool_inc", 0),
-            "odds_drop":  ab.get("odds_drop", 0),
-            "cum_drop":   state["cum_drop"].get(no, 0),
-            "cum_rise":   state["cum_rise"].get(no, 0),
-            "sms":        sms.get(no, 0),
-            "rci":        rci_s,
-            "steady":     st,
-            "alerts":     state["_alerts"].get(no, []),
-        })
-    log["snapshots"].append(snapshot)
-    existing = {(a["time"], a["no"], a["msg"]) for a in log["alerts"]}
-    for a in state["alerts"]:
-        k = (a["time"], a["no"], a["msg"])
-        if k not in existing:
-            log["alerts"].append(a)
-            existing.add(k)
-    _save_log(log)
-
-def finalize_log(now):
-    log   = _load_log()
-    cum_f = state["cum_flow"]
-    horses = [{
-        "no":       no,
-        "name":     next((r["name"] for r in state["data"] if r["no"] == no), no),
-        "final_win":next((r["win"]  for r in state["data"] if r["no"] == no), "—"),
-        "cum_flow": round(v),
-        "cum_drop": state["cum_drop"].get(no, 0),
-        "cum_rise": state["cum_rise"].get(no, 0),
-        "sms":      state["_sms"].get(no, 0),
-        "rci":      calc_rci(no, v, state["cum_rise"].get(no, 0)),
-    } for no, v in cum_f.items() if v > 0]
-    log["summary"] = {
-        "end_time":      now,
-        "total_updates": state["update_count"],
-        "base_time":     state["base_time"],
-        "final_pool":    state["win_pool"],
-        "total_alerts":  len(log["alerts"]),
-        "top_sms":       sorted(horses, key=lambda x: x["sms"], reverse=True)[:5],
-        "top_rci":       sorted(horses, key=lambda x: x["rci"], reverse=True)[:5],
-        "horses_final":  horses,
-    }
-    _save_log(log)
-    print(f"[LOG] 已儲存：{get_log_path()}")
-
-def monitor_loop():
-    state["status"]    = "連接 Node.js API 中..."
-    state["has_error"] = False
-
-    while state["running"]:
-        now        = datetime.now().strftime("%H:%M:%S")
-        data, win_pool = fetch_odds_api(
-            state["race_date"], state["venue"], state["race_no"]
-        )
-
-        if data:
-            state["has_error"]   = False
-            state["update_count"] += 1
-            est_bets = calc_est_bets(data, win_pool)
-
-            if not state["base_data"]:
-                state["base_data"]    = {r["no"]: r["win"] for r in data}
-                state["base_time"]    = now
-                state["base_est_bet"] = dict(est_bets)
-
-            flows, accels, absorbs, sms, alerts_map = calc_flow_and_signals(
-                est_bets, win_pool, data
-            )
-
-            calc_trends(data)
-            record_history(data, now, est_bets, flows, absorbs, sms)
-            append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool)
-            update_global_alerts(alerts_map, now)
-
-            state["data"]          = data
-            state["prev_data"]     = {r["no"]: r["win"] for r in data}
-            state["prev_odds_drop"]= {no: absorbs[no]["odds_drop"] for no in absorbs}
-            state["last_update"]   = now
-            state["win_pool"]      = win_pool
-            state["win_pool_history"].append({"time": now, "pool": win_pool})
-            state["prev_flow"]     = flows
-            state["prev_est_bet"]  = dict(est_bets)
-            state["prev_pool"]     = parse_pool(win_pool)
-            state["_accels"]       = accels
-            state["_absorb"]       = absorbs
-            state["_sms"]          = sms
-            state["_alerts"]       = alerts_map
-
-            calc_top3()
-            iv = state["interval"]
-            state["current_interval"] = iv
-            state["status"] = f"✅ 正常監察中 · hkjc-api · {iv}s"
-
-        else:
-            state["has_error"] = True
-            detail = state.get("last_error_detail", "")
-            state["status"] = f"[{now}] 連接失敗 | {detail[:80]}"
-
-        time.sleep(state["interval"])
-
-    finalize_log(datetime.now().strftime("%H:%M:%S"))
-    state["status"]    = "監察已停止"
-    state["has_error"] = False
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-@app.route("/start", methods=["POST"])
-def start():
-    global monitor_thread
-    if state["running"]:
-        return jsonify({"ok": False, "msg": "已在監察中"})
-
-    d = request.json
-    state["race_date"]  = d.get("date",     datetime.now().strftime("%Y-%m-%d"))
-    state["venue"]      = d.get("venue",    "ST")
-    state["venue_name"] = VENUE_NAME_MAP.get(state["venue"], state["venue"])
-    state["race_no"]    = d.get("race_no",  "1")
-    state["interval"]   = max(int(d.get("interval", 3)), 2)
-    state["url"]        = (
-        f"https://bet.hkjc.com/ch/racing/wp/"
-        f"{state['race_date']}/{state['venue']}/{state['race_no']}"
-    )
-
-    for k, v in [
-        ("running", True), ("has_error", False), ("data", []),
-        ("base_data", {}), ("base_est_bet", {}), ("prev_data", {}),
-        ("prev_est_bet", {}), ("prev_flow", {}), ("prev_pool", 0.0),
-        ("prev_odds_drop", {}), ("update_count", 0),
-        ("top_down", []), ("top_up", []), ("top_suspicious", []),
-        ("top_steady", []), ("top_rci", []), ("alerts", []),
-        ("timestamps", []), ("win_pool", ""), ("win_pool_history", []),
-        ("_accels", {}), ("_absorb", {}), ("_sms", {}), ("_alerts", {}),
-        ("steady_scores", {}), ("current_interval", 3),
-        ("status", "正在啟動..."), ("last_error_detail", ""),
-    ]:
-        state[k] = v
-
-    state["trend_counter"]      = defaultdict(int)
-    state["cum_drop"]           = defaultdict(float)
-    state["cum_rise"]           = defaultdict(float)
-    state["cum_flow"]           = defaultdict(float)
-    state["history"]            = defaultdict(list)
-    state["bet_history"]        = defaultdict(list)
-    state["flow_history"]       = defaultdict(list)
-    state["absorb_history"]     = defaultdict(list)
-    state["sms_history"]        = defaultdict(list)
-    state["e_history"]          = defaultdict(_deque5)
-    state["inflow_ts_history"]  = defaultdict(_deque60)
-    state["min_odds"]           = defaultdict(_inf)
-    state["alert_cooldown"]     = defaultdict(dict)
-
-    monitor_thread = threading.Thread(target=monitor_loop, daemon=True)
-    monitor_thread.start()
-    return jsonify({"ok": True})
-
-@app.route("/stop", methods=["POST"])
-def stop():
-    state["running"] = False
-    return jsonify({"ok": True})
-
-@app.route("/data")
-def get_data():
-    pool_num  = parse_pool(state["win_pool"])
-    net_pool  = pool_num * (1 - 0.175)
-    total_inv = sum(
-        1.0 / float(r["win"])
-        for r in state["data"] if r["win"] not in ("", "SCR")
-    )
-    rows = []
-
-    for r in state["data"]:
-        no       = r["no"]
-        label, css = get_trend_label(no)
-        base_win = state["base_data"].get(no, "—")
-        prev_win = state["prev_data"].get(no, "—")
-
-        chg_str = "—"
-        try:
-            diff    = float(r["win"]) - float(prev_win)
-            pct     = diff / float(prev_win) * 100
-            sign    = "+" if diff >= 0 else ""
-            chg_str = f"{sign}{diff:.1f}({sign}{pct:.1f}%)"
-        except:
-            pass
-
-        est_amt, est_bet, est_pct = 0.0, "—", "—"
-        try:
-            real_amt = float(r.get("win_investment", 0) or 0)
-            if real_amt > 0:
-                est_amt = real_amt
-                est_bet = fmt_money(est_amt)
-                est_pct = "真實"
-            else:
-                share   = (1.0 / float(r["win"])) / total_inv if total_inv > 0 else 0
-                est_amt = net_pool * share
-                est_bet = fmt_money(est_amt)
-                est_pct = f"{share * 100:.1f}%"
-        except:
-            pass
-
-        base_amt     = state["base_est_bet"].get(no, 0.0)
-        base_bet_str = fmt_money(base_amt) if base_amt > 0 else "—"
-
-        cum_diff_str, cum_diff_css, cum_diff_pct = "—", "neutral", ""
-        try:
-            if base_amt > 0:
-                cd_val        = est_amt - base_amt
-                sign          = "+" if cd_val >= 0 else "-"
-                cum_diff_str  = f"{sign}{fmt_money(abs(cd_val))}"
-                cum_diff_css  = "up" if cd_val >= 0 else "diluted"
-                pv            = cd_val / base_amt * 100
-                sign2         = "+" if pv >= 0 else ""
-                cum_diff_pct  = f"({sign2}{pv:.1f}%)"
-        except:
-            pass
-
-        cum_in     = state["cum_flow"].get(no, 0.0)
-        cum_in_str = ("+" + fmt_money(cum_in)) if cum_in > 0 else "—"
-
-        ab         = state["_absorb"].get(no, {})
-        flow       = ab.get("flow", 0)
-        absorb_pct = ab.get("absorb_pct", 0.0)
-        share_pct  = ab.get("share_pct", 0.0)
-        excess     = ab.get("excess", 0.0)
-        pool_inc   = ab.get("pool_inc", 0)
-        odds_drop  = ab.get("odds_drop", 0.0)
-        odds_accel = ab.get("odds_accel", 0.0)
-        is_rescue  = ab.get("is_rescue", False)
-
-        if flow > 0:
-            rescue_tag         = "❄️" if is_rescue else ""
-            flow_str, flow_css = f"▲ +{fmt_money(flow)}{rescue_tag}", "up"
-        elif flow < 0:
-            flow_str, flow_css = f"～ {fmt_money(flow)}", "diluted"
-        else:
-            flow_str, flow_css = "—", "neutral"
-
-        accel = state["_accels"].get(no, 0.0)
-        if accel > 2000:   accel_str, accel_css = f"🚀 +{fmt_money(accel)}",      "hot"
-        elif accel > 0:    accel_str, accel_css = f"↗ +{fmt_money(accel)}",       "up"
-        elif accel < 0:    accel_str, accel_css = f"↘ -{fmt_money(abs(accel))}",  "diluted"
-        else:              accel_str, accel_css = "→",                            "neutral"
-
-        if pool_inc > 500 and absorb_pct != 0:
-            if excess >= 15:   absorb_str, absorb_css = f"🔥 {absorb_pct:.1f}% (+{excess:.1f}%)", "hot"
-            elif excess >= 5:  absorb_str, absorb_css = f"⬆ {absorb_pct:.1f}% (+{excess:.1f}%)", "up"
-            elif excess >= 0:  absorb_str, absorb_css = f"= {absorb_pct:.1f}%",                   "neutral"
-            else:              absorb_str, absorb_css = f"⬇ {absorb_pct:.1f}% ({excess:.1f}%)",   "diluted"
-        else:
-            absorb_str, absorb_css = "—", "neutral"
-
-        if odds_accel > 1 and odds_drop > 1: odrop_str, odrop_css = f"⚡加速 -{odds_drop:.1f}%", "hot"
-        elif odds_drop > 0:                  odrop_str, odrop_css = f"↘ -{odds_drop:.1f}%",       "up"
-        elif odds_drop < 0:                  odrop_str, odrop_css = f"↗ +{abs(odds_drop):.1f}%",  "diluted"
-        else:                                odrop_str, odrop_css = "—",                           "neutral"
-
-        sms_score = state["_sms"].get(no, 0.0)
-        if sms_score >= 5:   sms_str, sms_css = f"🏆 {sms_score:.1f}", "hot"
-        elif sms_score >= 1: sms_str, sms_css = f"⭐ {sms_score:.1f}", "up"
-        elif sms_score > 0:  sms_str, sms_css = f"{sms_score:.1f}",    "neutral"
-        else:                sms_str, sms_css = "—",                   "neutral"
-
-        try:
-            curr_o       = float(r["win"])
-            min_o        = state["min_odds"].get(no, curr_o)
-            rise_from_min = (curr_o - min_o) / min_o * 100 if min_o > 0 else 0
-        except:
-            rise_from_min = 0
-        is_suspicious = rise_from_min > 50 and cum_in > 100000
-
-        try:
-            curr_o2 = float(r["win"]); steady = 0.0
-            if curr_o2 >= 15 and cum_in >= 200000:
-                flow_hist2 = list(state["flow_history"].get(no, []))[-5:]
-                if sum(1 for f in flow_hist2 if f > 0) >= 3:
-                    steady = round(cum_in / 10000.0 * (curr_o2 / 20.0), 2)
-        except:
-            steady = 0.0
-
-        rise_pct_val = state["cum_rise"].get(no, 0.0)
-        rci_score    = calc_rci(no, cum_in, rise_pct_val)
-        if rci_score >= 100:  rci_str, rci_css = f"🌊 {rci_score:.1f}", "hot"
-        elif rci_score >= 30: rci_str, rci_css = f"↗ {rci_score:.1f}",  "up"
-        elif rci_score > 0:   rci_str, rci_css = f"{rci_score:.1f}",    "neutral"
-        else:                 rci_str, rci_css = "—",                   "neutral"
-
-        alert_str = " ".join(state["_alerts"].get(no, []))
-
-        rows.append({
-            **r,
-            "base_win": base_win, "prev_win": prev_win,
-            "chg": chg_str, "trend": label, "trend_css": css,
-            "est_bet": est_bet, "est_pct": est_pct, "base_bet": base_bet_str,
-            "cum_diff": cum_diff_str, "cum_diff_css": cum_diff_css,
-            "cum_diff_pct": cum_diff_pct, "cum_inflow": cum_in_str,
-            "flow": flow_str, "flow_css": flow_css,
-            "accel": accel_str, "accel_css": accel_css,
-            "absorb": absorb_str, "absorb_css": absorb_css,
-            "odrop": odrop_str, "odrop_css": odrop_css,
-            "sms": sms_str, "sms_css": sms_css, "sms_raw": sms_score,
-            "alert": alert_str, "is_suspicious": is_suspicious,
-            "rise_from_min": round(rise_from_min, 1), "steady": steady,
-            "rci": rci_str, "rci_css": rci_css, "rci_raw": rci_score,
-        })
-
-    return jsonify({
-        "rows":             rows,
-        "top_down":         state["top_down"],
-        "top_up":           state["top_up"],
-        "top_suspicious":   state["top_suspicious"],
-        "top_steady":       state["top_steady"],
-        "top_rci":          state["top_rci"],
-        "alerts":           state["alerts"],
-        "update_count":     state["update_count"],
-        "last_update":      state["last_update"],
-        "base_time":        state["base_time"],
-        "status":           state["status"],
-        "has_error":        state["has_error"],
-        "running":          state["running"],
-        "race_date":        state["race_date"],
-        "venue_name":       state["venue_name"],
-        "race_no":          state["race_no"],
-        "interval":         state["interval"],
-        "current_interval": state["current_interval"],
-        "history":          {k: v for k, v in state["history"].items()},
-        "bet_history":      {k: v for k, v in state["bet_history"].items()},
-        "flow_history":     {k: v for k, v in state["flow_history"].items()},
-        "absorb_history":   {k: v for k, v in state["absorb_history"].items()},
-        "sms_history":      {k: v for k, v in state["sms_history"].items()},
-        "timestamps":       state["timestamps"],
-        "horses":           {r["no"]: r["name"] for r in state["data"]},
-        "win_pool":         state["win_pool"],
-        "win_pool_history": state["win_pool_history"],
-        "error_detail":     state.get("last_error_detail", ""),
-    })
-
-@app.route("/download_log")
-def download_log():
-    path = get_log_path()
-    if os.path.exists(path):
-        return send_file(path, as_attachment=True)
-    return jsonify({"error": "Log 不存在，請先開始監察"}), 404
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))
-    app.run(debug=False, host="0.0.0.0", port=port)
+"odd.py" 986L, 32257B

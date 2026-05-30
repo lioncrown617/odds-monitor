@@ -18,7 +18,6 @@
   .status-bar span { color: #444; font-weight: 500; }
   .status-bar strong { color: #000; font-size: 16px; }
 
-  /* ★ 賽事資料卡 */
   .race-info-bar {
     display: flex; flex-wrap: wrap; gap: 10px; padding: 8px 14px;
     background: #eaf4fb; border-bottom: 1px solid #b0cce0;
@@ -33,7 +32,6 @@
   .panel h3 { font-size: 12px; color: #444; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
   .panel-sms { flex: 2; }
 
-  /* 突發大注 & QP */
   .bigbet-panel { background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; padding: 10px; margin: 0 14px 10px; }
   .bigbet-panel h3 { font-size: 12px; color: #444; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
   .bigbet-count { background: #888; color: #fff; padding: 1px 7px; border-radius: 10px; font-size: 11px; }
@@ -48,40 +46,39 @@
   .qp-tiers { display: flex; flex-wrap: wrap; gap: 10px; }
   .qp-tier { flex: 1; min-width: 160px; }
   .qp-tier h4 { font-size: 11px; margin-bottom: 5px; }
-  .qp-tier-y h4 { color: #ffd700; }
-  .qp-tier-o h4 { color: #ff8c00; }
-  .qp-tier-r h4 { color: #ff4444; }
+  .qp-tier-y h4 { color: #b8860b; }
+  .qp-tier-o h4 { color: #cc5500; }
+  .qp-tier-r h4 { color: #cc0000; }
   .qp-list { max-height: 260px; overflow-y: auto; }
   .qp-item { font-size: 11px; padding: 2px 5px; border-bottom: 1px solid #eee; white-space: nowrap; }
 
-  /* main table */
   .tbl-wrap { overflow-x: auto; padding: 0 14px 20px; }
   table { width: 100%; border-collapse: collapse; font-size: 12px; }
   th { background: #e8e8e8; color: #333; padding: 6px 5px; text-align: center; border-bottom: 2px solid #ccc; white-space: nowrap; position: sticky; top: 0; }
   td { padding: 5px 5px; border-bottom: 1px solid #e0e0e0; text-align: center; white-space: nowrap; }
   tr:hover td { background: #f0f4ff; }
-  .hot    { color: #ff4444; font-weight: bold; }
-  .warm   { color: #ff8c00; }
-  .up     { color: #44ff88; }
-  .rise   { color: #44bbff; }
+  .hot    { color: #cc0000; font-weight: bold; }
+  .warm   { color: #cc5500; }
+  .up     { color: #007700; }
+  .rise   { color: #0055cc; }
   .diluted{ color: #999; }
   .neutral{ color: #555; }
-  .suspicious td { background: #fff0ff !important; }
-  .dot-hot  { display:inline-block; width:10px; height:10px; border-radius:50%; background:#ff4444; }
-  .dot-warm { display:inline-block; width:10px; height:10px; border-radius:50%; background:#ff8c00; }
-  .dot-up   { display:inline-block; width:10px; height:10px; border-radius:50%; background:#44ff88; }
-  .dot-rise { display:inline-block; width:10px; height:10px; border-radius:50%; background:#44bbff; }
-  .dot-neutral{ display:inline-block; width:10px; height:10px; border-radius:50%; background:#555; }
+  .dot-hot  { display:inline-block; width:10px; height:10px; border-radius:50%; background:#cc0000; }
+  .dot-warm { display:inline-block; width:10px; height:10px; border-radius:50%; background:#cc5500; }
+  .dot-up   { display:inline-block; width:10px; height:10px; border-radius:50%; background:#007700; }
+  .dot-rise { display:inline-block; width:10px; height:10px; border-radius:50%; background:#0055cc; }
+  .dot-neutral{ display:inline-block; width:10px; height:10px; border-radius:50%; background:#aaa; }
 
   .sms-item { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #ddd; font-size: 12px; }
-  .sms-no { color: #ff9; font-weight: bold; margin-right: 6px; }
+  .sms-no { color: #b8860b; font-weight: bold; margin-right: 6px; }
   .sms-name { color: #333; flex: 1; }
-  .sms-score { color: #f90; }
+  .sms-score { color: #cc7700; }
 
   .absorb-item { font-size: 12px; padding: 3px 0; border-bottom: 1px solid #ddd; }
-  .steady-item { font-size: 12px; padding: 3px 0; border-bottom: 1px solid #ddd; }
-  .rci-item    { font-size: 12px; padding: 3px 0; border-bottom: 1px solid #ddd; }
+  .acc-item    { font-size: 12px; padding: 3px 0; border-bottom: 1px solid #ddd; display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
 
+  .acc-high { color: #007b8a; font-weight: bold; }
+  .acc-mid  { color: #009aaa; }
   .sms-top5 { outline: 2px solid #f0a000; outline-offset: -1px; }
   .hint { color: #777; font-size: 11px; padding: 0 14px 10px; }
   ::-webkit-scrollbar { width: 6px; height: 6px; }
@@ -130,7 +127,7 @@
   <span id="sStatus" style="color:#999">等待設定...</span>
 </div>
 
-<!-- ★ 賽事資料列 -->
+<!-- 賽事資料列 -->
 <div class="race-info-bar" id="raceInfoBar">
   <div class="ri-item"><span class="ri-label">⏰ 開跑</span><span class="ri-val" id="ri-time">—</span></div>
   <div class="ri-item"><span class="ri-label">📏 路程</span><span class="ri-val" id="ri-dist">—</span></div>
@@ -149,28 +146,20 @@
     <div id="topSms">等待數據...</div>
   </div>
   <div class="panel">
-    <h3>🚨 單次吸金 ≥30% <span class="bigbet-count" id="absorbCount">0</span></h3>
-    <div id="topAbsorb">等待數據...</div>
-  </div>
-  <div class="panel">
-    <h3>🧲 穩定吸金</h3>
-    <div id="topSteady">等待數據...</div>
-  </div>
-  <div class="panel">
-    <h3>🌊 RCI 反彈資金</h3>
-    <div id="topRci">等待數據...</div>
+    <h3>🔄 分批累積大戶</h3>
+    <div id="topAcc">等待數據...</div>
   </div>
 </div>
 
-<!-- 突發大注（100筆） -->
+<!-- 💥 Win 大注監控 -->
 <div class="bigbet-panel">
-  <h3>💥 突發大注 <span class="bigbet-count" id="bigBetCount">0</span>
+  <h3>💥 Win 大注監控 <span class="bigbet-count" id="bigBetCount">0</span>
     <span style="color:#888;font-size:10px;font-weight:normal">每匹馬當次注碼 🟡 ≥10K 🟠 ≥50K 🔴 ≥100K ❄️=凍結估算</span>
   </h3>
   <div class="bigbet-list" id="bigBetList">等待數據...</div>
 </div>
 
-<!-- Q / QP 大注監控（100筆） -->
+<!-- Q / QP 大注監控 -->
 <div class="qp-panel">
   <h3>🎯 Q / QP 大注監控 <span style="color:#888;font-size:10px;font-weight:normal">按單次流入分類顯示對應號碼</span></h3>
   <div class="qp-tiers">
@@ -197,17 +186,18 @@
         <th>色</th><th>馬號</th><th>馬名</th><th>檔</th><th>騎師</th><th>練馬師</th>
         <th>基準賠</th><th>⭐WIN</th><th>賠率變動</th><th>賠率跌速</th><th>走勢</th>
         <th>基準投注</th><th>現時投注</th><th>累積增減</th><th>本次流入</th><th>加速度</th>
-        <th>累積流入</th><th>🔥超額吸金</th><th>🏆SMS</th><th>反彈%</th><th>🚨警報</th>
+        <th>累積流入</th><th>🔥超額吸金</th><th>🏆SMS</th><th>🔄ACC</th><th>反彈%</th><th>🚨警報</th>
       </tr>
     </thead>
     <tbody id="mainTbody">
-      <tr><td colspan="21" style="color:#999;padding:20px;text-align:center">請設定場次後按「開始監察」</td></tr>
+      <tr><td colspan="22" style="color:#999;padding:20px;text-align:center">請設定場次後按「開始監察」</td></tr>
     </tbody>
   </table>
 </div>
 
 <div class="hint">
   💡 SMS持續上升是最強買入訊號 &nbsp;|&nbsp;
+  🔄 ACC = 分批累積大戶指標 &nbsp;|&nbsp;
   🌊 退潮警告出現需立即警惕 &nbsp;|&nbsp;
   ❄️ 凍結大注為估算值 &nbsp;|&nbsp;
   🔥 熱門吸金 &nbsp;|&nbsp; 💧 資金流出
@@ -285,18 +275,19 @@ function renderRaceInfo(ri) {
 }
 
 function renderStatus(d) {
-  document.getElementById('sRace').textContent    = d.venue_name + ' R' + d.race_no;
+  document.getElementById('sRace').textContent     = d.venue_name + ' R' + d.race_no;
   const _sc = document.getElementById('sCount'); if (_sc) _sc.textContent = d.update_count;
-  document.getElementById('sTime').textContent    = d.last_update;
-  document.getElementById('sBase').textContent    = d.base_time;
-  document.getElementById('sPool').textContent    = d.win_pool;
-  document.getElementById('sInterval').textContent= d.current_interval + 's';
+  document.getElementById('sTime').textContent     = d.last_update;
+  document.getElementById('sBase').textContent     = d.base_time;
+  document.getElementById('sPool').textContent     = d.win_pool;
+  document.getElementById('sInterval').textContent = d.current_interval + 's';
   const st = document.getElementById('sStatus');
   st.textContent = d.status;
-  st.style.color = d.has_error ? '#f44' : '#1a7a3a';
+  st.style.color = d.has_error ? '#cc0000' : '#1a7a3a';
 }
 
 function renderTopPanels(d) {
+  // SMS Top 5
   const sms = d.top_down || [];
   document.getElementById('topSms').innerHTML = sms.length
     ? sms.map(x => `<div class="sms-item">
@@ -307,20 +298,15 @@ function renderTopPanels(d) {
       </div>`).join('')
     : '<span style="color:#aaa">無數據</span>';
 
-  const absorb = (d.rows||[]).filter(r=>r.absorb_css==='hot'||r.absorb_css==='up');
-  document.getElementById('absorbCount').textContent = absorb.length;
-  document.getElementById('topAbsorb').innerHTML = absorb.length
-    ? absorb.slice(0,8).map(r=>`<div class="absorb-item"><span class="sms-no">#${r.no}</span> ${r.name} <span class="${r.absorb_css}">${r.absorb}</span></div>`).join('')
-    : '<span style="color:#aaa">無數據</span>';
-
-  const steady = d.top_steady || [];
-  document.getElementById('topSteady').innerHTML = steady.length
-    ? steady.map(x=>`<div class="steady-item"><span class="sms-no">#${x.no}</span>${x.name} <span style="color:#666">${x.win}</span> 穩:${x.steady}</div>`).join('')
-    : '<span style="color:#aaa">無數據</span>';
-
-  const rci = d.top_rci || [];
-  document.getElementById('topRci').innerHTML = rci.length
-    ? rci.map(x=>`<div class="rci-item"><span class="sms-no">#${x.no}</span>${x.name} <span style="color:#44bbff">RCI:${x.rci}</span> 反彈:${x.rise_pct}%</div>`).join('')
+  // 🔄 分批累積大戶
+  const acc = d.top_acc || [];
+  document.getElementById('topAcc').innerHTML = acc.length
+    ? acc.map(x => `<div class="acc-item">
+        <span class="sms-no">#${x.no}</span>
+        <span style="color:#333;flex:1">${x.name}</span>
+        <span style="color:#007b8a;font-size:11px">×${x.batch_count}批&nbsp;${x.time_span}分</span>
+        <span style="color:#007b8a;font-weight:bold;margin-left:6px">ACC:${x.acc}</span>
+      </div>`).join('')
     : '<span style="color:#aaa">無數據</span>';
 }
 
@@ -335,7 +321,7 @@ function renderBigBets(rows) {
   if (bigBetHistory.length > MAX_RECORDS) bigBetHistory = bigBetHistory.slice(0, MAX_RECORDS);
   document.getElementById('bigBetCount').textContent = bigBetHistory.length;
   if (!bigBetHistory.length) {
-    document.getElementById('bigBetList').innerHTML = '<span style="color:#aaa">尚無突發大注</span>';
+    document.getElementById('bigBetList').innerHTML = '<span style="color:#aaa">尚無大注記錄</span>';
     return;
   }
   document.getElementById('bigBetList').innerHTML = bigBetHistory.map(x => {
@@ -373,21 +359,25 @@ function renderQP(rows) {
 function renderTable(rows) {
   if (!rows.length) return;
   const tbody = document.getElementById('mainTbody');
-  // Compute top-5 SMS horse numbers
   const smsRanked = rows.filter(r => r.sms_raw > 0)
     .sort((a, b) => b.sms_raw - a.sms_raw)
     .slice(0, 5)
     .map(r => r.no);
   tbody.innerHTML = rows.map(r => {
     const isTopSms = smsRanked.includes(r.no);
-    const dotCls = r.trend_css === 'hot' ? 'dot-hot'
+    const dotCls = r.trend_css === 'hot'  ? 'dot-hot'
                  : r.trend_css === 'warm' ? 'dot-warm'
                  : r.trend_css === 'up'   ? 'dot-up'
                  : r.trend_css === 'rise' ? 'dot-rise'
                  : 'dot-neutral';
     const noStyle   = isTopSms ? ' style="background:#fff3b0;color:#8a4f00;padding:2px 5px;border-radius:4px;font-weight:bold;border:1px solid #f0a000;"' : '';
-    const nameStyle = isTopSms ? ' style="text-align:left;max-width:90px;overflow:hidden;background:#fff3b0;color:#8a4f00;font-weight:bold;border-radius:4px;"' : ' style="text-align:left;max-width:90px;overflow:hidden"';
-    return `<tr class="${r.is_suspicious?'suspicious':''}${isTopSms?' sms-top5':''}">
+    const nameStyle = isTopSms
+      ? ' style="text-align:left;max-width:90px;overflow:hidden;background:#fff3b0;color:#8a4f00;font-weight:bold;border-radius:4px;"'
+      : ' style="text-align:left;max-width:90px;overflow:hidden"';
+    const accVal = r.acc_raw || 0;
+    const accCls = accVal >= 5 ? 'acc-high' : accVal > 0 ? 'acc-mid' : 'neutral';
+    const accStr = accVal > 0 ? '🔄' + accVal.toFixed(1) : '—';
+    return `<tr class="${isTopSms ? 'sms-top5' : ''}">
       <td><span class="${dotCls}"></span></td>
       <td><b${noStyle}>${r.no}</b></td>
       <td${nameStyle}>${r.name||''}</td>
@@ -400,14 +390,15 @@ function renderTable(rows) {
       <td class="${r.odrop_css}">${r.odrop}</td>
       <td class="${r.trend_css}">${r.trend}</td>
       <td style="color:#999">${r.base_bet}</td>
-      <td>${r.est_bet} <span style="color:#555;font-size:10px">${r.est_pct}</span></td>
+      <td>${r.est_bet} <span style="color:#777;font-size:10px">${r.est_pct}</span></td>
       <td class="${r.cum_diff_css}">${r.cum_diff} <span style="font-size:10px">${r.cum_diff_pct}</span></td>
       <td class="${r.flow_css}">${r.flow}</td>
       <td class="${r.accel_css}">${r.accel}</td>
       <td class="${r.flow_raw>0?'up':'neutral'}">${r.cum_inflow}</td>
       <td class="${r.absorb_css}">${r.absorb}</td>
       <td class="${r.sms_css}">${r.sms}</td>
-      <td style="color:${r.rise_from_min>50?'#ff4':'#666'}">${r.rise_from_min>0?r.rise_from_min+'%':'—'}</td>
+      <td class="${accCls}">${accStr}</td>
+      <td style="color:${r.rise_from_min>50?'#cc0000':'#999'}">${r.rise_from_min>0?r.rise_from_min+'%':'—'}</td>
       <td style="font-size:10px;text-align:left">${r.alert||''}</td>
     </tr>`;
   }).join('');

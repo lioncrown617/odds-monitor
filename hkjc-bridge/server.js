@@ -5,7 +5,7 @@ const { HorseRacingAPI } = require('hkjc-api');
 const app = express();
 const gql = new GraphQLClient('https://info.cld.hkjc.com/graphql/base/');
 const api = new HorseRacingAPI();
-// To this:
+
 const PORT = process.env.NODE_PORT || 3000;
 
 const horseOddsQuery = `
@@ -35,35 +35,76 @@ query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo:
   }
 }`;
 
+// Cache: card info + race info, keyed by venue_raceNo
 const cardCache = {};
 
 async function getCardMap(venue, raceNo) {
   const key = `${venue}_${raceNo}`;
   if (cardCache[key]) return cardCache[key];
+
   try {
     const { raceMeetings } = await api.getRaceMeetings();
     const meeting = raceMeetings.find(m => m.venueCode === venue);
     if (meeting) {
       const race = meeting.races.find(r => Number(r.no) === raceNo);
       if (race) {
+        // ── Build runner map ──────────────────────────────────
         const map = {};
         for (const r of (race.runners || [])) {
           const no = String(r.no);
           map[no] = {
-            name: r.name_ch || r.name_en || '',
-            draw: String(r.barrierDrawNumber || ''),
-            jockey: r.jockey?.name_ch || r.jockey?.name_en || '',
+            name:    r.name_ch    || r.name_en    || '',
+            draw:    String(r.barrierDrawNumber || ''),
+            jockey:  r.jockey?.name_ch  || r.jockey?.name_en  || '',
             trainer: r.trainer?.name_ch || r.trainer?.name_en || '',
           };
         }
-        cardCache[key] = map;
-        return map;
+
+        // ── Extract race info fields ──────────────────────────
+        const raceInfo = extractRaceInfo(race);
+
+        const result = { map, raceInfo };
+        cardCache[key] = result;
+        return result;
       }
     }
   } catch(e) {
     console.log('[WARN] getCardMap:', e.message.substring(0, 100));
   }
-  return {};
+  return { map: {}, raceInfo: {} };
+}
+
+function extractRaceInfo(race) {
+  if (!race) return {};
+  try {
+    // Different versions of hkjc-api may use slightly different field names
+    // Try all known variants
+    const raceTime  = race.postTime       || race.raceTime      || race.startTime    || '';
+    const distance  = race.distance       || race.raceDistance  || '';
+    const distStr   = distance ? (String(distance).includes('m') ? String(distance) : String(distance) + 'm') : '';
+    const going     = race.going?.name_ch || race.going?.name_en || race.going        || race.trackState   || '';
+    const course    = race.course?.name_ch|| race.course?.name_en|| race.courseName   || race.trackCode    || '';
+    const track     = race.surface?.name_ch|| race.surface?.name_en
+                   || (race.surfaceCode === 'AWT' ? '全天候跑道' : race.surfaceCode === 'TURF' ? '草地' : race.surfaceCode || '草地');
+    const raceClass = race.raceClass?.name_ch || race.raceClass?.name_en || race.classInfo || race.raceClassName || '';
+    const prize     = race.prize          || race.prizeMoney    || '';
+    const prizeStr  = prize ? `$${Number(String(prize).replace(/[^0-9]/g,'')).toLocaleString()}` : '—';
+    const raceName  = race.name_ch        || race.name_en       || race.raceName      || '';
+
+    return {
+      race_time:   String(raceTime).slice(0, 5),  // e.g. "12:45"
+      distance:    distStr,                         // e.g. "1200m"
+      track:       track,                           // e.g. "草地"
+      course:      course,                          // e.g. '"B" 賽道(B)'
+      race_class:  raceClass,                       // e.g. "新馬賽"
+      going:       going,                           // e.g. "好地"
+      prize:       prizeStr,                        // e.g. "$1,000,000"
+      race_name:   raceName,                        // e.g. "啟德河谷盃"
+    };
+  } catch(e) {
+    console.log('[WARN] extractRaceInfo:', e.message);
+    return {};
+  }
 }
 
 app.get('/odds', async (req, res) => {
@@ -72,11 +113,14 @@ app.get('/odds', async (req, res) => {
     const raceNo = parseInt(raceno) || 1;
     console.log(`[INFO] ${venue} R${raceNo} ${date}`);
 
-    const [oddsData, poolData, cardMap] = await Promise.all([
+    const [oddsData, poolData, cardResult] = await Promise.all([
       gql.request(horseOddsQuery, { date, venueCode: venue, raceNo, oddsTypes: ['WIN', 'PLA'] }),
       gql.request(horsePoolQuery, { date, venueCode: venue, raceNo, oddsTypes: ['WIN'] }),
       getCardMap(venue, raceNo),
     ]);
+
+    const cardMap  = cardResult.map      || {};
+    const raceInfo = cardResult.raceInfo || {};
 
     let winPool = '';
     try {
@@ -105,21 +149,52 @@ app.get('/odds', async (req, res) => {
       const info = cardMap[no] || {};
       return {
         no,
-        name: info.name || '',
-        draw: info.draw || '',
-        jockey: info.jockey || '',
-        trainer: info.trainer || '',
-        win: winOddsMap[no] || 'SCR',
-        place: plaOddsMap[no] || '',
+        name:           info.name    || '',
+        barrier:        info.draw    || '',
+        jockey:         info.jockey  || '',
+        trainer:        info.trainer || '',
+        win:            winOddsMap[no] || 'SCR',
+        place:          plaOddsMap[no] || '',
         win_investment: 0,
       };
     });
 
-    res.json({ ok: true, results, win_pool: winPool });
+    // ── Return race info alongside results ───────────────────
+    res.json({
+      ok:        true,
+      results,
+      win_pool:  winPool,
+      race_time: raceInfo.race_time  || '',
+      distance:  raceInfo.distance   || '',
+      track:     raceInfo.track      || '',
+      course:    raceInfo.course     || '',
+      race_class:raceInfo.race_class || '',
+      going:     raceInfo.going      || '',
+      prize:     raceInfo.prize      || '',
+      race_name: raceInfo.race_name  || '',
+    });
 
   } catch(e) {
     console.error('[ERROR]', e.message.substring(0, 300));
     res.json({ ok: false, error: e.message.substring(0, 300) });
+  }
+});
+
+// ── Debug endpoint: dump raw race object to see all field names ──
+app.get('/debug_race', async (req, res) => {
+  try {
+    const { venue, raceno } = req.query;
+    const raceNo = parseInt(raceno) || 1;
+    const { raceMeetings } = await api.getRaceMeetings();
+    const meeting = raceMeetings.find(m => m.venueCode === (venue || 'ST'));
+    if (!meeting) return res.json({ ok: false, error: 'No meeting found' });
+    const race = meeting.races.find(r => Number(r.no) === raceNo);
+    if (!race) return res.json({ ok: false, error: `Race ${raceNo} not found` });
+    // Return the full raw race object (excluding runners array for brevity)
+    const { runners, ...raceFields } = race;
+    res.json({ ok: true, race: raceFields, runnerCount: runners?.length });
+  } catch(e) {
+    res.json({ ok: false, error: e.message });
   }
 });
 

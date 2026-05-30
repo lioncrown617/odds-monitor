@@ -35,8 +35,6 @@ query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo:
   }
 }`;
 
-// Cache card + race info, keyed by venue_raceNo
-// Clear cache every 10 minutes so fresh data is picked up
 const cardCache = {};
 setInterval(() => {
   Object.keys(cardCache).forEach(k => delete cardCache[k]);
@@ -48,10 +46,8 @@ async function getCardAndRaceInfo(venue, raceNo) {
   if (cardCache[key]) return cardCache[key];
 
   try {
-    // Use getRaceMeetings with venue + date filters for accuracy
     const { raceMeetings } = await api.getRaceMeetings({ venueCode: venue });
     const meeting = (raceMeetings || []).find(m => m.venueCode === venue);
-
     if (!meeting) {
       console.log(`[WARN] No meeting found for venue ${venue}`);
       return { map: {}, raceInfo: {} };
@@ -59,17 +55,16 @@ async function getCardAndRaceInfo(venue, raceNo) {
 
     const race = (meeting.races || []).find(r => Number(r.no) === raceNo);
     if (!race) {
-      console.log(`[WARN] Race ${raceNo} not found in meeting`);
+      console.log(`[WARN] Race ${raceNo} not found`);
       return { map: {}, raceInfo: {} };
     }
 
-    // Log raw race keys so we can debug field names
-    console.log('[DEBUG] race keys:', Object.keys(race).join(', '));
-    console.log('[DEBUG] race sample:', JSON.stringify(race, null, 2).substring(0, 800));
+    // Log full race object so we can see every real field name
+    const { runners, ...raceFields } = race;
+    console.log('[DEBUG] FULL RACE OBJECT:', JSON.stringify(raceFields, null, 2));
 
-    // Build runner map
     const map = {};
-    for (const r of (race.runners || [])) {
+    for (const r of (runners || [])) {
       const no = String(r.no);
       map[no] = {
         name:    r.name_ch    || r.name_en    || '',
@@ -79,10 +74,7 @@ async function getCardAndRaceInfo(venue, raceNo) {
       };
     }
 
-    // Extract race info — log shows exact keys available
     const raceInfo = buildRaceInfo(race);
-    console.log('[DEBUG] raceInfo built:', raceInfo);
-
     const result = { map, raceInfo };
     cardCache[key] = result;
     return result;
@@ -93,63 +85,68 @@ async function getCardAndRaceInfo(venue, raceNo) {
   }
 }
 
+// Helper: extract string from field that may be string, number, or {name_ch, name_en}
+function str(v) {
+  if (!v && v !== 0) return '';
+  if (typeof v === 'object') return v.name_ch || v.name_en || v.ch || v.en || JSON.stringify(v);
+  return String(v);
+}
+
 function buildRaceInfo(r) {
   if (!r) return {};
 
-  // ── Time ────────────────────────────────────────────────
-  const rawTime = r.postTime || r.raceTime || r.startTime
-               || r.time     || r.raceStartTime || '';
-  const raceTime = String(rawTime).replace(/^(\d{2}:\d{2}).*/, '$1'); // keep HH:MM
-
-  // ── Distance ────────────────────────────────────────────
-  const rawDist  = r.distance || r.raceDistance || r.dist || '';
-  const distance = rawDist
-    ? (String(rawDist).match(/\d+m?/i)
-        ? String(rawDist).replace(/(\d+)([mM]?)/, '$1m')
-        : String(rawDist) + 'm')
-    : '';
-
-  // ── Track surface (草地 / 全天候) ─────────────────────
-  const surfCode = r.surfaceCode || r.trackType || r.surface || '';
-  let track = '';
-  if (typeof surfCode === 'object') {
-    track = surfCode.name_ch || surfCode.name_en || '';
-  } else {
-    const s = String(surfCode).toUpperCase();
-    if (s === 'TURF' || s === 'T')   track = '草地';
-    else if (s === 'AWT' || s === 'A') track = '全天候跑道';
-    else track = surfCode || '';
+  // ── Time: ISO format "2026-05-31T12:45:00+08:00" → "12:45" ──
+  const rawTime = r.postTime || r.raceTime || r.startTime || r.time || r.raceStartTime || '';
+  let raceTime = '';
+  if (rawTime) {
+    const m = String(rawTime).match(/T(\d{2}:\d{2})/);
+    raceTime = m ? m[1] : String(rawTime).slice(0, 5);
   }
 
-  // ── Course / Rail ────────────────────────────────────────
-  const rawCourse = r.course || r.courseName || r.track
-                  || r.railPosition || r.courseCode || '';
-  const course = typeof rawCourse === 'object'
-    ? (rawCourse.name_ch || rawCourse.name_en || '')
-    : String(rawCourse);
+  // ── Distance: number like 1200 or string "1200m" ─────────
+  const rawDist = r.distance || r.raceDistance || r.dist || '';
+  const distance = rawDist ? String(rawDist).replace(/(\d+)\s*[mM]?$/, '$1') + 'm' : '';
 
-  // ── Class ────────────────────────────────────────────────
-  const rawClass = r.raceClass || r.classInfo || r.class
-                 || r.raceCategory || r.className || '';
-  const raceClass = typeof rawClass === 'object'
-    ? (rawClass.name_ch || rawClass.name_en || '')
-    : String(rawClass);
+  // ── Track surface ─────────────────────────────────────────
+  // Try every known field name
+  const surfRaw = r.surface      || r.surfaceCode  || r.trackSurface
+               || r.raceSurface  || r.trackType    || r.turf
+               || r.groundType   || '';
+  let track = str(surfRaw);
+  const su = track.toUpperCase();
+  if (su === 'TURF' || su === 'T')         track = '草地';
+  else if (su === 'AWT' || su === 'A')     track = '全天候跑道';
+  else if (su === 'DIRT' || su === 'D')    track = '泥地';
 
-  // ── Going ────────────────────────────────────────────────
-  const rawGoing = r.going || r.trackCondition || r.trackState
-                 || r.groundCondition || '';
-  const going = typeof rawGoing === 'object'
-    ? (rawGoing.name_ch || rawGoing.name_en || '')
-    : String(rawGoing);
+  // ── Course / Rail ─────────────────────────────────────────
+  const courseRaw = r.course       || r.courseName   || r.courseCode
+                 || r.trackCourse  || r.railPosition  || r.track
+                 || r.trackName    || r.courseInfo    || '';
+  const course = str(courseRaw);
 
-  // ── Prize ────────────────────────────────────────────────
-  const rawPrize = r.prize || r.prizeMoney || r.prizeMoneyHKD || '';
-  const prize = rawPrize
-    ? '$' + Number(String(rawPrize).replace(/[^0-9]/g, '')).toLocaleString()
-    : '—';
+  // ── Class ─────────────────────────────────────────────────
+  const classRaw = r.raceClass     || r.classInfo    || r.class
+                || r.raceCategory  || r.className    || r.gradeInfo
+                || r.grade         || r.raceGrade    || r.category || '';
+  const raceClass = str(classRaw);
 
-  // ── Race name ────────────────────────────────────────────
-  const raceName = r.name_ch || r.name_en || r.raceName || r.raceNameEn || '';
+  // ── Going ─────────────────────────────────────────────────
+  const goingRaw = r.going         || r.trackCondition || r.trackState
+                || r.groundCondition || r.goingCode   || r.condition
+                || r.trackGoing    || r.goingDesc     || '';
+  const going = str(goingRaw);
+
+  // ── Prize ─────────────────────────────────────────────────
+  const prizeRaw = r.prize || r.prizeMoney || r.prizeMoneyHKD
+                || r.totalPrize  || r.prizePool || r.purse || '';
+  const prizeNum = Number(String(prizeRaw).replace(/[^0-9]/g, ''));
+  const prize = prizeNum > 0 ? '$' + prizeNum.toLocaleString() : '—';
+
+  // ── Race name ─────────────────────────────────────────────
+  const raceName = r.name_ch || r.name_en || r.raceName
+                || r.raceNameCh || r.raceNameEn || r.title || '';
+
+  console.log('[DEBUG] buildRaceInfo result:', { raceTime, distance, track, course, raceClass, going, prize, raceName });
 
   return { race_time: raceTime, distance, track, course, race_class: raceClass, going, prize, race_name: raceName };
 }
@@ -226,20 +223,19 @@ app.get('/odds', async (req, res) => {
   }
 });
 
-// ── Debug: dump raw race object to find exact field names ──────────
+// ── /debug_race: paste output here so we can fix field names instantly ──
 app.get('/debug_race', async (req, res) => {
   try {
     const venue  = req.query.venue  || 'ST';
     const raceNo = parseInt(req.query.raceno) || 1;
     const { raceMeetings } = await api.getRaceMeetings({ venueCode: venue });
     const meeting = (raceMeetings || []).find(m => m.venueCode === venue);
-    if (!meeting) return res.json({ ok: false, error: 'No meeting' });
+    if (!meeting) return res.json({ ok: false, error: 'No meeting', allVenues: raceMeetings.map(m=>m.venueCode) });
     const race = (meeting.races || []).find(r => Number(r.no) === raceNo);
-    if (!race) return res.json({ ok: false, error: `Race ${raceNo} not found` });
+    if (!race) return res.json({ ok: false, error: `Race ${raceNo} not found`, available: meeting.races.map(r=>r.no) });
     const { runners, ...raceFields } = race;
-    // Also show one runner's keys
-    const sampleRunner = runners?.[0] || {};
-    res.json({ ok: true, raceFields, runnerKeys: Object.keys(sampleRunner), runnerSample: sampleRunner });
+    const sampleRunner = runners?.[0] ? { ...runners[0] } : {};
+    res.json({ ok: true, raceFields, runnerSample: sampleRunner });
   } catch(e) {
     res.json({ ok: false, error: e.message });
   }

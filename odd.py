@@ -49,15 +49,14 @@ state = {
     "has_error": False,
     "top_down": [],
     "top_up": [],
-    "top_suspicious": [],
-    "top_steady": [],
-    "top_rci": [],
+    "top_acc": [],
     "alerts": [],
     "history": defaultdict(list),
     "bet_history": defaultdict(list),
     "flow_history": defaultdict(list),
     "absorb_history": defaultdict(list),
     "sms_history": defaultdict(list),
+    "acc_history": defaultdict(list),
     "timestamps": [],
     "win_pool": "",
     "win_pool_history": [],
@@ -71,12 +70,10 @@ state = {
     "alert_cooldown": defaultdict(dict),
     "steady_scores": {},
     "last_error_detail": "",
-    # ★ 新增：賽事資料
     "race_info": {},
 }
 
 TREND_THRESHOLD = 2
-ALERT_ABSORB_THRESH = 30.0
 ACCEL_DROP_MIN = 2
 
 monitor_thread = None
@@ -115,16 +112,15 @@ def fetch_odds_api(date_str, venue, race_no):
             return None, "", {}
         results = data.get("results", [])
         win_pool = data.get("win_pool", "")
-        # ★ 取得賽事資料
         race_info = {
-            "race_time":    data.get("race_time", ""),
-            "distance":     data.get("distance", ""),
-            "track":        data.get("track", ""),
-            "course":       data.get("course", ""),
-            "race_class":   data.get("race_class", ""),
-            "going":        data.get("going", ""),
-            "prize":        data.get("prize", ""),
-            "race_name":    data.get("race_name", ""),
+            "race_time": data.get("race_time", ""),
+            "distance": data.get("distance", ""),
+            "track": data.get("track", ""),
+            "course": data.get("course", ""),
+            "race_class": data.get("race_class", ""),
+            "going": data.get("going", ""),
+            "prize": data.get("prize", ""),
+            "race_name": data.get("race_name", ""),
         }
         if not results:
             state["last_error_detail"] = "無賽馬數據"
@@ -202,12 +198,19 @@ def calc_sms_v2(no, cum_flow_val, cum_drop_val):
     E_eff = sum(pos_e) / len(pos_e) if pos_e else 0
 
     now_ts = time.time()
-    recent_inflow = sum(
-        amt for ts, amt in state["inflow_ts_history"][no]
-        if now_ts - ts <= 900
-    )
+    hist = list(state["inflow_ts_history"][no])
+    w_5min  = sum(amt for ts, amt in hist if now_ts - ts <= 300)
+    w_15min = sum(amt for ts, amt in hist if now_ts - ts <= 900)
+    w_30min = sum(amt for ts, amt in hist if now_ts - ts <= 1800)
 
-    Wt = 1.5 if cum_flow_val > 0 and recent_inflow / cum_flow_val > 0.5 else 1.0
+    if cum_flow_val > 0 and w_5min / cum_flow_val > 0.4:
+        Wt = 1.5    # 臨門集中型
+    elif cum_flow_val > 0 and w_15min / cum_flow_val > 0.4:
+        Wt = 1.35   # 中期持續型
+    elif cum_flow_val > 0 and w_30min / cum_flow_val > 0.35:
+        Wt = 1.2    # 分批累積型
+    else:
+        Wt = 1.0
 
     recent_flows = list(state["flow_history"][no])[-3:]
     if len(recent_flows) >= 3 and all(f <= 0 for f in recent_flows):
@@ -220,18 +223,27 @@ def calc_sms_v2(no, cum_flow_val, cum_drop_val):
 
     return round((F ** 1.2) * (1 + D / 10) * (1 + E_eff / 10) * Wt, 2)
 
-def calc_rci(no, cum_flow_val, cum_rise_val):
-    if cum_flow_val < 300000 or cum_rise_val < 30:
+
+def calc_acc_score(no, cum_flow_val):
+    """分批累積型大戶識別"""
+    inflow_hist = list(state["inflow_ts_history"][no])
+    if len(inflow_hist) < 2:
         return 0.0
 
+    big_entries = [(ts, amt) for ts, amt in inflow_hist if amt >= 10000]
+    if len(big_entries) < 2:
+        return 0.0
+
+    time_span = (big_entries[-1][0] - big_entries[0][0]) / 60
+    if time_span < 1.0:
+        return 0.0
+
+    consistency = len(big_entries) / max(len(inflow_hist), 1)
     F = cum_flow_val / 10000.0
-    R = cum_rise_val / 10.0
+    batch_bonus = min(len(big_entries) / 3.0, 2.0)
 
-    recent_flows = list(state["flow_history"][no])[-3:]
-    if sum(1 for f in recent_flows if f > 0) < 1:
-        return 0.0
+    return round(F ** 1.1 * consistency * batch_bonus, 2)
 
-    return round(F * R, 2)
 
 def calc_flow_and_signals(est_bets, win_pool_str, data):
     prev_bets = state["prev_est_bet"]
@@ -294,10 +306,8 @@ def calc_flow_and_signals(est_bets, win_pool_str, data):
 
         odds_accel = odds_drop - prev_drop.get(no, 0.0)
         sms_score = calc_sms_v2(no, cum_flow.get(no, 0.0), cum_drop_pct.get(no, 0.0))
+        acc_score = calc_acc_score(no, cum_flow.get(no, 0.0))
         alert_flags = []
-
-        if pool_increase > 500 and prev_amt is not None and absorb_pct >= ALERT_ABSORB_THRESH:
-            alert_flags.append(f"🚨單次吸金{absorb_pct:.0f}%")
 
         tc_val = state["trend_counter"].get(no, 0)
         if tc_val >= ACCEL_DROP_MIN and odds_accel > 0.5:
@@ -332,10 +342,13 @@ def calc_flow_and_signals(est_bets, win_pool_str, data):
             "odds_accel": round(odds_accel, 2),
             "is_rescue": False,
         }
+
         sms[no] = sms_score
+        sms[f"acc_{no}"] = acc_score
         alerts[no] = alert_flags
 
     return flows, accels, absorbs, sms, alerts
+
 
 def get_trend_label(no):
     tc = state["trend_counter"]
@@ -367,13 +380,9 @@ def calc_top3():
     absorbs = state["_absorb"]
     tc = state["trend_counter"]
     cd = state["cum_drop"]
-    cr = state["cum_rise"]
     cum_f = state["cum_flow"]
 
     sms_all = []
-    suspicious = []
-    steady_list = []
-    rci_list = []
 
     for r in data:
         no = r["no"]
@@ -394,65 +403,34 @@ def calc_top3():
                 "excess": ab.get("excess", 0),
             })
 
-        try:
-            curr_o = float(r["win"])
-            min_o = state["min_odds"].get(no, curr_o)
-            rise_pct = (curr_o - min_o) / min_o * 100 if min_o > 0 else 0
-            if rise_pct > 50 and cum_in > 100000:
-                suspicious.append({
-                    "no": no,
-                    "name": r["name"],
-                    "win": r["win"],
-                    "min_odds": round(min_o, 1),
-                    "rise_pct": round(rise_pct, 1),
-                    "cum_inflow": round(cum_in),
-                })
-        except:
-            pass
-
-        try:
-            curr_o2 = float(r["win"])
-            steady = 0.0
-            if curr_o2 >= 15 and cum_in >= 200000:
-                flow_hist = list(state["flow_history"].get(no, []))[-5:]
-                if sum(1 for f in flow_hist if f > 0) >= 3:
-                    steady = round(cum_in / 10000.0 * (curr_o2 / 20.0), 2)
-            if steady > 0:
-                steady_list.append({
-                    "no": no,
-                    "name": r["name"],
-                    "win": r["win"],
-                    "base": base.get(no, "—"),
-                    "cum_inflow": round(cum_in),
-                    "steady": steady,
-                })
-        except:
-            pass
-
-        try:
-            rise_pct2 = cr.get(no, 0.0)
-            rci_score = calc_rci(no, cum_in, rise_pct2)
-            if rci_score > 0:
-                rci_list.append({
-                    "no": no,
-                    "name": r["name"],
-                    "win": r["win"],
-                    "base": base.get(no, "—"),
-                    "cum_inflow": round(cum_in),
-                    "rise_pct": round(rise_pct2, 1),
-                    "rci": rci_score,
-                })
-        except:
-            pass
-
     state["top_down"] = sorted(sms_all, key=lambda x: x["sms"], reverse=True)[:5]
-    state["top_up"] = []  # ★ 已移除倍率回升功能，保留空陣列相容性
-    state["top_suspicious"] = sorted(suspicious, key=lambda x: x["rise_pct"], reverse=True)[:3]
-    state["top_steady"] = sorted(steady_list, key=lambda x: x["steady"], reverse=True)[:3]
-    state["top_rci"] = sorted(rci_list, key=lambda x: x["rci"], reverse=True)[:3]
+    state["top_up"] = []
+
+    # ★ 累積大戶 top3
+    acc_list = []
+    for r in data:
+        no = r["no"]
+        cum_in = cum_f.get(no, 0.0)
+        acc_s = calc_acc_score(no, cum_in)
+        if acc_s > 0:
+            inflow_hist = list(state["inflow_ts_history"][no])
+            big_entries = [(ts, amt) for ts, amt in inflow_hist if amt >= 10000]
+            if len(big_entries) >= 2:
+                time_span = round((big_entries[-1][0] - big_entries[0][0]) / 60, 1)
+                acc_list.append({
+                    "no": no,
+                    "name": r["name"],
+                    "win": r["win"],
+                    "base": base.get(no, "—"),
+                    "cum_inflow": round(cum_in),
+                    "batch_count": len(big_entries),
+                    "time_span": time_span,
+                    "acc": acc_s,
+                })
+    state["top_acc"] = sorted(acc_list, key=lambda x: x["acc"], reverse=True)[:3]
+
 
 def update_global_alerts(alerts_map, now):
-    # ★ 已移除即時警報功能
     pass
 
 def record_history(data, now, est_bets, flows, absorbs, sms):
@@ -467,6 +445,7 @@ def record_history(data, now, est_bets, flows, absorbs, sms):
         state["flow_history"][no].append(round(flows.get(no, 0)))
         state["absorb_history"][no].append(absorbs[no]["excess"] if no in absorbs else 0)
         state["sms_history"][no].append(sms.get(no, 0))
+        state["acc_history"][no].append(sms.get(f"acc_{no}", 0))
 
 def get_log_path():
     date_str = state["race_date"].replace("-", "")
@@ -511,18 +490,6 @@ def append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool):
     for r in data:
         no = r["no"]
         ab = absorbs.get(no, {})
-        rci_s = calc_rci(no, state["cum_flow"].get(no, 0.0), state["cum_rise"].get(no, 0.0))
-
-        try:
-            co = float(r["win"])
-            ci = state["cum_flow"].get(no, 0.0)
-            st = 0.0
-            if co >= 15 and ci >= 200000:
-                fh = list(state["flow_history"].get(no, []))[-5:]
-                if sum(1 for f in fh if f > 0) >= 3:
-                    st = round(ci / 10000.0 * (co / 20.0), 2)
-        except:
-            st = 0.0
 
         snapshot["horses"].append({
             "no": r["no"],
@@ -540,8 +507,7 @@ def append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool):
             "cum_drop": state["cum_drop"].get(no, 0),
             "cum_rise": state["cum_rise"].get(no, 0),
             "sms": sms.get(no, 0),
-            "rci": rci_s,
-            "steady": st,
+            "acc": sms.get(f"acc_{no}", 0),
             "alerts": state["_alerts"].get(no, []),
         })
 
@@ -560,7 +526,7 @@ def finalize_log(now):
         "cum_drop": state["cum_drop"].get(no, 0),
         "cum_rise": state["cum_rise"].get(no, 0),
         "sms": state["_sms"].get(no, 0),
-        "rci": calc_rci(no, v, state["cum_rise"].get(no, 0)),
+        "acc": calc_acc_score(no, v),
     } for no, v in cum_f.items() if v > 0]
 
     log["summary"] = {
@@ -570,7 +536,7 @@ def finalize_log(now):
         "final_pool": state["win_pool"],
         "total_alerts": 0,
         "top_sms": sorted(horses, key=lambda x: x["sms"], reverse=True)[:5],
-        "top_rci": sorted(horses, key=lambda x: x["rci"], reverse=True)[:5],
+        "top_acc": sorted(horses, key=lambda x: x["acc"], reverse=True)[:5],
         "horses_final": horses,
     }
 
@@ -590,7 +556,6 @@ def monitor_loop():
         if data:
             state["has_error"] = False
             state["update_count"] += 1
-            # ★ 更新賽事資料
             if race_info:
                 state["race_info"] = race_info
 
@@ -667,8 +632,7 @@ def start():
         ("base_data", {}), ("base_est_bet", {}), ("prev_data", {}),
         ("prev_est_bet", {}), ("prev_flow", {}), ("prev_pool", 0.0),
         ("prev_odds_drop", {}), ("update_count", 0),
-        ("top_down", []), ("top_up", []), ("top_suspicious", []),
-        ("top_steady", []), ("top_rci", []), ("alerts", []),
+        ("top_down", []), ("top_up", []), ("top_acc", []), ("alerts", []),
         ("timestamps", []), ("win_pool", ""), ("win_pool_history", []),
         ("_accels", {}), ("_absorb", {}), ("_sms", {}), ("_alerts", {}),
         ("steady_scores", {}), ("current_interval", 3),
@@ -686,6 +650,7 @@ def start():
     state["flow_history"] = defaultdict(list)
     state["absorb_history"] = defaultdict(list)
     state["sms_history"] = defaultdict(list)
+    state["acc_history"] = defaultdict(list)
     state["e_history"] = defaultdict(_deque5)
     state["inflow_ts_history"] = defaultdict(_deque60)
     state["min_odds"] = defaultdict(_inf)
@@ -811,6 +776,8 @@ def get_data():
             odrop_str, odrop_css = "—", "neutral"
 
         sms_score = state["_sms"].get(no, 0.0)
+        acc_score = state["_sms"].get(f"acc_{no}", 0.0)
+
         if sms_score >= 5:
             sms_str, sms_css = f"🏆 {sms_score:.1f}", "hot"
         elif sms_score >= 1:
@@ -826,29 +793,6 @@ def get_data():
             rise_from_min = (curr_o - min_o) / min_o * 100 if min_o > 0 else 0
         except:
             rise_from_min = 0
-
-        is_suspicious = rise_from_min > 50 and cum_in > 100000
-
-        try:
-            curr_o2 = float(r["win"])
-            steady = 0.0
-            if curr_o2 >= 15 and cum_in >= 200000:
-                flow_hist2 = list(state["flow_history"].get(no, []))[-5:]
-                if sum(1 for f in flow_hist2 if f > 0) >= 3:
-                    steady = round(cum_in / 10000.0 * (curr_o2 / 20.0), 2)
-        except:
-            steady = 0.0
-
-        rise_pct_val = state["cum_rise"].get(no, 0.0)
-        rci_score = calc_rci(no, cum_in, rise_pct_val)
-        if rci_score >= 100:
-            rci_str, rci_css = f"🌊 {rci_score:.1f}", "hot"
-        elif rci_score >= 30:
-            rci_str, rci_css = f"↗ {rci_score:.1f}", "up"
-        elif rci_score > 0:
-            rci_str, rci_css = f"{rci_score:.1f}", "neutral"
-        else:
-            rci_str, rci_css = "—", "neutral"
 
         alert_str = " ".join(state["_alerts"].get(no, []))
 
@@ -878,23 +822,18 @@ def get_data():
             "sms": sms_str,
             "sms_css": sms_css,
             "sms_raw": sms_score,
+            "acc_raw": acc_score,
             "alert": alert_str,
-            "is_suspicious": is_suspicious,
+            "is_suspicious": False,
             "rise_from_min": round(rise_from_min, 1),
-            "steady": steady,
-            "rci": rci_str,
-            "rci_css": rci_css,
-            "rci_raw": rci_score,
         })
 
     return jsonify({
         "rows": rows,
         "top_down": state["top_down"],
         "top_up": state["top_up"],
-        "top_suspicious": state["top_suspicious"],
-        "top_steady": state["top_steady"],
-        "top_rci": state["top_rci"],
-        "alerts": [],  # ★ 已移除即時警報
+        "top_acc": state["top_acc"],
+        "alerts": [],
         "update_count": state["update_count"],
         "last_update": state["last_update"],
         "base_time": state["base_time"],
@@ -911,12 +850,13 @@ def get_data():
         "flow_history": {k: v for k, v in state["flow_history"].items()},
         "absorb_history": {k: v for k, v in state["absorb_history"].items()},
         "sms_history": {k: v for k, v in state["sms_history"].items()},
+        "acc_history": {k: v for k, v in state["acc_history"].items()},
         "timestamps": state["timestamps"],
         "horses": {r["no"]: r["name"] for r in state["data"]},
         "win_pool": state["win_pool"],
         "win_pool_history": state["win_pool_history"],
         "error_detail": state.get("last_error_detail", ""),
-        "race_info": state.get("race_info", {}),  # ★ 新增賽事資料
+        "race_info": state.get("race_info", {}),
     })
 
 @app.route("/download_log")

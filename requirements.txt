@@ -1,5 +1,4 @@
-
 flask
-requests
+selenium
+webdriver-manager
 gunicorn
-pytz

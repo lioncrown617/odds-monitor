@@ -5,7 +5,8 @@ const { HorseRacingAPI } = require('hkjc-api');
 const app = express();
 const gql = new GraphQLClient('https://info.cld.hkjc.com/graphql/base/');
 const api = new HorseRacingAPI();
-const PORT = process.env.PORT || 3000;
+// To this:
+const PORT = process.env.NODE_PORT || 3000;
 
 const horseOddsQuery = `
 query racing($date: String, $venueCode: String, $oddsTypes: [OddsType], $raceNo: Int) {

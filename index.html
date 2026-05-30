@@ -1,34 +1,3 @@
-Last login: Wed May 27 19:30:36 on ttys001
-lioncrown@lioncrowndeMacBook-Neo hkjc-bridge % cd ..
-lioncrown@lioncrowndeMacBook-Neo ~ % cd templates 
-lioncrown@lioncrowndeMacBook-Neo templates % ls -tlr
-total 984
--rw-r--r--  1 lioncrown  staff  12287 17  5 18:12 index.old
--rw-r--r--  1 lioncrown  staff  18927 17  5 18:39 index.old1
--rw-r--r--  1 lioncrown  staff  20521 17  5 18:53 index.old2
--rw-r--r--  1 lioncrown  staff  23137 17  5 19:10 index.old3
--rw-r--r--@ 1 lioncrown  staff  25880 19  5 20:31 index.old4
--rw-r--r--@ 1 lioncrown  staff  27899 19  5 21:18 index.old5
--rw-r--r--  1 lioncrown  staff  28000 19  5 22:41 index.keep
--rw-r--r--  1 lioncrown  staff  26608 20  5 22:03 index.bak
--rw-r--r--  1 lioncrown  staff  13122 21  5 22:00 index.win
--rw-r--r--  1 lioncrown  staff  10266 21  5 23:37 index.html.keep
--rw-r--r--  1 lioncrown  staff  13122 22  5 21:40 index.html.noadrci
--rw-r--r--  1 lioncrown  staff  17315 22  5 21:55 index.20260523
--rw-r--r--  1 lioncrown  staff  20250 24  5 12:04 index.202605241.html
--rw-r--r--  1 lioncrown  staff  20480 24  5 12:16 index.html.202505242
--rw-r--r--  1 lioncrown  staff  21799 24  5 12:39 index.html.202505243
--rw-r--r--  1 lioncrown  staff  21911 24  5 12:46 index.html.202505244
--rw-r--r--  1 lioncrown  staff  21354 24  5 13:20 index.html.2025245
--rw-r--r--  1 lioncrown  staff  20771 24  5 13:51 index.html.202504256
--rw-r--r--  1 lioncrown  staff  20091 24  5 14:22 index.html.ok
--rw-r--r--  1 lioncrown  staff  21891 24  5 17:44 index.html.freeze
--rw-r--r--  1 lioncrown  staff  21784 24  5 18:43 index.night2
--rw-r--r--  1 lioncrown  staff  15584 24  5 23:09 index.html.night
--rw-r--r--  1 lioncrown  staff  15474 24  5 23:51 index.html
-lioncrown@lioncrowndeMacBook-Neo templates % vi index.html
-lioncrown@lioncrowndeMacBook-Neo templates % vi index.html
-
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
@@ -52,100 +21,338 @@ h1 { text-align: center; padding: 12px; background: linear-gradient(135deg,#1a1a
 #status-text { color: #00ff88; }
 #status-text.error { color: #ff4444; }
 
-"index.html" 358L, 15474B
-  [已還原2026年5月30日 上午10:59:47]
-Last login: Sat May 30 10:59:47 on ttys001
-Restored session: 2026年 5月27日 星期三 23時36分50秒 CST
-lioncrown@lioncrowndeMacBook-Neo templates % ls -tlr
-total 984
--rw-r--r--  1 lioncrown  staff  12287 17  5 18:12 index.old
--rw-r--r--  1 lioncrown  staff  18927 17  5 18:39 index.old1
--rw-r--r--  1 lioncrown  staff  20521 17  5 18:53 index.old2
--rw-r--r--  1 lioncrown  staff  23137 17  5 19:10 index.old3
--rw-r--r--@ 1 lioncrown  staff  25880 19  5 20:31 index.old4
--rw-r--r--@ 1 lioncrown  staff  27899 19  5 21:18 index.old5
--rw-r--r--  1 lioncrown  staff  28000 19  5 22:41 index.keep
--rw-r--r--  1 lioncrown  staff  26608 20  5 22:03 index.bak
--rw-r--r--  1 lioncrown  staff  13122 21  5 22:00 index.win
--rw-r--r--  1 lioncrown  staff  10266 21  5 23:37 index.html.keep
--rw-r--r--  1 lioncrown  staff  13122 22  5 21:40 index.html.noadrci
--rw-r--r--  1 lioncrown  staff  17315 22  5 21:55 index.20260523
--rw-r--r--  1 lioncrown  staff  20250 24  5 12:04 index.202605241.html
--rw-r--r--  1 lioncrown  staff  20480 24  5 12:16 index.html.202505242
--rw-r--r--  1 lioncrown  staff  21799 24  5 12:39 index.html.202505243
--rw-r--r--  1 lioncrown  staff  21911 24  5 12:46 index.html.202505244
--rw-r--r--  1 lioncrown  staff  21354 24  5 13:20 index.html.2025245
--rw-r--r--  1 lioncrown  staff  20771 24  5 13:51 index.html.202504256
--rw-r--r--  1 lioncrown  staff  20091 24  5 14:22 index.html.ok
--rw-r--r--  1 lioncrown  staff  21891 24  5 17:44 index.html.freeze
--rw-r--r--  1 lioncrown  staff  21784 24  5 18:43 index.night2
--rw-r--r--  1 lioncrown  staff  15584 24  5 23:09 index.html.night
--rw-r--r--  1 lioncrown  staff  15474 24  5 23:51 index.html
-lioncrown@lioncrowndeMacBook-Neo templates % vi index.html
-lioncrown@lioncrowndeMacBook-Neo templates % cd ~/          # go to your project root (parent of templates/)
-git add templates/index.html
-git commit -m "update index.html"
-git push origin main
-zsh: number expected
-lioncrown@lioncrowndeMacBook-Neo templates % cd ~/          # go to your project root (parent of templates/)
-git add templates/index.html
-git commit -m "update in         
-dquote> 
-dquote> 
-lioncrown@lioncrowndeMacBook-Neo templates % pit add templates/index.html
-zsh: command not found: pit
-lioncrown@lioncrowndeMacBook-Neo templates % git add templates/index.html
-xcode-select: note: No developer tools were found, requesting install.
-If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
-See `man xcode-select` for more details.
-lioncrown@lioncrowndeMacBook-Neo templates % ls -tlr
-total 984
--rw-r--r--  1 lioncrown  staff  12287 17  5 18:12 index.old
--rw-r--r--  1 lioncrown  staff  18927 17  5 18:39 index.old1
--rw-r--r--  1 lioncrown  staff  20521 17  5 18:53 index.old2
--rw-r--r--  1 lioncrown  staff  23137 17  5 19:10 index.old3
--rw-r--r--@ 1 lioncrown  staff  25880 19  5 20:31 index.old4
--rw-r--r--@ 1 lioncrown  staff  27899 19  5 21:18 index.old5
--rw-r--r--  1 lioncrown  staff  28000 19  5 22:41 index.keep
--rw-r--r--  1 lioncrown  staff  26608 20  5 22:03 index.bak
--rw-r--r--  1 lioncrown  staff  13122 21  5 22:00 index.win
--rw-r--r--  1 lioncrown  staff  10266 21  5 23:37 index.html.keep
--rw-r--r--  1 lioncrown  staff  13122 22  5 21:40 index.html.noadrci
--rw-r--r--  1 lioncrown  staff  17315 22  5 21:55 index.20260523
--rw-r--r--  1 lioncrown  staff  20250 24  5 12:04 index.202605241.html
--rw-r--r--  1 lioncrown  staff  20480 24  5 12:16 index.html.202505242
--rw-r--r--  1 lioncrown  staff  21799 24  5 12:39 index.html.202505243
--rw-r--r--  1 lioncrown  staff  21911 24  5 12:46 index.html.202505244
--rw-r--r--  1 lioncrown  staff  21354 24  5 13:20 index.html.2025245
--rw-r--r--  1 lioncrown  staff  20771 24  5 13:51 index.html.202504256
--rw-r--r--  1 lioncrown  staff  20091 24  5 14:22 index.html.ok
--rw-r--r--  1 lioncrown  staff  21891 24  5 17:44 index.html.freeze
--rw-r--r--  1 lioncrown  staff  21784 24  5 18:43 index.night2
--rw-r--r--  1 lioncrown  staff  15584 24  5 23:09 index.html.night
--rw-r--r--  1 lioncrown  staff  15474 24  5 23:51 index.html
-lioncrown@lioncrowndeMacBook-Neo templates % vi index.html
+/* ── Panel rows ── */
+.panels-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 永遠兩欄並排 */
+  gap: 8px;
+  padding: 10px 14px 0;
+}
+.panels-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 永遠兩欄並排 */
+  gap: 8px;
+  padding: 8px 14px 0;
+}
+.panel { background: #0d1117; border: 1px solid #1a2a3a; border-radius: 6px; padding: 10px; overflow: hidden; }
+.panel h3 { font-size: 12px; color: #00d4ff; margin-bottom: 8px; border-bottom: 1px solid #1a2a3a; padding-bottom: 4px; }
+.panel-item { padding: 4px 0; border-bottom: 1px solid #111; font-size: 12px; }
+.panel-item:last-child { border-bottom: none; }
+.panel-item .no  { display: inline-block; width: 22px; height: 22px; border-radius: 50%; background: #1a3a5a; color: #00d4ff; text-align: center; line-height: 22px; font-size: 11px; margin-right: 4px; }
+.panel-item .sms-val { color: #ffd700; font-weight: bold; }
 
-<!DOCTYPE html>
-<html lang="zh-HK">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏇 HKJC 大戶熱錢監察系統 v2</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0a0a0f; color: #e0e0e0; font-family: 'Courier New', monospace; font-size: 13px; }
-h1 { text-align: center; padding: 12px; background: linear-gradient(135deg,#1a1a2e,#16213e); color: #00d4ff; font-size: 16px; letter-spacing: 2px; border-bottom: 1px solid #00d4ff33; }
-.control-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 14px; background: #0d0d1a; border-bottom: 1px solid #1a1a3e; align-items: center; }
-.control-bar label { color: #88aacc; font-size: 12px; }
-.control-bar input, .control-bar select { background: #111827; color: #e0e0e0; border: 1px solid #334; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
-.btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
-.btn-start { background: #00aa44; color: #fff; }
-.btn-stop  { background: #cc3300; color: #fff; }
-.btn-start:hover { background: #00cc55; }
-.btn-stop:hover  { background: #ee4400; }
-.status-bar { display: flex; flex-wrap: wrap; gap: 12px; padding: 6px 14px; background: #080810; font-size: 12px; border-bottom: 1px solid #1a1a3e; color: #88aacc; }
-.status-bar span { color: #e0e0e0; }
-#status-text { color: #00ff88; }
-#status-text.error { color: #ff4444; }
+.alert-box { background: #0d1117; border: 1px solid #2a1a1a; border-radius: 6px; padding: 10px; margin: 8px 14px 10px; max-height: 160px; overflow-y: auto; }
+.alert-box h3 { font-size: 12px; color: #ff6644; margin-bottom: 6px; }
+.alert-item { padding: 3px 0; border-bottom: 1px solid #1a1a1a; font-size: 11px; display: flex; gap: 8px; }
+.alert-item:last-child { border-bottom: none; }
+.alert-time { color: #666; min-width: 60px; }
+.alert-no   { color: #00d4ff; min-width: 60px; }
+.alert-msg  { color: #ffaa44; }
+.table-wrap { overflow-x: auto; padding: 0 14px 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { background: #0d1520; color: #88aacc; padding: 6px 8px; text-align: center; border: 1px solid #1a2a3a; white-space: nowrap; position: sticky; top: 0; z-index: 10; }
+td { padding: 5px 8px; border: 1px solid #111827; text-align: center; white-space: nowrap; }
+tr:hover td { background: #0d1a2a !important; }
+tr.highlighted td { background: #0a2a1a !important; }
+.color-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid #333; }
+.suspicious-row td { border: 1px solid #6600cc !important; }
+.hot     { color: #ff4444; font-weight: bold; }
+.warm    { color: #ff8844; }
+.up      { color: #44ff88; }
+.rise    { color: #44ccff; }
+.diluted { color: #888888; }
+.neutral { color: #cccccc; }
+.win-cell { font-size: 14px; font-weight: bold; color: #ffd700; }
+.base-cell { color: #888; font-size: 11px; }
+.scr-cell { color: #555; text-decoration: line-through; }
+.hint { color: #446688; font-size: 11px; padding: 6px 14px 10px; }
+</style>
+</head>
+<body>
+<h1>🏇 HKJC 大戶熱錢監察系統 v2 · 改良SMS · 洗碼偵測</h1>
 
-"index.html" 358L, 15474B
+<div class="control-bar">
+  <label>📅 日期</label>
+  <input type="date" id="inp-date">
+  <label>🏟 場地</label>
+  <select id="inp-venue">
+    <option value="ST">ST - 沙田</option>
+    <option value="HV">HV - 跑馬地</option>
+    <option value="S1">S1</option><option value="S2">S2</option>
+    <option value="S3">S3</option><option value="S4">S4</option>
+    <option value="S5">S5</option><option value="S6">S6</option>
+    <option value="S7">S7</option><option value="S8">S8</option>
+  </select>
+  <label>🔢 場次</label>
+  <select id="inp-race">
+    <option value="1">第 1 場</option><option value="2">第 2 場</option>
+    <option value="3">第 3 場</option><option value="4">第 4 場</option>
+    <option value="5">第 5 場</option><option value="6">第 6 場</option>
+    <option value="7">第 7 場</option><option value="8">第 8 場</option>
+    <option value="9">第 9 場</option><option value="10">第 10 場</option>
+    <option value="11">第 11 場</option><option value="12">第 12 場</option>
+  </select>
+  <label>⏱ 基礎間隔(秒)</label>
+  <input type="number" id="inp-interval" value="3" min="2" max="30" style="width:55px">
+  <button class="btn btn-start" onclick="startMonitor()">▶ 開始監察</button>
+  <button class="btn btn-stop"  onclick="stopMonitor()">■ 停止</button>
+</div>
+
+<div class="status-bar">
+  <span>場次：<span id="s-race">—</span></span>
+  <span>更新：<span id="s-count">0</span></span>
+  <span>最後更新：<span id="s-time">—</span></span>
+  <span>基準時間：<span id="s-base">—</span></span>
+  <span>💰 彩池：<span id="s-pool">—</span></span>
+  <span>⚡ 掃描間隔：<span id="s-interval">—</span></span>
+  <span>狀態：<span id="status-text">等待設定...</span></span>
+</div>
+
+<!-- ══ ROW 1: SMS頭五位 ║ 突發大注（永遠並排）══ -->
+<div class="panels-top">
+  <div class="panel">
+    <h3>🏆 SMS資金頭五位</h3>
+    <div id="panel-down">等待數據...</div>
+  </div>
+  <div class="panel">
+    <h3>💥 突發大注 <span id="cnt-bigbet">0</span> <small style="color:#666">每匹馬當次注碼</small></h3>
+    <small style="color:#888">🟡 ≥10K&nbsp; 🟠 ≥50K&nbsp; 🔴 ≥100K&nbsp; ❄️=凍結估算</small>
+    <div id="panel-bigbet" style="margin-top:6px">等待數據...</div>
+  </div>
+</div>
+
+<!-- ══ ROW 2: 賠率回升 ║ 單次吸金（永遠並排）══ -->
+<div class="panels-bottom">
+  <div class="panel">
+    <h3>📈 賠率回升頭三位</h3>
+    <div id="panel-up">等待數據...</div>
+  </div>
+  <div class="panel">
+    <h3>🚨 單次吸金 ≥30% <span id="cnt-absorb">0</span></h3>
+    <div id="panel-absorb">等待數據...</div>
+  </div>
+</div>
+
+<div class="alert-box">
+  <h3>🔔 即時警報 <a id="dl-log" href="/download_log" style="color:#446688;font-size:11px;margin-left:10px">📥 下載Log</a></h3>
+  <div id="alert-list">等待警報...</div>
+</div>
+
+<div class="table-wrap">
+  <table id="main-table">
+    <thead>
+      <tr>
+        <th>色</th><th>馬號</th><th>馬名</th><th>檔</th>
+        <th>騎師</th><th>練馬師</th>
+        <th>基準賠</th><th>⭐WIN</th><th>賠率變動</th><th>賠率跌速</th><th>走勢</th>
+        <th>基準投注</th><th>現時投注</th><th>累積增減</th>
+        <th>本次流入</th><th>加速度</th><th>累積真實流入</th>
+        <th>🔥超額吸金</th><th>🏆SMS</th><th>由低反彈%</th><th>🚨警報</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <tr><td colspan="21" style="color:#446688;padding:20px">請設定場次後按「開始監察」</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="hint">💡 SMS持續上升是最強買入訊號 · 🌊退潮警告出現需立即警惕 · ❄️凍結大注為估算值</div>
+
+<script>
+(function(){
+  const d = new Date();
+  document.getElementById('inp-date').value =
+    d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+})();
+
+let fetchTimer  = null;
+let highlighted = null;
+
+const COLORS = [
+  '#ffffff','#000000','#ff3333','#3399ff','#ffcc00',
+  '#ff9900','#cc33ff','#ff66cc','#33cc33','#996633',
+  '#cccccc','#ff6600','#00cccc','#cc0000','#0066cc','#669900'
+];
+function getColor(no){ return COLORS[(parseInt(no)-1) % COLORS.length] || '#aaa'; }
+
+function startMonitor(){
+  const date     = document.getElementById('inp-date').value;
+  const venue    = document.getElementById('inp-venue').value;
+  const race_no  = document.getElementById('inp-race').value;
+  const interval = document.getElementById('inp-interval').value;
+  if(!date){ alert('請填入日期'); return; }
+  fetch('/start',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({date, venue, race_no, interval})
+  }).then(r=>r.json()).then(d=>{
+    if(d.ok){ scheduleFetch(); }
+    else { alert(d.msg||'啟動失敗'); }
+  });
+}
+
+function stopMonitor(){
+  fetch('/stop',{method:'POST'}).then(()=>{
+    if(fetchTimer){ clearTimeout(fetchTimer); fetchTimer=null; }
+  });
+}
+
+function scheduleFetch(){ fetchData(); }
+
+function fetchData(){
+  fetch('/data').then(r=>r.json()).then(d=>{
+    renderStatus(d);
+    renderPanels(d);
+    renderAlerts(d.alerts);
+    renderTable(d.rows);
+    const iv = (d.current_interval||3)*1000;
+    if(d.running){ fetchTimer = setTimeout(fetchData, iv); }
+  }).catch(()=>{
+    fetchTimer = setTimeout(fetchData, 5000);
+  });
+}
+
+function renderStatus(d){
+  document.getElementById('s-race').textContent     = (d.venue_name||'')+(d.race_no?' 第'+d.race_no+'場':'');
+  document.getElementById('s-count').textContent    = d.update_count||0;
+  document.getElementById('s-time').textContent     = d.last_update||'—';
+  document.getElementById('s-base').textContent     = d.base_time||'—';
+  document.getElementById('s-pool').textContent     = d.win_pool ? Number(d.win_pool).toLocaleString() : '—';
+  document.getElementById('s-interval').textContent = (d.current_interval||'—')+'s';
+  const st = document.getElementById('status-text');
+  st.textContent = d.status||'—';
+  st.className   = d.has_error ? 'error' : '';
+}
+
+function renderPanels(d){
+  // SMS 頭五位
+  const pd = document.getElementById('panel-down');
+  if(d.top_down && d.top_down.length){
+    pd.innerHTML = d.top_down.map(x=>
+      `<div class="panel-item">
+        <span class="no">${x.no}</span>
+        <b>${x.name}</b>
+        WIN:<span class="win-cell">${x.win}</span>
+        基準:${x.base}
+        SMS:<span class="sms-val">${x.sms}</span>
+        累流入:${fmtM(x.cum_inflow)}
+      </div>`
+    ).join('');
+  } else { pd.innerHTML='等待數據...'; }
+
+  // 賠率回升
+  const pu = document.getElementById('panel-up');
+  if(d.top_up && d.top_up.length){
+    pu.innerHTML = d.top_up.map(x=>
+      `<div class="panel-item">
+        <span class="no">${x.no}</span>
+        <b>${x.name}</b>
+        WIN:${x.win} 基準:${x.base}
+        反彈:<span class="rise">+${x.rise}%</span>
+      </div>`
+    ).join('');
+  } else { pu.innerHTML='等待數據...'; }
+
+  // 單次吸金
+  const absorbs = (d.alerts||[]).filter(a=>a.msg&&a.msg.includes('單次吸金'));
+  document.getElementById('cnt-absorb').textContent = absorbs.length;
+  const pa = document.getElementById('panel-absorb');
+  if(absorbs.length){
+    pa.innerHTML = absorbs.slice(0,3).map(a=>
+      `<div class="panel-item">
+        ${a.time} <span class="no">${a.no}</span> <b>${a.name}</b>
+        WIN:${a.win} | 流入:${fmtM(a.flow_amt)} | 彩池增:${fmtM(a.pool_inc)}
+        <span class="hot">${a.msg}</span>
+      </div>`
+    ).join('');
+  } else { pa.innerHTML='等待數據...'; }
+
+  // 突發大注（顏色從 msg 解析）
+  const bigbets = (d.alerts||[]).filter(a=>a.msg&&a.msg.includes('突發大注'));
+  document.getElementById('cnt-bigbet').textContent = bigbets.length;
+  const pb = document.getElementById('panel-bigbet');
+  if(bigbets.length){
+    pb.innerHTML = bigbets.slice(0,6).map(a=>{
+      let amt = a.flow_amt || 0;
+      if(!amt){
+        const m = (a.msg||'').match(/\$([\d.]+)([KM]?)/);
+        if(m){ amt = parseFloat(m[1]) * (m[2]==='M'?1000000:m[2]==='K'?1000:1); }
+      }
+      const dot    = amt>=100000?'🔴':amt>=50000?'🟠':'🟡';
+      const frozen = (a.msg||'').includes('❄️') ? '❄️' : '';
+      return `<div class="panel-item">
+        ${dot}${frozen} ${a.time} <span class="no">${a.no}</span>
+        <b>${a.name}</b> WIN:<span class="win-cell">${a.win}</span>
+        <span class="hot">${a.msg}</span>
+      </div>`;
+    }).join('');
+  } else { pb.innerHTML='等待數據...'; }
+}
+
+function renderAlerts(alerts){
+  if(!alerts||!alerts.length){ return; }
+  document.getElementById('alert-list').innerHTML = alerts.slice(0,30).map(a=>
+    `<div class="alert-item">
+      <span class="alert-time">${a.time}</span>
+      <span class="alert-no">#${a.no} ${a.name}</span>
+      <span class="alert-msg">${a.msg}</span>
+    </div>`
+  ).join('');
+}
+
+function renderTable(rows){
+  if(!rows||!rows.length) return;
+  document.getElementById('table-body').innerHTML = rows.map(r=>{
+    const scr    = r.win==='SCR';
+    const winCss = scr ? 'scr-cell' : 'win-cell';
+    const rowCss = r.is_suspicious ? 'suspicious-row' : '';
+    const hlCss  = highlighted===r.no ? 'highlighted' : '';
+    const dot    = `<span class="color-dot" style="background:${getColor(r.no)}"></span>`;
+    return `<tr class="${rowCss} ${hlCss}" onclick="toggleHL('${r.no}')">
+      <td>${dot}</td>
+      <td><b>${r.no}</b></td>
+      <td style="text-align:left;max-width:90px;overflow:hidden">${r.name||''}</td>
+      <td>${r.draw||''}</td>
+      <td style="text-align:left">${r.jockey||''}</td>
+      <td style="text-align:left">${r.trainer||''}</td>
+      <td class="base-cell">${r.base_win||'—'}</td>
+      <td class="${winCss}">${r.win||'—'}</td>
+      <td class="${r.chg&&r.chg.includes('-')?'up':'neutral'}">${r.chg||'—'}</td>
+      <td class="${r.odrop_css||'neutral'}">${r.odrop||'—'}</td>
+      <td class="${r.trend_css||'neutral'}">${r.trend||'—'}</td>
+      <td class="base-cell">${r.base_bet||'—'}</td>
+      <td>${r.est_bet||'—'}</td>
+      <td class="${r.cum_diff_css||'neutral'}">${r.cum_diff||'—'} ${r.cum_diff_pct||''}</td>
+      <td class="${r.flow_css||'neutral'}">${r.flow||'—'}</td>
+      <td class="${r.accel_css||'neutral'}">${r.accel||'—'}</td>
+      <td class="up">${r.cum_inflow||'—'}</td>
+      <td class="${r.absorb_css||'neutral'}">${r.absorb||'—'}</td>
+      <td class="${r.sms_css||'neutral'}">${r.sms||'—'}</td>
+      <td class="${r.rise_from_min>50?'hot':'neutral'}">${r.rise_from_min>0?'+'+r.rise_from_min+'%':'—'}</td>
+      <td style="text-align:left;color:#ffaa44;font-size:11px">${r.alert||''}</td>
+    </tr>`;
+  }).join('');
+}
+
+function toggleHL(no){
+  highlighted = highlighted===no ? null : no;
+  document.querySelectorAll('#table-body tr').forEach(tr=>{
+    const cells = tr.querySelectorAll('td');
+    if(cells.length>1){
+      tr.classList.toggle('highlighted', cells[1].textContent.trim()===highlighted);
+    }
+  });
+}
+
+function fmtM(n){
+  if(!n) return '$0';
+  const a = Math.abs(n);
+  if(a>=1000000) return '$'+(a/1000000).toFixed(2)+'M';
+  if(a>=1000)    return '$'+(a/1000).toFixed(1)+'K';
+  return '$'+Math.round(a);
+}
+
+fetch('/data').then(r=>r.json()).then(d=>{ if(d.running){ scheduleFetch(); } });
+</script>
+</body>
+</html>

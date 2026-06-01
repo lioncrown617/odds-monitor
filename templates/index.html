@@ -17,41 +17,33 @@
   .status-bar { font-size: 15px; padding: 9px 14px; background: #f5f5f5; border-bottom: 1px solid #ccc; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
   .status-bar span { color: #444; font-weight: 500; }
   .status-bar strong { color: #000; font-size: 16px; }
-
-  .race-info-bar {
-    display: flex; flex-wrap: wrap; gap: 10px; padding: 8px 14px;
-    background: #eaf4fb; border-bottom: 1px solid #b0cce0;
-    font-size: 12px; color: #1a5a80;
-  }
+  .race-info-bar { display: flex; flex-wrap: wrap; gap: 10px; padding: 8px 14px; background: #eaf4fb; border-bottom: 1px solid #b0cce0; font-size: 12px; color: #1a5a80; }
   .race-info-bar .ri-item { display: flex; gap: 5px; align-items: center; }
   .race-info-bar .ri-label { color: #888; font-size: 11px; }
   .race-info-bar .ri-val { color: #0055aa; font-weight: bold; }
-
   .panels { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px 14px; }
   .panel { background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; padding: 10px; min-width: 220px; flex: 1; }
   .panel h3 { font-size: 12px; color: #444; margin-bottom: 8px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
   .panel-sms { flex: 2; }
-
   .bigbet-panel { background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; padding: 10px; margin: 0 14px 10px; }
   .bigbet-panel h3 { font-size: 12px; color: #444; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
   .bigbet-count { background: #888; color: #fff; padding: 1px 7px; border-radius: 10px; font-size: 11px; }
   .bigbet-list { display: flex; flex-wrap: wrap; gap: 5px; max-height: 260px; overflow-y: auto; }
   .bigbet-item { font-size: 11px; padding: 3px 7px; border-radius: 3px; white-space: nowrap; }
-  .bigbet-y  { background: #fffbe6; color: #8a6000; border: 1px solid #ccaa00; }
-  .bigbet-o  { background: #fff3e0; color: #b05000; border: 1px solid #cc6600; }
-  .bigbet-r  { background: #fff0f0; color: #cc0000; border: 1px solid #ff4444; }
-
+  .bigbet-y { background: #fffbe6; color: #8a6000; border: 1px solid #ccaa00; }
+  .bigbet-o { background: #fff3e0; color: #b05000; border: 1px solid #cc6600; }
+  .bigbet-r { background: #fff0f0; color: #cc0000; border: 1px solid #ff4444; }
   .qp-panel { background: #f9f9f9; border: 1px solid #ddd; border-radius: 6px; padding: 10px; margin: 0 14px 10px; }
   .qp-panel h3 { font-size: 12px; color: #444; margin-bottom: 6px; }
-  .qp-tiers { display: flex; flex-wrap: wrap; gap: 10px; }
-  .qp-tier { flex: 1; min-width: 160px; }
-  .qp-tier h4 { font-size: 11px; margin-bottom: 5px; }
-  .qp-tier-y h4 { color: #b8860b; }
-  .qp-tier-o h4 { color: #cc5500; }
-  .qp-tier-r h4 { color: #cc0000; }
-  .qp-list { max-height: 260px; overflow-y: auto; }
-  .qp-item { font-size: 11px; padding: 2px 5px; border-bottom: 1px solid #eee; white-space: nowrap; }
-
+  .qp-table-wrap { max-height: 320px; overflow-y: auto; }
+  #qpTable { width: 100%; border-collapse: collapse; font-size: 11px; }
+  #qpTable thead tr { background: #1a3a6a; color: #fff; }
+  #qpTable th { padding: 6px 10px; white-space: nowrap; text-align: center; }
+  #qpTable td { padding: 4px 10px; border-bottom: 1px solid #e8e8e8; text-align: center; white-space: nowrap; }
+  #qpTable tr:nth-child(even) td { background: #f5f5f5; }
+  .qp-row-y td { background: #fffbe6 !important; }
+  .qp-row-o td { background: #fff3e0 !important; }
+  .qp-row-r td { background: #fff0f0 !important; }
   .tbl-wrap { overflow-x: auto; padding: 0 14px 20px; }
   table { width: 100%; border-collapse: collapse; font-size: 12px; }
   th { background: #e8e8e8; color: #333; padding: 6px 5px; text-align: center; border-bottom: 2px solid #ccc; white-space: nowrap; position: sticky; top: 0; }
@@ -68,15 +60,12 @@
   .dot-up   { display:inline-block; width:10px; height:10px; border-radius:50%; background:#007700; }
   .dot-rise { display:inline-block; width:10px; height:10px; border-radius:50%; background:#0055cc; }
   .dot-neutral{ display:inline-block; width:10px; height:10px; border-radius:50%; background:#aaa; }
-
   .sms-item { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid #ddd; font-size: 12px; }
   .sms-no { color: #b8860b; font-weight: bold; margin-right: 6px; }
   .sms-name { color: #333; flex: 1; }
   .sms-score { color: #cc7700; }
-
   .absorb-item { font-size: 12px; padding: 3px 0; border-bottom: 1px solid #ddd; }
   .acc-item    { font-size: 12px; padding: 3px 0; border-bottom: 1px solid #ddd; display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
-
   .acc-high { color: #007b8a; font-weight: bold; }
   .acc-mid  { color: #009aaa; }
   .sms-top5 { outline: 2px solid #f0a000; outline-offset: -1px; }
@@ -101,80 +90,85 @@
     <option value="S5">S5</option><option value="S6">S6</option>
     <option value="S7">S7</option><option value="S8">S8</option>
   </select>
-  <label>🔢 場次</label>
+  <label>🏇 場次</label>
   <select id="raceNo">
-    <option value="1">第 1 場</option><option value="2">第 2 場</option>
-    <option value="3">第 3 場</option><option value="4">第 4 場</option>
-    <option value="5">第 5 場</option><option value="6">第 6 場</option>
-    <option value="7">第 7 場</option><option value="8">第 8 場</option>
-    <option value="9">第 9 場</option><option value="10">第 10 場</option>
-    <option value="11">第 11 場</option><option value="12">第 12 場</option>
+    <option value="1">1</option><option value="2">2</option>
+    <option value="3">3</option><option value="4">4</option>
+    <option value="5">5</option><option value="6">6</option>
+    <option value="7">7</option><option value="8">8</option>
+    <option value="9">9</option><option value="10">10</option>
+    <option value="11">11</option><option value="12">12</option>
   </select>
   <label>⏱ 間隔(秒)</label>
   <input type="number" id="interval" value="3" min="2" max="30" style="width:55px">
-  <button class="btn btn-start" onclick="startMonitor()">▶ 開始監察</button>
-  <button class="btn btn-stop"  onclick="stopMonitor()">■ 停止</button>
-  <button class="btn btn-log"   onclick="downloadLog()">📥 下載Log</button>
+  <button class="btn btn-start" onclick="startMonitor()">▶ 開始</button>
+  <button class="btn btn-stop"  onclick="stopMonitor()">⏹ 停止</button>
+  <button class="btn btn-log"   onclick="downloadLog()">📥 Log</button>
 </div>
 
 <!-- 狀態列 -->
 <div class="status-bar">
-  <span>場次：<strong id="sRace">—</strong></span>
-  <span>最後更新：<strong id="sTime">—</strong></span>
-  <span>基準時間：<strong id="sBase">—</strong></span>
-  <span>💰 彩池：<strong id="sPool">—</strong></span>
-  <span>⚡ 間隔：<strong id="sInterval">—</strong></span>
-  <span id="sStatus" style="color:#999">等待設定...</span>
+  <span>場次 <strong id="sRace">--</strong></span>
+  <span>更新 <strong id="sTime">--</strong></span>
+  <span>基準 <strong id="sBase">--</strong></span>
+  <span>WIN池 <strong id="sPool">--</strong></span>
+  <span>間隔 <strong id="sInterval">--</strong>s</span>
+  <span id="sStatus" style="color:#999">未啟動</span>
 </div>
 
-<!-- 賽事資料列 -->
+<!-- 賽事資訊列 -->
 <div class="race-info-bar" id="raceInfoBar">
-  <div class="ri-item"><span class="ri-label">⏰ 開跑</span><span class="ri-val" id="ri-time">—</span></div>
-  <div class="ri-item"><span class="ri-label">📏 路程</span><span class="ri-val" id="ri-dist">—</span></div>
-  <div class="ri-item"><span class="ri-label">🏟 跑道</span><span class="ri-val" id="ri-track">—</span></div>
-  <div class="ri-item"><span class="ri-label">🌿 場地</span><span class="ri-val" id="ri-course">—</span></div>
-  <div class="ri-item"><span class="ri-label">🏆 組別</span><span class="ri-val" id="ri-class">—</span></div>
-  <div class="ri-item"><span class="ri-label">🌦 地面</span><span class="ri-val" id="ri-going">—</span></div>
-  <div class="ri-item"><span class="ri-label">💵 獎金</span><span class="ri-val" id="ri-prize">—</span></div>
-  <div class="ri-item"><span class="ri-label">📋 賽事</span><span class="ri-val" id="ri-name">—</span></div>
+  <div class="ri-item"><span class="ri-label">開跑</span><span class="ri-val" id="ri-time">--</span></div>
+  <div class="ri-item"><span class="ri-label">距離</span><span class="ri-val" id="ri-dist">--</span></div>
+  <div class="ri-item"><span class="ri-label">跑道</span><span class="ri-val" id="ri-track">--</span></div>
+  <div class="ri-item"><span class="ri-label">路線</span><span class="ri-val" id="ri-course">--</span></div>
+  <div class="ri-item"><span class="ri-label">班次</span><span class="ri-val" id="ri-class">--</span></div>
+  <div class="ri-item"><span class="ri-label">場地</span><span class="ri-val" id="ri-going">--</span></div>
+  <div class="ri-item"><span class="ri-label">獎金</span><span class="ri-val" id="ri-prize">--</span></div>
+  <div class="ri-item"><span class="ri-label">賽事</span><span class="ri-val" id="ri-name">--</span></div>
 </div>
 
-<!-- 頂部面板 -->
+<!-- SMS / ACC 面板 -->
 <div class="panels">
   <div class="panel panel-sms">
-    <h3>🏆 SMS資金頭五位</h3>
-    <div id="topSms">等待數據...</div>
+    <h3>📨 SMS Top 5</h3>
+    <div id="topSms"><span style="color:#aaa">--</span></div>
   </div>
   <div class="panel">
-    <h3>🔄 分批累積大戶</h3>
-    <div id="topAcc">等待數據...</div>
+    <h3>⚡ ACC Top 5</h3>
+    <div id="topAcc"><span style="color:#aaa">--</span></div>
   </div>
 </div>
 
-<!-- 💥 Win 大注監控 -->
+<!-- Win 大注監控 -->
 <div class="bigbet-panel">
-  <h3>💥 Win 大注監控 <span class="bigbet-count" id="bigBetCount">0</span>
-    <span style="color:#888;font-size:10px;font-weight:normal">每匹馬當次注碼 🟡 ≥10K 🟠 ≥50K 🔴 ≥100K ❄️=凍結估算</span>
+  <h3>💰 Win 大注監控
+    <span class="bigbet-count" id="bigBetCount">0</span>
+    <span style="color:#888;font-size:10px;font-weight:normal">10K / 50K / 100K</span>
   </h3>
-  <div class="bigbet-list" id="bigBetList">等待數據...</div>
+  <div class="bigbet-list" id="bigBetList"><span style="color:#aaa">尚無大注記錄</span></div>
 </div>
 
-<!-- Q / QP 大注監控 -->
+<!-- Q / QP 大注監控（表格形式） -->
 <div class="qp-panel">
-  <h3>🎯 Q / QP 大注監控 <span style="color:#888;font-size:10px;font-weight:normal">按單次流入分類顯示對應號碼</span></h3>
-  <div class="qp-tiers">
-    <div class="qp-tier qp-tier-y">
-      <h4>🟡 10K - 50K</h4>
-      <div class="qp-list" id="qpListY">等待數據...</div>
-    </div>
-    <div class="qp-tier qp-tier-o">
-      <h4>🟠 50K - 100K</h4>
-      <div class="qp-list" id="qpListO">等待數據...</div>
-    </div>
-    <div class="qp-tier qp-tier-r">
-      <h4>🔴 ≥100K</h4>
-      <div class="qp-list" id="qpListR">等待數據...</div>
-    </div>
+  <h3>🎯 Q / QP 大注監控
+    <span style="color:#888;font-size:10px;font-weight:normal">按組合賠率及投注金額排列</span>
+  </h3>
+  <div class="qp-table-wrap">
+    <table id="qpTable">
+      <thead>
+        <tr>
+          <th>時間</th>
+          <th>類別</th>
+          <th>馬號</th>
+          <th>賠率</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+      <tbody id="qpTableBody">
+        <tr><td colspan="5" style="color:#aaa;text-align:center;padding:10px;">等待數據...</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
@@ -184,32 +178,33 @@
     <thead>
       <tr>
         <th>色</th><th>馬號</th><th>馬名</th><th>檔</th><th>騎師</th><th>練馬師</th>
-        <th>基準賠</th><th>⭐WIN</th><th>賠率變動</th><th>賠率跌速</th><th>走勢</th>
-        <th>基準投注</th><th>現時投注</th><th>累積增減</th><th>本次流入</th><th>加速度</th>
-        <th>累積流入</th><th>🔥超額吸金</th><th>🏆SMS</th><th>🔄ACC</th><th>反彈%</th><th>🚨警報</th>
+        <th>基準賠</th><th>⭐WIN</th><th>賠率變</th><th>跌幅</th><th>趨勢</th>
+        <th>基準注</th><th>估算注</th><th>累差</th><th>累入</th><th>流入</th>
+        <th>加速</th><th>累入流</th><th>吸注</th><th>SMS</th><th>ACC</th>
+        <th>升幅</th><th>提示</th>
       </tr>
     </thead>
     <tbody id="mainTbody">
-      <tr><td colspan="22" style="color:#999;padding:20px;text-align:center">請設定場次後按「開始監察」</td></tr>
+      <tr><td colspan="23" style="color:#999;padding:20px;text-align:center">等待數據...</td></tr>
     </tbody>
   </table>
 </div>
 
 <div class="hint">
-  💡 SMS持續上升是最強買入訊號 &nbsp;|&nbsp;
-  🔄 ACC = 分批累積大戶指標 &nbsp;|&nbsp;
-  🌊 退潮警告出現需立即警惕 &nbsp;|&nbsp;
-  ❄️ 凍結大注為估算值 &nbsp;|&nbsp;
-  🔥 熱門吸金 &nbsp;|&nbsp; 💧 資金流出
+  SMS = 智能資金評分 &nbsp;|&nbsp; ACC = 加速大注評分 &nbsp;|&nbsp;
+  吸注% = 流入佔池增量% &nbsp;|&nbsp; 超額% = 吸注%-份額% &nbsp;|&nbsp;
+  累入 = 累計流入 &nbsp;|&nbsp; 升幅 = 由最低賠率升幅%
 </div>
 
 <script>
 const MAX_RECORDS = 100;
 let bigBetHistory = [];
-let qpHistoryY = [];
-let qpHistoryO = [];
-let qpHistoryR = [];
+let bigBetSeenKeys = new Set();   // ★ 修正：去重 Win 大注
+let qpHistory = [];
+let qpSeenKeys = new Set();       // ★ 修正：去重 Q/QP 大注
 let pollTimer = null;
+let lastRowsHash = "";
+let lastHeaderHash = "";
 
 function today() {
   return new Date().toISOString().slice(0,10);
@@ -223,7 +218,9 @@ async function startMonitor() {
     race_no: document.getElementById('raceNo').value,
     interval: parseInt(document.getElementById('interval').value) || 3,
   };
-  bigBetHistory = []; qpHistoryY = []; qpHistoryO = []; qpHistoryR = [];
+  // ★ 修正：重置時同時清空 SeenKeys
+  bigBetHistory = []; bigBetSeenKeys = new Set();
+  qpHistory = []; qpSeenKeys = new Set();
   const r = await fetch('/start', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
   const j = await r.json();
   if (j.ok) { schedulePoll(); }
@@ -235,14 +232,13 @@ async function stopMonitor() {
   if (pollTimer) clearTimeout(pollTimer);
 }
 
-async function downloadLog() {
-  window.open('/download_log', '_blank');
-}
+async function downloadLog() { window.open('/download_log', '_blank'); }
 
 function schedulePoll() {
   if (pollTimer) clearTimeout(pollTimer);
   pollData().then(() => {
-    pollTimer = setTimeout(schedulePoll, 2000);
+    fetchQPData(); // ★ 修正：每次 poll 後也拉 Q/QP 數據
+    pollTimer = setTimeout(schedulePoll, 500);
   });
 }
 
@@ -250,20 +246,25 @@ async function pollData() {
   try {
     const r = await fetch('/data');
     const d = await r.json();
-    renderStatus(d);
-    renderRaceInfo(d.race_info || {});
-    renderTopPanels(d);
-    renderBigBets(d.rows || []);
-    renderQP(d.rows || []);
-    renderTable(d.rows || []);
+    const headerHash = [d.win_pool || '', d.last_update || '', d.status || ''].join('|');
+    if (headerHash !== lastHeaderHash) {
+      lastHeaderHash = headerHash;
+      renderStatus(d);
+      renderRaceInfo(d.race_info || {});
+      renderTopPanels(d);
+    }
+    renderBigBets(d.rows || []); // ★ 只傳 WIN rows，已有去重
+    const rows = d.rows || [];
+    const h = rows.map(x => [x.no, x.win, x.flow_raw, x.sms_raw, x.acc_raw].join('|')).join('~');
+    if (h !== lastRowsHash) {
+      lastRowsHash = h;
+      renderTable(rows);
+    }
   } catch(e) { console.error(e); }
 }
 
 function renderRaceInfo(ri) {
-  const set = (id, val) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = val || '—';
-  };
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val || '--'; };
   set('ri-time',   ri.race_time);
   set('ri-dist',   ri.distance);
   set('ri-track',  ri.track);
@@ -275,15 +276,15 @@ function renderRaceInfo(ri) {
 }
 
 function renderStatus(d) {
-  document.getElementById('sRace').textContent     = d.venue_name + ' R' + d.race_no;
-  const _sc = document.getElementById('sCount'); if (_sc) _sc.textContent = d.update_count;
+  document.getElementById('sRace').textContent     = (d.venue_name || '') + ' R' + d.race_no;
+  const sc = document.getElementById('sCount'); if (sc) sc.textContent = d.update_count;
   document.getElementById('sTime').textContent     = d.last_update;
   document.getElementById('sBase').textContent     = d.base_time;
   document.getElementById('sPool').textContent     = d.win_pool;
-  document.getElementById('sInterval').textContent = d.current_interval + 's';
+  document.getElementById('sInterval').textContent = d.current_interval;
   const st = document.getElementById('sStatus');
-  st.textContent = d.status;
-  st.style.color = d.has_error ? '#cc0000' : '#1a7a3a';
+  st.textContent   = d.status;
+  st.style.color   = d.has_error ? '#cc0000' : '#1a7a3a';
 }
 
 function renderTopPanels(d) {
@@ -293,29 +294,33 @@ function renderTopPanels(d) {
     ? sms.map(x => `<div class="sms-item">
         <span class="sms-no">#${x.no}</span>
         <span class="sms-name">${x.name}</span>
-        <span style="color:#777;font-size:11px">基${x.base}→${x.win}</span>
+        <span style="color:#777;font-size:11px">${x.base}→${x.win}</span>
         <span class="sms-score">SMS:${x.sms}</span>
       </div>`).join('')
-    : '<span style="color:#aaa">無數據</span>';
-
-  // 🔄 分批累積大戶
+    : '<span style="color:#aaa">--</span>';
   const acc = d.top_acc || [];
   document.getElementById('topAcc').innerHTML = acc.length
     ? acc.map(x => `<div class="acc-item">
         <span class="sms-no">#${x.no}</span>
         <span style="color:#333;flex:1">${x.name}</span>
-        <span style="color:#007b8a;font-size:11px">×${x.batch_count}批&nbsp;${x.time_span}分</span>
+        <span style="color:#007b8a;font-size:11px">${x.batch_count}筆 ${x.time_span}分</span>
         <span style="color:#007b8a;font-weight:bold;margin-left:6px">ACC:${x.acc}</span>
       </div>`).join('')
-    : '<span style="color:#aaa">無數據</span>';
+    : '<span style="color:#aaa">--</span>';
 }
 
+// ★★★ 修正：renderBigBets 加去重邏輯 ★★★
 function renderBigBets(rows) {
   const now = new Date().toLocaleTimeString('zh-HK', {hour12:false});
   rows.forEach(r => {
     const raw = r.flow_raw || 0;
     if (raw >= 10000) {
-      bigBetHistory.unshift({ time: now, no: r.no, name: r.name, win: r.win, flow: r.flow, raw: raw });
+      // 以 馬號 + flow_raw 作為唯一鍵，防止同一筆記錄重複出現
+      const key = r.no + '|' + raw;
+      if (!bigBetSeenKeys.has(key)) {
+        bigBetSeenKeys.add(key);
+        bigBetHistory.unshift({ time: now, no: r.no, name: r.name, win: r.win, flow: r.flow, raw: raw });
+      }
     }
   });
   if (bigBetHistory.length > MAX_RECORDS) bigBetHistory = bigBetHistory.slice(0, MAX_RECORDS);
@@ -330,76 +335,118 @@ function renderBigBets(rows) {
   }).join('');
 }
 
-function renderQP(rows) {
-  const now = new Date().toLocaleTimeString('zh-HK', {hour12:false});
-  rows.forEach(r => {
-    const raw = r.flow_raw || 0;
-    if (raw >= 10000) {
-      const item = { time: now, no: r.no, name: r.name, win: r.win, flow: r.flow, raw };
-      if (raw >= 100000) {
-        qpHistoryR.unshift(item);
-        if (qpHistoryR.length > MAX_RECORDS) qpHistoryR = qpHistoryR.slice(0, MAX_RECORDS);
-      } else if (raw >= 50000) {
-        qpHistoryO.unshift(item);
-        if (qpHistoryO.length > MAX_RECORDS) qpHistoryO = qpHistoryO.slice(0, MAX_RECORDS);
-      } else {
-        qpHistoryY.unshift(item);
-        if (qpHistoryY.length > MAX_RECORDS) qpHistoryY = qpHistoryY.slice(0, MAX_RECORDS);
-      }
-    }
-  });
-  const fmt = (arr) => arr.length
-    ? arr.map(x=>`<div class="qp-item">${x.time} <strong>#${x.no}</strong> ${x.name} @${x.win} ${x.flow}</div>`).join('')
-    : '<div class="qp-item" style="color:#aaa">暫無記錄</div>';
-  document.getElementById('qpListY').innerHTML = fmt(qpHistoryY);
-  document.getElementById('qpListO').innerHTML = fmt(qpHistoryO);
-  document.getElementById('qpListR').innerHTML = fmt(qpHistoryR);
+// ★★★ 修正：Q/QP 改為從 /qinflow 取真正的 QIN/QPL 數據並以表格顯示 ★★★
+async function fetchQPData() {
+  try {
+    const r = await fetch('/qinflow');
+    const d = await r.json();
+    if (!d.ok) return;
+    const now = new Date().toLocaleTimeString('zh-HK', {hour12:false});
+    const dateStr = document.getElementById('raceDate').value || '';
+    const mmdd = dateStr.length >= 10 ? dateStr.slice(5,7) + '-' + dateStr.slice(8,10) : '';
+
+    const processEntries = (entries, type) => {
+      (entries || []).forEach(e => {
+        const raw = e.raw || 0;
+        if (raw >= 10000) {
+          // 唯一鍵：類別 + 組合 + 賠率 + 金額
+          const key = type + '|' + e.combo + '|' + (e.odds || '') + '|' + raw;
+          if (!qpSeenKeys.has(key)) {
+            qpSeenKeys.add(key);
+            qpHistory.unshift({
+              time: now,
+              mmdd: mmdd,
+              type: type,
+              combo: e.combo,
+              odds: e.odds || '--',
+              raw: raw
+            });
+          }
+        }
+      });
+    };
+
+    // /qinflow 返回 { qin: {y,o,r}, qpl: {y,o,r} }
+    const qin = d.qin || {};
+    const qpl = d.qpl || {};
+    // 處理所有三個層級
+    ['y','o','r'].forEach(tier => {
+      processEntries(qin[tier] || [], 'Q');
+      processEntries(qpl[tier] || [], 'QP');
+    });
+
+    if (qpHistory.length > MAX_RECORDS) qpHistory = qpHistory.slice(0, MAX_RECORDS);
+    renderQPTable();
+  } catch(e) { console.error('fetchQPData error', e); }
+}
+
+function renderQPTable() {
+  const tbody = document.getElementById('qpTableBody');
+  if (!qpHistory.length) {
+    tbody.innerHTML = '<tr><td colspan="5" style="color:#aaa;text-align:center;padding:10px;">暫無記錄</td></tr>';
+    return;
+  }
+  tbody.innerHTML = qpHistory.map((x, i) => {
+    // 行顏色：依金額分級
+    let rowCls = '';
+    if (x.raw >= 100000) rowCls = 'qp-row-r';
+    else if (x.raw >= 50000) rowCls = 'qp-row-o';
+    else if (i % 2 === 1) rowCls = '';
+    const amtStr = x.raw >= 1000000
+      ? (x.raw/1000000).toFixed(2) + 'M'
+      : (x.raw/1000).toFixed(0) + 'K';
+    // 賠率顯示格式：如有前值則 "前 → 後"，否則 "值 → 值"
+    const oddsDisplay = x.odds ? `${x.odds} → ${x.odds}` : '--';
+    return `<tr class="${rowCls}">
+      <td>${x.mmdd} ${x.time}</td>
+      <td><strong>${x.type}</strong></td>
+      <td>${x.combo}</td>
+      <td>${oddsDisplay}</td>
+      <td><strong>${amtStr}</strong></td>
+    </tr>`;
+  }).join('');
 }
 
 function renderTable(rows) {
   if (!rows.length) return;
   const tbody = document.getElementById('mainTbody');
   const smsRanked = rows.filter(r => r.sms_raw > 0)
-    .sort((a, b) => b.sms_raw - a.sms_raw)
-    .slice(0, 5)
-    .map(r => r.no);
+    .sort((a,b) => b.sms_raw - a.sms_raw).slice(0,5).map(r => r.no);
   tbody.innerHTML = rows.map(r => {
     const isTopSms = smsRanked.includes(r.no);
-    const dotCls = r.trend_css === 'hot'  ? 'dot-hot'
-                 : r.trend_css === 'warm' ? 'dot-warm'
-                 : r.trend_css === 'up'   ? 'dot-up'
-                 : r.trend_css === 'rise' ? 'dot-rise'
-                 : 'dot-neutral';
-    const noStyle   = isTopSms ? ' style="background:#fff3b0;color:#8a4f00;padding:2px 5px;border-radius:4px;font-weight:bold;border:1px solid #f0a000;"' : '';
+    const dotCls = r.trend_css === 'hot' ? 'dot-hot' : r.trend_css === 'warm' ? 'dot-warm'
+      : r.trend_css === 'up' ? 'dot-up' : r.trend_css === 'rise' ? 'dot-rise' : 'dot-neutral';
+    const noStyle = isTopSms ? 'style="background:#fff3b0;color:#8a4f00;padding:2px 5px;border-radius:4px;font-weight:bold;border:1px solid #f0a000"' : '';
     const nameStyle = isTopSms
-      ? ' style="text-align:left;max-width:90px;overflow:hidden;background:#fff3b0;color:#8a4f00;font-weight:bold;border-radius:4px;"'
-      : ' style="text-align:left;max-width:90px;overflow:hidden"';
+      ? 'style="text-align:left;max-width:90px;overflow:hidden;background:#fff3b0;color:#8a4f00;font-weight:bold;border-radius:4px"'
+      : 'style="text-align:left;max-width:90px;overflow:hidden"';
     const accVal = r.acc_raw || 0;
     const accCls = accVal >= 5 ? 'acc-high' : accVal > 0 ? 'acc-mid' : 'neutral';
-    const accStr = accVal > 0 ? '🔄' + accVal.toFixed(1) : '—';
+    const accStr = accVal > 0 ? accVal.toFixed(1) : '';
     return `<tr class="${isTopSms ? 'sms-top5' : ''}">
       <td><span class="${dotCls}"></span></td>
-      <td><b${noStyle}>${r.no}</b></td>
-      <td${nameStyle}>${r.name||''}</td>
-      <td>${r.barrier||'—'}</td>
-      <td style="text-align:left;max-width:80px;overflow:hidden;font-size:11px">${r.jockey||'—'}</td>
-      <td style="text-align:left;max-width:80px;overflow:hidden;font-size:11px">${r.trainer||'—'}</td>
+      <td><b ${noStyle}>${r.no}</b></td>
+      <td ${nameStyle}>${r.name}</td>
+      <td>${r.barrier}</td>
+      <td style="text-align:left;max-width:80px;overflow:hidden;font-size:11px">${r.jockey}</td>
+      <td style="text-align:left;max-width:80px;overflow:hidden;font-size:11px">${r.trainer}</td>
       <td style="color:#999">${r.base_win}</td>
       <td><b class="${r.trend_css}">${r.win}</b></td>
-      <td class="${r.trend_css==='hot'||r.trend_css==='warm'?'hot':'neutral'}">${r.chg}</td>
+      <td class="${r.trend_css === 'hot' || r.trend_css === 'warm' ? 'hot' : 'neutral'}">${r.chg}</td>
       <td class="${r.odrop_css}">${r.odrop}</td>
       <td class="${r.trend_css}">${r.trend}</td>
       <td style="color:#999">${r.base_bet}</td>
       <td>${r.est_bet} <span style="color:#777;font-size:10px">${r.est_pct}</span></td>
       <td class="${r.cum_diff_css}">${r.cum_diff} <span style="font-size:10px">${r.cum_diff_pct}</span></td>
+      <td class="${r.flow_raw > 0 ? 'up' : 'neutral'}">${r.cum_inflow}</td>
       <td class="${r.flow_css}">${r.flow}</td>
       <td class="${r.accel_css}">${r.accel}</td>
-      <td class="${r.flow_raw>0?'up':'neutral'}">${r.cum_inflow}</td>
+      <td class="${r.flow_raw > 0 ? 'up' : 'neutral'}">${r.cum_inflow}</td>
       <td class="${r.absorb_css}">${r.absorb}</td>
       <td class="${r.sms_css}">${r.sms}</td>
       <td class="${accCls}">${accStr}</td>
-      <td style="color:${r.rise_from_min>50?'#cc0000':'#999'}">${r.rise_from_min>0?r.rise_from_min+'%':'—'}</td>
-      <td style="font-size:10px;text-align:left">${r.alert||''}</td>
+      <td style="color:${r.rise_from_min >= 50 ? '#cc0000' : '#999'}">${r.rise_from_min > 0 ? r.rise_from_min : ''}</td>
+      <td style="font-size:10px;text-align:left">${r.alert}</td>
     </tr>`;
   }).join('');
 }

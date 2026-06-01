@@ -1,17 +1,10 @@
 import os
 import json
 import time
+import math
 import threading
 from datetime import datetime
 from collections import defaultdict, deque
-from zoneinfo import ZoneInfo
-
-HKT = ZoneInfo("Asia/Hong_Kong")
-
-# Replace every occurrence of:
-
-# With:
-now = datetime.now(HKT).strftime('%H:%M:%S')
 
 import requests
 from flask import Flask, render_template, jsonify, request, send_file
@@ -20,14 +13,18 @@ app = Flask(__name__)
 
 NODE_API = os.environ.get("NODE_API", "http://localhost:3000/odds")
 
-def _deque5():
-    return deque(maxlen=5)
+
+def _deque10():
+    return deque(maxlen=10)
+
 
 def _deque60():
     return deque(maxlen=60)
 
+
 def _inf():
     return float("inf")
+
 
 state = {
     "running": False,
@@ -72,13 +69,17 @@ state = {
     "_absorb": {},
     "_sms": {},
     "_alerts": {},
-    "e_history": defaultdict(_deque5),
+    "e_history": defaultdict(_deque10),
     "inflow_ts_history": defaultdict(_deque60),
     "min_odds": defaultdict(_inf),
     "alert_cooldown": defaultdict(dict),
     "steady_scores": {},
     "last_error_detail": "",
     "race_info": {},
+    "qin_flow": {},
+    "qpl_flow": {},
+    "qin_history": [],
+    "qpl_history": [],
 }
 
 TREND_THRESHOLD = 2
@@ -92,11 +93,13 @@ VENUE_NAME_MAP = {
     **{f"S{i}": f"特別賽事 S{i}" for i in range(1, 9)},
 }
 
+
 def parse_pool(pool_str):
     try:
         return float(str(pool_str).replace("$", "").replace(",", "").strip())
     except:
         return 0.0
+
 
 def fmt_money(amt):
     a = abs(amt)
@@ -106,18 +109,24 @@ def fmt_money(amt):
         return f"${a/1_000:.1f}K"
     return f"${a:.0f}"
 
+
 def fetch_odds_api(date_str, venue, race_no):
     try:
-        resp = requests.get(NODE_API, params={
-            "date": date_str,
-            "venue": venue,
-            "raceno": race_no,
-        }, timeout=8)
+        resp = requests.get(
+            NODE_API,
+            params={
+                "date": date_str,
+                "venue": venue,
+                "raceno": race_no,
+            },
+            timeout=8,
+        )
         resp.raise_for_status()
         data = resp.json()
         if not data.get("ok"):
             state["last_error_detail"] = data.get("error", "Node API 錯誤")
             return None, "", {}
+
         results = data.get("results", [])
         win_pool = data.get("win_pool", "")
         race_info = {
@@ -138,6 +147,7 @@ def fetch_odds_api(date_str, venue, race_no):
         state["last_error_detail"] = str(e)
         return None, "", {}
 
+
 def calc_est_bets(data, pool_str):
     real_map = {}
     has_real = False
@@ -146,6 +156,7 @@ def calc_est_bets(data, pool_str):
         real_map[r["no"]] = amt
         if amt > 0:
             has_real = True
+
     if has_real:
         return real_map
 
@@ -161,6 +172,7 @@ def calc_est_bets(data, pool_str):
         except:
             result[r["no"]] = 0.0
     return result
+
 
 def calc_trends(data):
     prev = state["prev_data"]
@@ -195,45 +207,59 @@ def calc_trends(data):
         except:
             pass
 
+
 def calc_sms_v2(no, cum_flow_val, cum_drop_val):
     F = max(cum_flow_val / 10000.0, 0)
-    if F == 0:
+    if F <= 0:
         return 0.0
 
     D = max(cum_drop_val, 0)
+
     e_hist = list(state["e_history"][no])
     pos_e = [max(e, 0) for e in e_hist]
-    E_eff = sum(pos_e) / len(pos_e) if pos_e else 0
+    E_eff = sum(pos_e) / len(pos_e) if len(pos_e) >= 3 else 0.0
 
     now_ts = time.time()
     hist = list(state["inflow_ts_history"][no])
-    w_5min  = sum(amt for ts, amt in hist if now_ts - ts <= 300)
+    w_5min = sum(amt for ts, amt in hist if now_ts - ts <= 300)
     w_15min = sum(amt for ts, amt in hist if now_ts - ts <= 900)
     w_30min = sum(amt for ts, amt in hist if now_ts - ts <= 1800)
 
-    if cum_flow_val > 0 and w_5min / cum_flow_val > 0.4:
-        Wt = 1.5    # 臨門集中型
-    elif cum_flow_val > 0 and w_15min / cum_flow_val > 0.4:
-        Wt = 1.35   # 中期持續型
-    elif cum_flow_val > 0 and w_30min / cum_flow_val > 0.35:
-        Wt = 1.2    # 分批累積型
+    r5 = (w_5min / cum_flow_val) if cum_flow_val > 0 else 0
+    r15 = (w_15min / cum_flow_val) if cum_flow_val > 0 else 0
+    r30 = (w_30min / cum_flow_val) if cum_flow_val > 0 else 0
+
+    if r5 >= 0.50:
+        Wt = 1.45
+    elif r15 >= 0.45:
+        Wt = 1.30
+    elif r30 >= 0.38:
+        Wt = 1.18
     else:
         Wt = 1.0
 
     recent_flows = list(state["flow_history"][no])[-3:]
     if len(recent_flows) >= 3 and all(f <= 0 for f in recent_flows):
-        Wt *= 0.5
+        Wt *= 0.55
 
     if len(recent_flows) >= 3:
         accels_local = [recent_flows[i] - recent_flows[i - 1] for i in range(1, len(recent_flows))]
         if all(f < 0 for f in recent_flows) and all(a < 0 for a in accels_local):
-            Wt *= 0.7
+            Wt *= 0.75
 
-    return round((F ** 1.2) * (1 + D / 10) * (1 + E_eff / 10) * Wt, 2)
+    recent_pos_ratio = 0.0
+    last6 = list(state["flow_history"][no])[-6:]
+    if last6:
+        pos_cnt = sum(1 for x in last6 if x > 0)
+        recent_pos_ratio = pos_cnt / len(last6)
+
+    stability_bonus = 1.0 + (recent_pos_ratio * 0.12)
+
+    score = (F ** 1.2) * (1 + D / 10) * (1 + E_eff / 10) * Wt * stability_bonus
+    return round(score, 2)
 
 
 def calc_acc_score(no, cum_flow_val):
-    """分批累積型大戶識別"""
     inflow_hist = list(state["inflow_ts_history"][no])
     if len(inflow_hist) < 2:
         return 0.0
@@ -247,10 +273,51 @@ def calc_acc_score(no, cum_flow_val):
         return 0.0
 
     consistency = len(big_entries) / max(len(inflow_hist), 1)
-    F = cum_flow_val / 10000.0
-    batch_bonus = min(len(big_entries) / 3.0, 2.0)
+    F = max(cum_flow_val / 10000.0, 0)
 
-    return round(F ** 1.1 * consistency * batch_bonus, 2)
+    if len(big_entries) >= 3:
+        gaps = [(big_entries[i][0] - big_entries[i - 1][0]) / 60 for i in range(1, len(big_entries))]
+        max_gap_min = max(gaps) if gaps else time_span
+    else:
+        max_gap_min = time_span
+
+    if max_gap_min <= 5:
+        gap_penalty = 1.0
+    elif max_gap_min <= 10:
+        gap_penalty = 0.9
+    elif max_gap_min <= 15:
+        gap_penalty = 0.75
+    else:
+        gap_penalty = 0.6
+
+    batch_bonus = 1.0 + math.log(max(len(big_entries), 1), 2)
+    batch_bonus = min(batch_bonus, 4.0)
+
+    duration_bonus = min(max(time_span / 8.0, 0.0), 1.2)
+
+    score = (F ** 1.08) * consistency * gap_penalty * batch_bonus * (1.0 + duration_bonus * 0.15)
+    return round(score, 2)
+
+
+def calc_acc_meta(no):
+    inflow_hist = list(state["inflow_ts_history"][no])
+    big_entries = [(ts, amt) for ts, amt in inflow_hist if amt >= 10000]
+    if len(big_entries) < 2:
+        return {
+            "batch_count": 0,
+            "time_span": 0.0,
+            "max_gap_min": 0.0,
+        }
+
+    time_span = round((big_entries[-1][0] - big_entries[0][0]) / 60, 1)
+    gaps = [(big_entries[i][0] - big_entries[i - 1][0]) / 60 for i in range(1, len(big_entries))]
+    max_gap_min = round(max(gaps), 1) if gaps else time_span
+
+    return {
+        "batch_count": len(big_entries),
+        "time_span": time_span,
+        "max_gap_min": max_gap_min,
+    }
 
 
 def calc_flow_and_signals(est_bets, win_pool_str, data):
@@ -381,6 +448,7 @@ def get_trend_label(no):
         return "回升", "rise"
     return "—", "neutral"
 
+
 def calc_top3():
     data = state["data"]
     base = state["base_data"]
@@ -397,8 +465,12 @@ def calc_top3():
         sms_score = sms_map.get(no, 0.0)
         ab = absorbs.get(no, {})
         cum_in = cum_f.get(no, 0.0)
+        trend_v = tc.get(no, 0)
+        flow_recent = list(state["flow_history"][no])[-3:]
 
-        if sms_score > 0:
+        weakening = len(flow_recent) >= 3 and all(f <= 0 for f in flow_recent)
+
+        if sms_score > 0 and trend_v >= -1 and not weakening:
             sms_all.append({
                 "no": no,
                 "name": r["name"],
@@ -414,32 +486,32 @@ def calc_top3():
     state["top_down"] = sorted(sms_all, key=lambda x: x["sms"], reverse=True)[:5]
     state["top_up"] = []
 
-    # ★ 累積大戶 top3
     acc_list = []
     for r in data:
         no = r["no"]
         cum_in = cum_f.get(no, 0.0)
         acc_s = calc_acc_score(no, cum_in)
         if acc_s > 0:
-            inflow_hist = list(state["inflow_ts_history"][no])
-            big_entries = [(ts, amt) for ts, amt in inflow_hist if amt >= 10000]
-            if len(big_entries) >= 2:
-                time_span = round((big_entries[-1][0] - big_entries[0][0]) / 60, 1)
+            meta = calc_acc_meta(no)
+            if meta["batch_count"] >= 2:
                 acc_list.append({
                     "no": no,
                     "name": r["name"],
                     "win": r["win"],
                     "base": base.get(no, "—"),
                     "cum_inflow": round(cum_in),
-                    "batch_count": len(big_entries),
-                    "time_span": time_span,
+                    "batch_count": meta["batch_count"],
+                    "time_span": meta["time_span"],
+                    "max_gap_min": meta["max_gap_min"],
                     "acc": acc_s,
                 })
-    state["top_acc"] = sorted(acc_list, key=lambda x: x["acc"], reverse=True)[:3]
+
+    state["top_acc"] = sorted(acc_list, key=lambda x: x["acc"], reverse=True)[:5]
 
 
 def update_global_alerts(alerts_map, now):
     pass
+
 
 def record_history(data, now, est_bets, flows, absorbs, sms):
     state["timestamps"].append(now)
@@ -449,11 +521,13 @@ def record_history(data, now, est_bets, flows, absorbs, sms):
             state["history"][no].append(float(r["win"]))
         except:
             state["history"][no].append(None)
+
         state["bet_history"][no].append(round(est_bets.get(no, 0)))
         state["flow_history"][no].append(round(flows.get(no, 0)))
         state["absorb_history"][no].append(absorbs[no]["excess"] if no in absorbs else 0)
         state["sms_history"][no].append(sms.get(no, 0))
         state["acc_history"][no].append(sms.get(f"acc_{no}", 0))
+
 
 def get_log_path():
     date_str = state["race_date"].replace("-", "")
@@ -461,6 +535,7 @@ def get_log_path():
     race_no = state["race_no"].zfill(2)
     os.makedirs("logs", exist_ok=True)
     return f"logs/{date_str}_{venue}_R{race_no}_log.json"
+
 
 def _load_log():
     path = get_log_path()
@@ -472,12 +547,14 @@ def _load_log():
             pass
     return {"meta": {}, "snapshots": [], "alerts": [], "summary": {}}
 
+
 def _save_log(log_data):
     try:
         with open(get_log_path(), "w", encoding="utf-8") as f:
             json.dump(log_data, f, ensure_ascii=False, indent=2)
     except Exception as e:
         print(f"[LOG ERROR] {e}")
+
 
 def append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool):
     log = _load_log()
@@ -522,6 +599,7 @@ def append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool):
     log["snapshots"].append(snapshot)
     _save_log(log)
 
+
 def finalize_log(now):
     log = _load_log()
     cum_f = state["cum_flow"]
@@ -551,12 +629,13 @@ def finalize_log(now):
     _save_log(log)
     print(f"[LOG] 已儲存：{get_log_path()}")
 
+
 def monitor_loop():
     state["status"] = "連接 Node.js API 中..."
     state["has_error"] = False
 
     while state["running"]:
-        now = datetime.now(HKT).strftime("%H:%M:%S")
+        now = datetime.now().strftime("%H:%M:%S")
         data, win_pool, race_info = fetch_odds_api(
             state["race_date"], state["venue"], state["race_no"]
         )
@@ -609,13 +688,15 @@ def monitor_loop():
 
         time.sleep(state["interval"])
 
-    finalize_log(datetime.now(HKT).strftime("%H:%M:%S"))
+    finalize_log(datetime.now().strftime("%H:%M:%S"))
     state["status"] = "監察已停止"
     state["has_error"] = False
+
 
 @app.route("/")
 def index():
     return render_template("index.html")
+
 
 @app.route("/start", methods=["POST"])
 def start():
@@ -625,7 +706,7 @@ def start():
         return jsonify({"ok": False, "msg": "已在監察中"})
 
     d = request.json
-    state["race_date"] = d.get("date", datetime.now(HKT).strftime("%Y-%m-%d"))
+    state["race_date"] = d.get("date", datetime.now().strftime("%Y-%m-%d"))
     state["venue"] = d.get("venue", "ST")
     state["venue_name"] = VENUE_NAME_MAP.get(state["venue"], state["venue"])
     state["race_no"] = d.get("race_no", "1")
@@ -645,7 +726,8 @@ def start():
         ("_accels", {}), ("_absorb", {}), ("_sms", {}), ("_alerts", {}),
         ("steady_scores", {}), ("current_interval", 3),
         ("status", "正在啟動..."), ("last_error_detail", ""),
-        ("race_info", {}),
+        ("race_info", {}), ("qin_flow", {}), ("qpl_flow", {}),
+        ("qin_history", []), ("qpl_history", []),
     ]:
         state[k] = v
 
@@ -659,7 +741,7 @@ def start():
     state["absorb_history"] = defaultdict(list)
     state["sms_history"] = defaultdict(list)
     state["acc_history"] = defaultdict(list)
-    state["e_history"] = defaultdict(_deque5)
+    state["e_history"] = defaultdict(_deque10)
     state["inflow_ts_history"] = defaultdict(_deque60)
     state["min_odds"] = defaultdict(_inf)
     state["alert_cooldown"] = defaultdict(dict)
@@ -668,10 +750,12 @@ def start():
     monitor_thread.start()
     return jsonify({"ok": True})
 
+
 @app.route("/stop", methods=["POST"])
 def stop():
     state["running"] = False
     return jsonify({"ok": True})
+
 
 @app.route("/data")
 def get_data():
@@ -737,7 +821,6 @@ def get_data():
         ab = state["_absorb"].get(no, {})
         flow = ab.get("flow", 0)
         absorb_pct = ab.get("absorb_pct", 0.0)
-        share_pct = ab.get("share_pct", 0.0)
         excess = ab.get("excess", 0.0)
         pool_inc = ab.get("pool_inc", 0)
         odds_drop = ab.get("odds_drop", 0.0)
@@ -867,12 +950,77 @@ def get_data():
         "race_info": state.get("race_info", {}),
     })
 
+
+@app.route("/qin_flow")
+def get_qin_flow():
+    try:
+        resp = requests.get(
+            NODE_API.replace("/odds", "/qin-qpl"),
+            params={
+                "date": state["race_date"],
+                "venue": state["venue"],
+                "raceno": state["race_no"],
+            },
+            timeout=8,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        if not data.get("ok"):
+            return jsonify({"ok": False, "error": data.get("error", "")})
+
+        prev_qin = state["qin_flow"]
+        prev_qpl = state["qpl_flow"]
+        now_str = datetime.now().strftime("%H:%M:%S")
+
+        def process(pool_data, prev_map, history_key):
+            entries = []
+            curr_map = {}
+            for item in pool_data.get("odds", []):
+                combo = item["combo"]
+                try:
+                    curr_inv = float(item.get("odds", 0) or 0)
+                except:
+                    curr_inv = 0.0
+                curr_map[combo] = curr_inv
+                prev_inv = prev_map.get(combo)
+                if prev_inv is not None:
+                    flow = curr_inv - prev_inv
+                    if flow >= 10000:
+                        entries.append({
+                            "time": now_str,
+                            "combo": combo.replace("+", "-"),
+                            "odds": item.get("odds", ""),
+                            "flow": flow,
+                            "raw": flow,
+                        })
+            state[history_key] = (entries + state[history_key])[:200]
+            return curr_map
+
+        state["qin_flow"] = process(data.get("qin", {}), prev_qin, "qin_history")
+        state["qpl_flow"] = process(data.get("qpl", {}), prev_qpl, "qpl_history")
+
+        def tier(history):
+            y = [x for x in history if x["raw"] < 50000][:100]
+            o = [x for x in history if 50000 <= x["raw"] < 100000][:100]
+            r = [x for x in history if x["raw"] >= 100000][:100]
+            return {"y": y, "o": o, "r": r}
+
+        return jsonify({
+            "ok": True,
+            "qin": tier(state["qin_history"]),
+            "qpl": tier(state["qpl_history"]),
+        })
+    except Exception as e:
+        return jsonify({"ok": False, "error": str(e)})
+
+
 @app.route("/download_log")
 def download_log():
     path = get_log_path()
     if os.path.exists(path):
         return send_file(path, as_attachment=True)
     return jsonify({"error": "Log 不存在，請先開始監察"}), 404
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5001))

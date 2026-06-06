@@ -1,121 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏇 HKJC 大戶熱錢監察系統 v2</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>香港賽馬監察</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0a0a0f; color: #e0e0e0; font-family: 'Courier New', monospace; font-size: 13px; }
-h1 { text-align: center; padding: 12px; background: linear-gradient(135deg,#1a1a2e,#16213e); color: #00d4ff; font-size: 16px; letter-spacing: 2px; border-bottom: 1px solid #00d4ff33; }
-.control-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 14px; background: #0d0d1a; border-bottom: 1px solid #1a1a3e; align-items: center; }
-.control-bar label { color: #88aacc; font-size: 12px; }
-.control-bar input, .control-bar select { background: #111827; color: #e0e0e0; border: 1px solid #334; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
-.btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
-.btn-start { background: #00aa44; color: #fff; }
-.btn-stop  { background: #cc3300; color: #fff; }
-.btn-start:hover { background: #00cc55; }
-.btn-stop:hover  { background: #ee4400; }
-.status-bar { display: flex; flex-wrap: wrap; gap: 12px; padding: 6px 14px; background: #080810; font-size: 12px; border-bottom: 1px solid #1a1a3e; color: #88aacc; }
-.status-bar span { color: #e0e0e0; }
-#status-text { color: #00ff88; }
-#status-text.error { color: #ff4444; }
+:root{--bg:#0d1117;--panel:#161b22;--border:#30363d;--text:#e6edf3;--sub:#8b949e;--green:#3fb950;--red:#f85149;--yellow:#d29922;--blue:#58a6ff;--hot:#ff4444;--up:#3fb950;--diluted:#8b949e;--warm:#e3b341}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:SF Pro,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px}
+header{background:var(--panel);border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+header h1{font-size:16px;font-weight:700;color:var(--blue);white-space:nowrap}
+.ctrl{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+input,select{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:4px 8px;border-radius:4px;font-size:12px}
+button{padding:5px 14px;border:none;border-radius:4px;font-size:12px;cursor:pointer;font-weight:600}
+button:disabled{opacity:.45;cursor:not-allowed}
+#btnStart{background:var(--green);color:#000}
+#btnStop{background:var(--red);color:#fff}
+#status{font-size:11px;color:var(--sub)}
+#sse-indicator{font-size:11px;padding:2px 8px;border-radius:10px;background:#1c2a1c;color:var(--green);border:1px solid var(--green)}
+#sse-indicator.off{background:#2a1c1c;color:var(--red);border-color:var(--red)}
+#tabs{display:flex;gap:2px;padding:8px 16px 0;background:var(--panel);border-bottom:1px solid var(--border)}
+.tab{padding:6px 16px;border-radius:4px 4px 0 0;cursor:pointer;color:var(--sub);font-size:12px}
+.tab.active{background:var(--bg);color:var(--text);font-weight:600}
+#content{padding:12px 16px}
+.race-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:10px;font-size:13px;line-height:1.5}
+.race-line .strong{font-weight:700;color:var(--text)}
+.pool-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;font-size:13px;line-height:1.5}
+.pool-line .blue{color:var(--blue);font-weight:700}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--panel);color:var(--sub);padding:6px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1}
+th:first-child,td:first-child{text-align:left}
+td{padding:5px 8px;border-bottom:1px solid #1c2128;text-align:right;white-space:nowrap;vertical-align:middle}
+td.left{text-align:left}
+tr:hover td{background:#1c2128}
+.top-panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-bottom:10px}
+.top-panel,.qflow-box{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:10px}
+.top-panel h3,.qflow-box h3{font-size:12px;color:var(--sub);margin-bottom:8px}
+.top-row,.qflow-item{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid #1c2128;font-size:12px}
+.top-row:last-child,.qflow-item:last-child{border-bottom:none}
+.top-no{font-weight:700;color:var(--blue);width:20px}.top-name{flex:1;padding:0 6px}.top-score{font-weight:700;color:var(--hot)}
+.qflow-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.section-title{margin:10px 0 8px;font-weight:700;color:var(--text)}
+</style>
+</head>
+<body>
+<header>
+  <h1>香港賽馬監察</h1>
+  <div class="ctrl">
+    <input id="iDate" type="date" style="width:130px" />
+    <select id="iVenue">
+      <option value="ST">ST</option><option value="HV">HV</option><option value="S1">S1</option><option value="S2">S2</option><option value="S3">S3</option><option value="S4">S4</option>
+    </select>
+    <input id="iRace" type="number" value="1" style="width:55px" />
+    <button id="btnStart" onclick="startMonitor()">開始</button>
+    <button id="btnStop" onclick="stopMonitor()" disabled>停止</button>
+    <button onclick="location.href='/download_log'" style="background:#30363d;color:var(--text)">Log</button>
+  </div>
+  <span id="sse-indicator" class="off">SSE</span>
+  <span id="status">準備中</span>
+</header>
 
-"index.html" 358L, 15474B
-  [已還原2026年5月30日 上午10:59:47]
-Last login: Sat May 30 10:59:47 on ttys001
-Restored session: 2026年 5月27日 星期三 23時36分50秒 CST
-lioncrown@lioncrowndeMacBook-Neo templates % ls -tlr
-total 984
--rw-r--r--  1 lioncrown  staff  12287 17  5 18:12 index.old
--rw-r--r--  1 lioncrown  staff  18927 17  5 18:39 index.old1
--rw-r--r--  1 lioncrown  staff  20521 17  5 18:53 index.old2
--rw-r--r--  1 lioncrown  staff  23137 17  5 19:10 index.old3
--rw-r--r--@ 1 lioncrown  staff  25880 19  5 20:31 index.old4
--rw-r--r--@ 1 lioncrown  staff  27899 19  5 21:18 index.old5
--rw-r--r--  1 lioncrown  staff  28000 19  5 22:41 index.keep
--rw-r--r--  1 lioncrown  staff  26608 20  5 22:03 index.bak
--rw-r--r--  1 lioncrown  staff  13122 21  5 22:00 index.win
--rw-r--r--  1 lioncrown  staff  10266 21  5 23:37 index.html.keep
--rw-r--r--  1 lioncrown  staff  13122 22  5 21:40 index.html.noadrci
--rw-r--r--  1 lioncrown  staff  17315 22  5 21:55 index.20260523
--rw-r--r--  1 lioncrown  staff  20250 24  5 12:04 index.202605241.html
--rw-r--r--  1 lioncrown  staff  20480 24  5 12:16 index.html.202505242
--rw-r--r--  1 lioncrown  staff  21799 24  5 12:39 index.html.202505243
--rw-r--r--  1 lioncrown  staff  21911 24  5 12:46 index.html.202505244
--rw-r--r--  1 lioncrown  staff  21354 24  5 13:20 index.html.2025245
--rw-r--r--  1 lioncrown  staff  20771 24  5 13:51 index.html.202504256
--rw-r--r--  1 lioncrown  staff  20091 24  5 14:22 index.html.ok
--rw-r--r--  1 lioncrown  staff  21891 24  5 17:44 index.html.freeze
--rw-r--r--  1 lioncrown  staff  21784 24  5 18:43 index.night2
--rw-r--r--  1 lioncrown  staff  15584 24  5 23:09 index.html.night
--rw-r--r--  1 lioncrown  staff  15474 24  5 23:51 index.html
-lioncrown@lioncrowndeMacBook-Neo templates % vi index.html
-lioncrown@lioncrowndeMacBook-Neo templates % cd ~/          # go to your project root (parent of templates/)
-git add templates/index.html
-git commit -m "update index.html"
-git push origin main
-zsh: number expected
-lioncrown@lioncrowndeMacBook-Neo templates % cd ~/          # go to your project root (parent of templates/)
-git add templates/index.html
-git commit -m "update in         
-dquote> 
-dquote> 
-lioncrown@lioncrowndeMacBook-Neo templates % pit add templates/index.html
-zsh: command not found: pit
-lioncrown@lioncrowndeMacBook-Neo templates % git add templates/index.html
-xcode-select: note: No developer tools were found, requesting install.
-If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
-See `man xcode-select` for more details.
-lioncrown@lioncrowndeMacBook-Neo templates % ls -tlr
-total 984
--rw-r--r--  1 lioncrown  staff  12287 17  5 18:12 index.old
--rw-r--r--  1 lioncrown  staff  18927 17  5 18:39 index.old1
--rw-r--r--  1 lioncrown  staff  20521 17  5 18:53 index.old2
--rw-r--r--  1 lioncrown  staff  23137 17  5 19:10 index.old3
--rw-r--r--@ 1 lioncrown  staff  25880 19  5 20:31 index.old4
--rw-r--r--@ 1 lioncrown  staff  27899 19  5 21:18 index.old5
--rw-r--r--  1 lioncrown  staff  28000 19  5 22:41 index.keep
--rw-r--r--  1 lioncrown  staff  26608 20  5 22:03 index.bak
--rw-r--r--  1 lioncrown  staff  13122 21  5 22:00 index.win
--rw-r--r--  1 lioncrown  staff  10266 21  5 23:37 index.html.keep
--rw-r--r--  1 lioncrown  staff  13122 22  5 21:40 index.html.noadrci
--rw-r--r--  1 lioncrown  staff  17315 22  5 21:55 index.20260523
--rw-r--r--  1 lioncrown  staff  20250 24  5 12:04 index.202605241.html
--rw-r--r--  1 lioncrown  staff  20480 24  5 12:16 index.html.202505242
--rw-r--r--  1 lioncrown  staff  21799 24  5 12:39 index.html.202505243
--rw-r--r--  1 lioncrown  staff  21911 24  5 12:46 index.html.202505244
--rw-r--r--  1 lioncrown  staff  21354 24  5 13:20 index.html.2025245
--rw-r--r--  1 lioncrown  staff  20771 24  5 13:51 index.html.202504256
--rw-r--r--  1 lioncrown  staff  20091 24  5 14:22 index.html.ok
--rw-r--r--  1 lioncrown  staff  21891 24  5 17:44 index.html.freeze
--rw-r--r--  1 lioncrown  staff  21784 24  5 18:43 index.night2
--rw-r--r--  1 lioncrown  staff  15584 24  5 23:09 index.html.night
--rw-r--r--  1 lioncrown  staff  15474 24  5 23:51 index.html
-lioncrown@lioncrowndeMacBook-Neo templates % vi index.html
+<div id="tabs">
+  <div class="tab active" onclick="showTab('main',this)">主頁</div>
+  <div class="tab" onclick="showTab('top',this)">熱門</div>
+  <div class="tab" onclick="showTab('qin',this)">Q/QP 流向</div>
+</div>
 
-<!DOCTYPE html>
-<html lang="zh-HK">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏇 HKJC 大戶熱錢監察系統 v2</title>
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0a0a0f; color: #e0e0e0; font-family: 'Courier New', monospace; font-size: 13px; }
-h1 { text-align: center; padding: 12px; background: linear-gradient(135deg,#1a1a2e,#16213e); color: #00d4ff; font-size: 16px; letter-spacing: 2px; border-bottom: 1px solid #00d4ff33; }
-.control-bar { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 14px; background: #0d0d1a; border-bottom: 1px solid #1a1a3e; align-items: center; }
-.control-bar label { color: #88aacc; font-size: 12px; }
-.control-bar input, .control-bar select { background: #111827; color: #e0e0e0; border: 1px solid #334; padding: 4px 8px; border-radius: 4px; font-size: 12px; }
-.btn { padding: 6px 14px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
-.btn-start { background: #00aa44; color: #fff; }
-.btn-stop  { background: #cc3300; color: #fff; }
-.btn-start:hover { background: #00cc55; }
-.btn-stop:hover  { background: #ee4400; }
-.status-bar { display: flex; flex-wrap: wrap; gap: 12px; padding: 6px 14px; background: #080810; font-size: 12px; border-bottom: 1px solid #1a1a3e; color: #88aacc; }
-.status-bar span { color: #e0e0e0; }
-#status-text { color: #00ff88; }
-#status-text.error { color: #ff4444; }
+<div id="content">
+  <div id="race-info" class="race-line"></div>
+  <div id="pool-bar" class="pool-line"></div>
 
-"index.html" 358L, 15474B
+  <div id="tab-main">
+    <div class="section-title">主頁數據</div>
+
+    <div class="top-panels" style="margin-bottom:10px">
+      <div class="top-panel">
+        <h3>WIN 大注</h3>
+        <div id="top-win"></div>
+      </div>
+      <div class="top-panel">
+        <h3>SMS</h3>
+        <div id="top-sms-main"></div>
+      </div>
+      <div class="top-panel">
+        <h3>ACC</h3>
+        <div id="top-acc-main"></div>
+      </div>
+    </div>
+
+    <div class="qflow-wrap" style="margin-bottom:10px">
+      <div class="qflow-box">
+        <h3>連贏 (QIN) 大注流入</h3>
+        <div id="qin-r" style="margin-bottom:6px"></div>
+        <div id="qin-o" style="margin-bottom:6px"></div>
+        <div id="qin-y"></div>
+      </div>
+      <div class="qflow-box">
+        <h3>位置Q (QPL) 大注流入</h3>
+        <div id="qpl-r" style="margin-bottom:6px"></div>
+        <div id="qpl-o" style="margin-bottom:6px"></div>
+        <div id="qpl-y"></div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table id="main-tbl">
+        <thead>
+          <tr>
+            <th>馬號</th><th>馬名</th><th>檔</th><th>騎師</th><th>練馬師</th>
+            <th>賠率</th><th>位置</th><th>基準</th><th>投注</th><th>警示</th>
+          </tr>
+        </thead>
+        <tbody id="main-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="tab-top" style="display:none">
+    <div class="top-panels">
+      <div class="top-panel"><h3>SMS</h3><div id="top-sms"></div></div>
+      <div class="top-panel"><h3>ACC</h3><div id="top-acc"></div></div>
+    </div>
+  </div>
+
+  <div id="tab-qin" style="display:none">
+    <div class="qflow-wrap">
+      <div class="qflow-box">
+        <h3>QIN</h3>
+        <div id="qin-r2" style="margin-bottom:6px"></div>
+        <div id="qin-o2" style="margin-bottom:6px"></div>
+        <div id="qin-y2"></div>
+      </div>
+      <div class="qflow-box">
+        <h3>QPL</h3>
+        <div id="qpl-r2" style="margin-bottom:6px"></div>
+        <div id="qpl-o2" style="margin-bottom:6px"></div>
+        <div id="qpl-y2"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+let es=null,qinTimer=null;
+function setButtons(r){document.getElementById('btnStart').disabled=r;document.getElementById('btnStop').disabled=!r;}
+function connectSSE(){if(es)es.close();es=new EventSource('/stream');es.onopen=()=>{const e=document.getElementById('sse-indicator');e.textContent='SSE';e.className='';};es.onmessage=e=>{try{renderAll(JSON.parse(e.data));}catch(err){}};es.onerror=()=>{const e=document.getElementById('sse-indicator');e.textContent='SSE OFF';e.className='off';setTimeout(connectSSE,3000);};}
+async function fetchFallback(){try{const r=await fetch('/data');const d=await r.json();if(d&&d.rows&&d.rows.length>0)renderAll(d);}catch(e){}}
+async function fetchQin(){try{const r=await fetch('/qin-qpl');const d=await r.json();if(d&&d.ok)renderQin(d);}catch(e){}}
+function startQinTimer(){if(qinTimer)clearInterval(qinTimer);qinTimer=setInterval(fetchQin,2000)}
+function renderAll(d){
+  if(!d)return;
+  document.getElementById('status').textContent=d.status||'';
+  setButtons(!!d.running);
+  const ri=d.raceinfo||{};
+  document.getElementById('race-info').innerHTML=`<span>Race <span class="strong">${ri.racename||''}</span></span><span class="strong">${ri.racetime||''}</span><span>${ri.distance||''} ${ri.track||''}</span><span>${ri.course||''}</span><span>${ri.raceclass||''}</span><span>${ri.going||''}</span>`;
+  document.getElementById('pool-bar').innerHTML=`<span>WIN Pool: <span class="blue">${d.winpool||''}</span></span><span>Last Update: <b>${d.lastupdate||''}</b></span><span>Base Time: <b>${d.basetime||''}</b></span><span>Updates: <b>${d.updatecount||0}</b></span>`;
+  const tbody=document.getElementById('main-body');
+  tbody.innerHTML=(d.rows||[]).map(r=>`<tr><td style="font-weight:700;color:var(--blue)">${r.no}</td><td class="left">${r.name||''}</td><td>${r.barrier||''}</td><td class="left">${r.jockey||''}</td><td class="left">${r.trainer||''}</td><td class="win-big">${r.win||''}</td><td>${r.place||''}</td><td style="color:var(--sub)">${r.basewin||''}</td><td style="color:var(--sub)">${r.estbet||''}</td><td style="font-size:11px">${r.alert||''}</td></tr>`).join('');
+  renderTopPanel('top-win',d.topup||[],r=>`<div class="top-row"><span class="top-no">${r.no}</span><span class="top-name">${r.name}</span><span class="top-score">${r.flow||''}</span></div>`);
+  renderTopPanel('top-sms-main',d.topdown||[],r=>`<div class="top-row"><span class="top-no">${r.no}</span><span class="top-name">${r.name}</span><span class="top-score">${r.sms?.toFixed?r.sms.toFixed(1):r.sms||''}</span></div>`);
+  renderTopPanel('top-acc-main',d.topacc||[],r=>`<div class="top-row"><span class="top-no">${r.no}</span><span class="top-name">${r.name}</span><span class="top-score">${r.acc?.toFixed?r.acc.toFixed(1):r.acc||''}</span></div>`);
+  renderTopPanel('top-sms',d.topdown||[],r=>`<div class="top-row"><span class="top-no">${r.no}</span><span class="top-name">${r.name}</span><span class="top-score">${r.sms?.toFixed?r.sms.toFixed(1):r.sms||''}</span></div>`);
+  renderTopPanel('top-acc',d.topacc||[],r=>`<div class="top-row"><span class="top-no">${r.no}</span><span class="top-name">${r.name}</span><span class="top-score">${r.acc?.toFixed?r.acc.toFixed(1):r.acc||''}</span></div>`);
+  renderQin(d);
+}
+function renderTopPanel(id,arr,fn){const el=document.getElementById(id);if(!el)return;el.innerHTML=arr&&arr.length?arr.map(fn).join(''):'<div style="color:var(--sub);font-size:11px;padding:8px 0">No data</div>';}
+function renderQin(d){['qin','qpl'].forEach(type=>{const t=d[type]||{};['r','o','y'].forEach(tier=>{const items=t[tier]||[];['','2'].forEach(s=>{const el=document.getElementById(`${type}-${tier}${s}`);if(el)el.innerHTML=items.length?items.map(x=>`<div class="qflow-item"><span>${x.time||''} <b>${x.combo||''}</b></span><span>${x.odds||''}</span><span>${fmtM(x.flow||0)}</span></div>`).join(''):'';});});});}
+function fmtM(v){if(!v)return'0';if(v>=1e6)return(v/1e6).toFixed(2)+'M';if(v>=1e3)return(v/1e3).toFixed(1)+'K';return Math.round(v).toString();}
+function showTab(name,el){['main','top','qin'].forEach(t=>document.getElementById('tab-'+t).style.display=t===name?'':'none');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');if(name==='qin'){fetchQin();startQinTimer()}else if(qinTimer){clearInterval(qinTimer);qinTimer=null;}}
+async function startMonitor(){await fetch('/start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({date:document.getElementById('iDate').value||new Date().toISOString().slice(0,10),venue:document.getElementById('iVenue').value,raceno:document.getElementById('iRace').value,interval:1})})}
+async function stopMonitor(){await fetch('/stop',{method:'POST'})}
+document.getElementById('iDate').value=new Date().toISOString().slice(0,10);
+connectSSE();
+setInterval(fetchFallback,5000);
+</script>
+</body>
+</html>

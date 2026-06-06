@@ -1,4 +1,3 @@
-
 import os
 import json
 import time
@@ -8,16 +7,20 @@ from datetime import datetime
 from collections import defaultdict, deque
 
 import requests
-from flask import Flask, render_template, jsonify, request, send_file, Response
+from flask import Flask, render_template, jsonify, request, send_file
 
 app = Flask(__name__)
 
-NODE_API   = os.environ.get("NODE_API",  "http://localhost:3000/odds")
-NODE_PUSH  = os.environ.get("NODE_PUSH", "http://localhost:3000/push")
+NODE_API = os.environ.get("NODE_API", "http://localhost:3000/odds")
 
-def _deque10(): return deque(maxlen=10)
-def _deque60(): return deque(maxlen=60)
-def _inf():     return float("inf")
+def _deque10():
+    return deque(maxlen=10)
+
+def _deque60():
+    return deque(maxlen=60)
+
+def _inf():
+    return float("inf")
 
 state = {
     "running": False, "data": [], "base_data": {}, "base_time": "",
@@ -26,7 +29,7 @@ state = {
     "cum_drop": defaultdict(float), "cum_rise": defaultdict(float),
     "cum_flow": defaultdict(float), "update_count": 0, "last_update": "",
     "race_date": "", "venue": "", "venue_name": "", "race_no": "",
-    "interval": 1, "current_interval": 1, "url": "", "status": "等待設定...",
+    "interval": 1, "current_interval": 3, "url": "", "status": "等待設定...",
     "has_error": False, "top_down": [], "top_up": [], "top_acc": [],
     "alerts": [], "history": defaultdict(list), "bet_history": defaultdict(list),
     "flow_history": defaultdict(list), "absorb_history": defaultdict(list),
@@ -37,12 +40,7 @@ state = {
     "min_odds": defaultdict(_inf), "alert_cooldown": defaultdict(dict),
     "steady_scores": {}, "last_error_detail": "", "race_info": {},
     "qin_flow": {}, "qpl_flow": {}, "qin_history": [], "qpl_history": [],
-    "last_upd_at": "",
 }
-
-# SSE 訂閱者列表
-sse_subscribers = []
-sse_lock = threading.Lock()
 
 TREND_THRESHOLD = 2
 ACCEL_DROP_MIN  = 2
@@ -53,10 +51,11 @@ VENUE_NAME_MAP = {
     **{f"S{i}": f"特別賽事 S{i}" for i in range(1, 9)},
 }
 
-# ── 工具函數 ──────────────────────────────────────────────────────────────────
 def parse_pool(pool_str):
-    try: return float(str(pool_str).replace("$","").replace(",","").strip())
-    except: return 0.0
+    try:
+        return float(str(pool_str).replace("$","").replace(",","").strip())
+    except:
+        return 0.0
 
 def fmt_money(amt):
     a = abs(amt)
@@ -66,16 +65,18 @@ def fmt_money(amt):
 
 def fetch_odds_api(date_str, venue, race_no):
     try:
-        resp = requests.get(NODE_API,
-            params={"date": date_str, "venue": venue, "raceno": race_no}, timeout=4)
+        resp = requests.get(
+            NODE_API,
+            params={"date": date_str, "venue": venue, "raceno": race_no},
+            timeout=8,
+        )
         resp.raise_for_status()
         data = resp.json()
         if not data.get("ok"):
             state["last_error_detail"] = data.get("error", "Node API 錯誤")
-            return None, "", {}, ""
+            return None, "", {}
         results  = data.get("results", [])
         win_pool = data.get("win_pool", "")
-        upd_at   = data.get("updAt", "")
         race_info = {
             "racetime":  data.get("race_time", ""),
             "distance":  data.get("distance", ""),
@@ -88,13 +89,12 @@ def fetch_odds_api(date_str, venue, race_no):
         }
         if not results:
             state["last_error_detail"] = "無賽馬數據"
-            return None, "", {}, ""
-        return results, win_pool, race_info, upd_at
+            return None, "", {}
+        return results, win_pool, race_info
     except Exception as e:
         state["last_error_detail"] = str(e)
-        return None, "", {}, ""
+        return None, "", {}
 
-# ── 計算函數（與原版相同）────────────────────────────────────────────────────
 def calc_est_bets(data, pool_str):
     real_map = {}; has_real = False
     for r in data:
@@ -102,20 +102,21 @@ def calc_est_bets(data, pool_str):
         real_map[r["no"]] = amt
         if amt > 0: has_real = True
     if has_real: return real_map
-    pool_num = parse_pool(pool_str)
-    net_pool = pool_num * (1 - 0.175)
+    pool_num  = parse_pool(pool_str)
+    net_pool  = pool_num * (1 - 0.175)
     total_inv = sum(1.0/float(r["win"]) for r in data if r["win"] not in ("","SCR"))
     result = {}
     for r in data:
         try:
             share = (1.0/float(r["win"]))/total_inv if total_inv > 0 else 0
             result[r["no"]] = net_pool * share
-        except: result[r["no"]] = 0.0
+        except:
+            result[r["no"]] = 0.0
     return result
 
 def calc_trends(data):
     prev = state["prev_data"]; base = state["base_data"]
-    tc = state["trend_counter"]; cd = state["cum_drop"]; cr = state["cum_rise"]
+    tc   = state["trend_counter"]; cd = state["cum_drop"]; cr = state["cum_rise"]
     for r in data:
         no = r["no"]
         try:
@@ -123,13 +124,13 @@ def calc_trends(data):
             if curr < state["min_odds"][no]: state["min_odds"][no] = curr
             if no in prev:
                 diff = curr - float(prev[no])
-                if diff < 0: tc[no] = tc[no]+1 if tc[no]>0 else 1
+                if diff < 0:   tc[no] = tc[no]+1 if tc[no]>0 else 1
                 elif diff > 0: tc[no] = tc[no]-1 if tc[no]<0 else -1
             if no in base:
                 base_w = float(base[no])
-                pct = (base_w - curr) / base_w * 100
+                pct    = (base_w - curr) / base_w * 100
                 if pct > 0: cd[no] = round(pct,1); cr[no] = 0.0
-                else: cr[no] = round(abs(pct),1); cd[no] = 0.0
+                else:        cr[no] = round(abs(pct),1); cd[no] = 0.0
         except: pass
 
 def calc_sms_v2(no, cum_flow_val, cum_drop_val):
@@ -139,14 +140,14 @@ def calc_sms_v2(no, cum_flow_val, cum_drop_val):
     e_hist = list(state["e_history"][no])
     pos_e  = [max(e,0) for e in e_hist]
     E_eff  = sum(pos_e)/len(pos_e) if len(pos_e) >= 3 else 0.0
-    now_ts = time.time()
-    hist   = list(state["inflow_ts_history"][no])
+    now_ts  = time.time()
+    hist    = list(state["inflow_ts_history"][no])
     w_5min  = sum(amt for ts,amt in hist if now_ts-ts <= 300)
     w_15min = sum(amt for ts,amt in hist if now_ts-ts <= 900)
     w_30min = sum(amt for ts,amt in hist if now_ts-ts <= 1800)
-    r5  = w_5min /cum_flow_val if cum_flow_val > 0 else 0
-    r15 = w_15min/cum_flow_val if cum_flow_val > 0 else 0
-    r30 = w_30min/cum_flow_val if cum_flow_val > 0 else 0
+    r5  = (w_5min /cum_flow_val) if cum_flow_val > 0 else 0
+    r15 = (w_15min/cum_flow_val) if cum_flow_val > 0 else 0
+    r30 = (w_30min/cum_flow_val) if cum_flow_val > 0 else 0
     if r5>=0.50: Wt=1.45
     elif r15>=0.45: Wt=1.30
     elif r30>=0.38: Wt=1.18
@@ -167,16 +168,16 @@ def calc_acc_score(no, cum_flow_val):
     if len(inflow_hist) < 2: return 0.0
     big_entries = [(ts,amt) for ts,amt in inflow_hist if amt>=10000]
     if len(big_entries) < 2: return 0.0
-    time_span = (big_entries[-1][0]-big_entries[0][0])/60
+    time_span   = (big_entries[-1][0]-big_entries[0][0])/60
     if time_span < 1.0: return 0.0
     consistency = len(big_entries)/max(len(inflow_hist),1)
     F = max(cum_flow_val/10000.0, 0)
-    gaps = [(big_entries[i][0]-big_entries[i-1][0])/60 for i in range(1,len(big_entries))]
+    gaps        = [(big_entries[i][0]-big_entries[i-1][0])/60 for i in range(1,len(big_entries))]
     max_gap_min = max(gaps) if gaps else time_span
-    if max_gap_min<=5: gap_penalty=1.0
+    if max_gap_min<=5:   gap_penalty=1.0
     elif max_gap_min<=10: gap_penalty=0.9
     elif max_gap_min<=15: gap_penalty=0.75
-    else: gap_penalty=0.6
+    else:                 gap_penalty=0.6
     batch_bonus    = min(1.0+math.log(max(len(big_entries),1),2), 4.0)
     duration_bonus = min(max(time_span/8.0,0.0),1.2)
     score = (F**1.08)*consistency*gap_penalty*batch_bonus*(1.0+duration_bonus*0.15)
@@ -192,10 +193,10 @@ def calc_acc_meta(no):
     return {"batch_count":len(big_entries),"time_span":time_span,"max_gap_min":max_gap_min}
 
 def calc_flow_and_signals(est_bets, win_pool_str, data):
-    prev_bets = state["prev_est_bet"]; prev_fl = state["prev_flow"]
-    prev_pool = state["prev_pool"];    prev_drop = state["prev_odds_drop"]
-    cum_flow  = state["cum_flow"];     cum_drop_pct = state["cum_drop"]
-    now_ts    = time.time()
+    prev_bets    = state["prev_est_bet"]; prev_fl   = state["prev_flow"]
+    prev_pool    = state["prev_pool"];    prev_drop = state["prev_odds_drop"]
+    cum_flow     = state["cum_flow"];     cum_drop_pct = state["cum_drop"]
+    now_ts       = time.time()
     curr_pool_num = parse_pool(win_pool_str)
     pool_increase = max((curr_pool_num - prev_pool)*(1-0.175), 0)
     total_inv = sum(1.0/float(r["win"]) for r in data if r["win"] not in ("","SCR"))
@@ -205,15 +206,16 @@ def calc_flow_and_signals(est_bets, win_pool_str, data):
         if win_str in ("","SCR"): continue
         try: curr_odds = float(win_str)
         except: continue
-        amt       = est_bets.get(no, 0.0)
-        prev_amt  = prev_bets.get(no, None)
-        flow      = 0.0 if prev_amt is None else amt - prev_amt
+        amt      = est_bets.get(no, 0.0)
+        prev_amt = prev_bets.get(no, None)
+        flow     = 0.0 if prev_amt is None else amt - prev_amt
         prev_flow_val = prev_fl.get(no, None)
-        accel     = 0.0 if prev_flow_val is None else flow - prev_flow_val
+        accel    = 0.0 if prev_flow_val is None else flow - prev_flow_val
         if prev_amt is not None and flow > 0:
             cum_flow[no] = cum_flow.get(no, 0.0) + flow
             state["inflow_ts_history"][no].append((now_ts, flow))
-        try: share_pct = (1.0/curr_odds)/total_inv*100 if total_inv > 0 else 0
+        try:
+            share_pct = (1.0/curr_odds)/total_inv*100 if total_inv > 0 else 0
         except: share_pct = 0.0
         absorb_pct=0.0; excess=0.0
         if pool_increase > 500 and prev_amt is not None:
@@ -221,8 +223,8 @@ def calc_flow_and_signals(est_bets, win_pool_str, data):
             excess     = absorb_pct - share_pct
             state["e_history"][no].append(excess)
         prev_o_val = float(state["prev_data"].get(no, curr_odds) or curr_odds)
-        try: odds_drop = (prev_o_val-curr_odds)/prev_o_val*100 if prev_o_val > 0 else 0.0
-        except: odds_drop = 0.0
+        try:    odds_drop  = (prev_o_val-curr_odds)/prev_o_val*100 if prev_o_val > 0 else 0.0
+        except: odds_drop  = 0.0
         odds_accel  = odds_drop - prev_drop.get(no, 0.0)
         sms_score   = calc_sms_v2(no, cum_flow.get(no,0.0), cum_drop_pct.get(no,0.0))
         acc_score   = calc_acc_score(no, cum_flow.get(no,0.0))
@@ -243,23 +245,23 @@ def calc_flow_and_signals(est_bets, win_pool_str, data):
             al = [recent_flows[i]-recent_flows[i-1] for i in range(1,len(recent_flows))]
             if all(f<0 for f in recent_flows) and all(a<0 for a in al):
                 alert_flags.append("🌊資金退潮警告")
-        flows[no]   = flow; accels[no] = accel
+        flows[no]  = flow; accels[no] = accel
         absorbs[no] = {
             "flow":round(flow), "absorb_pct":round(absorb_pct,1),
             "share_pct":round(share_pct,1), "excess":round(excess,1),
             "pool_inc":round(pool_increase), "odds_drop":round(odds_drop,2),
             "odds_accel":round(odds_accel,2), "is_rescue":False,
         }
-        sms[no] = sms_score; sms[f"acc_{no}"] = acc_score; alerts[no] = alert_flags
+        sms[no]=sms_score; sms[f"acc_{no}"]=acc_score; alerts[no]=alert_flags
     return flows, accels, absorbs, sms, alerts
 
 def get_trend_label(no):
-    tc = state["trend_counter"]; prev = state["prev_data"]
-    data_dict = {r["no"]:r for r in state["data"]}
-    count = tc.get(no,0)
+    tc=state["trend_counter"]; prev=state["prev_data"]
+    data_dict={r["no"]:r for r in state["data"]}
+    count=tc.get(no,0)
     try:
-        curr = float(data_dict[no]["win"]); p = float(prev[no]) if no in prev else curr
-        pct  = (p-curr)/p*100 if p > 0 else 0
+        curr=float(data_dict[no]["win"]); p=float(prev[no]) if no in prev else curr
+        pct=(p-curr)/p*100 if p > 0 else 0
     except: pct=0
     if count>=TREND_THRESHOLD and pct>=10: return "急跌","hot"
     elif count>=TREND_THRESHOLD and pct>0:  return "持跌","warm"
@@ -283,6 +285,7 @@ def calc_top3():
                 "streak":max(tc.get(no,0),0),"drop":cd.get(no,0),
                 "cum_inflow":round(cum_in),"sms":sms_score,"excess":ab.get("excess",0),
             })
+    # ✅ FIX: 只在有真實數據時才更新，防止清空
     new_top = sorted(sms_all, key=lambda x:x["sms"], reverse=True)[:5]
     if new_top: state["top_down"] = new_top
     state["top_up"]=[]
@@ -297,6 +300,7 @@ def calc_top3():
                     "cum_inflow":round(cum_in),"batch_count":meta["batch_count"],
                     "time_span":meta["time_span"],"max_gap_min":meta["max_gap_min"],"acc":acc_s,
                 })
+    # ✅ FIX: 只在有真實數據時才更新
     new_acc = sorted(acc_list, key=lambda x:x["acc"], reverse=True)[:5]
     if new_acc: state["top_acc"] = new_acc
 
@@ -337,9 +341,9 @@ def append_snapshot(now, data, est_bets, flows, absorbs, sms, win_pool):
     log=_load_log()
     if not log["meta"]:
         log["meta"]={"race_date":state["race_date"],"venue":state["venue"],
-            "venue_name":state["venue_name"],"race_no":state["race_no"],
-            "base_time":state["base_time"],"start_time":now,
-            "race_info":state.get("race_info",{})}
+                     "venue_name":state["venue_name"],"race_no":state["race_no"],
+                     "base_time":state["base_time"],"start_time":now,
+                     "race_info":state.get("race_info",{})}
     snapshot={"time":now,"win_pool":win_pool,"horses":[]}
     for r in data:
         no=r["no"]; ab=absorbs.get(no,{})
@@ -371,8 +375,86 @@ def finalize_log(now):
         "horses_final":horses}
     _save_log(log); print(f"[LOG] 已儲存：{get_log_path()}")
 
-# ── SSE 推送給瀏覽器 ──────────────────────────────────────────────────────────
-def build_data_payload():
+def monitor_loop():
+    state["status"]="連接 Node.js API 中..."; state["has_error"]=False
+    while state["running"]:
+        now=datetime.now().strftime("%H:%M:%S")
+        data,win_pool,race_info=fetch_odds_api(state["race_date"],state["venue"],state["race_no"])
+        if data:
+            state["has_error"]=False; state["update_count"]+=1
+            if race_info: state["race_info"]=race_info
+            est_bets=calc_est_bets(data,win_pool)
+            if not state["base_data"]:
+                state["base_data"]={r["no"]:r["win"] for r in data}
+                state["base_time"]=now; state["base_est_bet"]=dict(est_bets)
+            flows,accels,absorbs,sms,alerts_map=calc_flow_and_signals(est_bets,win_pool,data)
+            calc_trends(data)
+            record_history(data,now,est_bets,flows,absorbs,sms)
+            append_snapshot(now,data,est_bets,flows,absorbs,sms,win_pool)
+            update_global_alerts(alerts_map,now)
+            state["data"]=data
+            state["prev_data"]={r["no"]:r["win"] for r in data}
+            state["prev_odds_drop"]={no:absorbs[no]["odds_drop"] for no in absorbs}
+            state["last_update"]=now; state["win_pool"]=win_pool
+            state["win_pool_history"].append({"time":now,"pool":win_pool})
+            state["prev_flow"]=flows; state["prev_est_bet"]=dict(est_bets)
+            state["prev_pool"]=parse_pool(win_pool)
+            state["_accels"]=accels; state["_absorb"]=absorbs
+            state["_sms"]=sms; state["_alerts"]=alerts_map
+            calc_top3()
+            iv=state["interval"]; state["current_interval"]=iv
+            state["status"]=f"✅ 正常監察中 · hkjc-api · {iv}s"
+        else:
+            state["has_error"]=True
+            detail=state.get("last_error_detail","")
+            state["status"]=f"[{now}] 連接失敗 | {detail[:80]}"
+        time.sleep(state["interval"])
+    finalize_log(datetime.now().strftime("%H:%M:%S"))
+    state["status"]="監察已停止"; state["has_error"]=False
+
+@app.route("/")
+def index(): return render_template("index.html")
+
+@app.route("/start", methods=["POST"])
+def start():
+    global monitor_thread
+    if state["running"]: return jsonify({"ok":False,"msg":"已在監察中"})
+    d=request.json
+    state["race_date"] =d.get("date",datetime.now().strftime("%Y-%m-%d"))
+    state["venue"]     =d.get("venue","ST")
+    state["venue_name"]=VENUE_NAME_MAP.get(state["venue"],state["venue"])
+    state["race_no"]   =d.get("raceno","1")
+    state["interval"]  =max(int(d.get("interval",1)),1)
+    state["url"]=f"https://bet.hkjc.com/ch/racing/wp/{state['race_date']}/{state['venue']}/{state['race_no']}"
+    for k,v in [
+        ("running",True),("has_error",False),("data",[]),
+        ("base_data",{}),("base_est_bet",{}),("prev_data",{}),
+        ("prev_est_bet",{}),("prev_flow",{}),("prev_pool",0.0),
+        ("prev_odds_drop",{}),("update_count",0),
+        ("top_down",[]),("top_up",[]),("top_acc",[]),("alerts",[]),
+        ("timestamps",[]),("win_pool",""),("win_pool_history",[]),
+        ("_accels",{}),("_absorb",{}),("_sms",{}),("_alerts",{}),
+        ("steady_scores",{}),("current_interval",3),
+        ("status","正在啟動..."),("last_error_detail",""),
+        ("race_info",{}),("qin_flow",{}),("qpl_flow",{}),
+        ("qin_history",[]),("qpl_history",[]),
+    ]: state[k]=v
+    state["trend_counter"]=defaultdict(int); state["cum_drop"]=defaultdict(float)
+    state["cum_rise"]=defaultdict(float);    state["cum_flow"]=defaultdict(float)
+    state["history"]=defaultdict(list);      state["bet_history"]=defaultdict(list)
+    state["flow_history"]=defaultdict(list); state["absorb_history"]=defaultdict(list)
+    state["sms_history"]=defaultdict(list);  state["acc_history"]=defaultdict(list)
+    state["e_history"]=defaultdict(_deque10); state["inflow_ts_history"]=defaultdict(_deque60)
+    state["min_odds"]=defaultdict(_inf);     state["alert_cooldown"]=defaultdict(dict)
+    monitor_thread=threading.Thread(target=monitor_loop,daemon=True)
+    monitor_thread.start()
+    return jsonify({"ok":True})
+
+@app.route("/stop", methods=["POST"])
+def stop(): state["running"]=False; return jsonify({"ok":True})
+
+@app.route("/data")
+def get_data():
     pool_num  = parse_pool(state["win_pool"])
     net_pool  = pool_num*(1-0.175)
     total_inv = sum(1.0/float(r["win"]) for r in state["data"] if r["win"] not in ("","SCR"))
@@ -417,10 +499,10 @@ def build_data_payload():
         elif flow<0: flow_str,flow_css=f"-{fmt_money(abs(flow))}","diluted"
         else: flow_str,flow_css="","neutral"
         accel=state["_accels"].get(no,0.0)
-        if accel>=2000:   accel_str,accel_css=f"+{fmt_money(accel)}","hot"
-        elif accel>0:     accel_str,accel_css=f"+{fmt_money(accel)}","up"
-        elif accel<0:     accel_str,accel_css=f"-{fmt_money(abs(accel))}","diluted"
-        else:             accel_str,accel_css="","neutral"
+        if accel>=2000:  accel_str,accel_css=f"+{fmt_money(accel)}","hot"
+        elif accel>0:    accel_str,accel_css=f"+{fmt_money(accel)}","up"
+        elif accel<0:    accel_str,accel_css=f"-{fmt_money(abs(accel))}","diluted"
+        else:            accel_str,accel_css="","neutral"
         if pool_inc>500 and absorb_pct!=0:
             if excess>=15:   absorb_str,absorb_css=f"{absorb_pct:.1f}%(+{excess:.1f}%)","hot"
             elif excess>=5:  absorb_str,absorb_css=f"{absorb_pct:.1f}%(+{excess:.1f}%)","up"
@@ -428,11 +510,11 @@ def build_data_payload():
             else:            absorb_str,absorb_css=f"{absorb_pct:.1f}%({excess:.1f}%)","diluted"
         else: absorb_str,absorb_css="","neutral"
         if odds_accel>1 and odds_drop>1: odrop_str,odrop_css=f"-{odds_drop:.1f}%","hot"
-        elif odds_drop>0:  odrop_str,odrop_css=f"-{odds_drop:.1f}%","up"
-        elif odds_drop<0:  odrop_str,odrop_css=f"+{abs(odds_drop):.1f}%","diluted"
-        else:              odrop_str,odrop_css="","neutral"
+        elif odds_drop>0:                odrop_str,odrop_css=f"-{odds_drop:.1f}%","up"
+        elif odds_drop<0:                odrop_str,odrop_css=f"+{abs(odds_drop):.1f}%","diluted"
+        else:                            odrop_str,odrop_css="","neutral"
         sms_score=state["_sms"].get(no,0.0); acc_score=state["_sms"].get(f"acc_{no}",0.0)
-        if sms_score>=5:  sms_str,sms_css=f"{sms_score:.1f}","hot"
+        if sms_score>=5:   sms_str,sms_css=f"{sms_score:.1f}","hot"
         elif sms_score>=1: sms_str,sms_css=f"{sms_score:.1f}","up"
         elif sms_score>0:  sms_str,sms_css=f"{sms_score:.1f}","neutral"
         else:              sms_str,sms_css="","neutral"
@@ -453,7 +535,7 @@ def build_data_payload():
             "smsraw":sms_score,"accraw":acc_score,"alert":alert_str,
             "issuspicious":False,"risefrommin":round(rise_from_min,1),
         })
-    return {
+    return jsonify({
         "rows":rows,"topdown":state["top_down"],"topup":state["top_up"],
         "topacc":state["top_acc"],"alerts":[],
         "updatecount":state["update_count"],"lastupdate":state["last_update"],
@@ -473,157 +555,45 @@ def build_data_payload():
         "winpool":state["win_pool"],"winpoolhistory":state["win_pool_history"],
         "errordetail":state.get("last_error_detail",""),
         "raceinfo":state.get("race_info",{}),
-    }
-
-def push_sse(payload):
-    """推送到 server.js SSE，再廣播到瀏覽器"""
-    try:
-        requests.post(NODE_PUSH, json=payload, timeout=1)
-    except: pass
-
-# ── 監察主迴圈 ────────────────────────────────────────────────────────────────
-def monitor_loop():
-    state["status"] = "連接 Node.js API 中..."; state["has_error"] = False
-    while state["running"]:
-        now = datetime.now().strftime("%H:%M:%S")
-        data, win_pool, race_info, upd_at = fetch_odds_api(
-            state["race_date"], state["venue"], state["race_no"])
-
-        if data:
-            # ✅ 跳過無變化更新
-            if upd_at and upd_at == state["last_upd_at"]:
-                time.sleep(0.5)
-                continue
-            state["last_upd_at"] = upd_at
-
-            state["has_error"] = False; state["update_count"] += 1
-            if race_info: state["race_info"] = race_info
-            est_bets = calc_est_bets(data, win_pool)
-            if not state["base_data"]:
-                state["base_data"]    = {r["no"]:r["win"] for r in data}
-                state["base_time"]    = now
-                state["base_est_bet"] = dict(est_bets)
-            flows,accels,absorbs,sms,alerts_map = calc_flow_and_signals(est_bets,win_pool,data)
-            calc_trends(data)
-            record_history(data,now,est_bets,flows,absorbs,sms)
-            append_snapshot(now,data,est_bets,flows,absorbs,sms,win_pool)
-            update_global_alerts(alerts_map,now)
-            state["data"]         = data
-            state["prev_data"]    = {r["no"]:r["win"] for r in data}
-            state["prev_odds_drop"] = {no:absorbs[no]["odds_drop"] for no in absorbs}
-            state["last_update"]  = now
-            state["win_pool"]     = win_pool
-            state["win_pool_history"].append({"time":now,"pool":win_pool})
-            state["prev_flow"]    = flows
-            state["prev_est_bet"] = dict(est_bets)
-            state["prev_pool"]    = parse_pool(win_pool)
-            state["_accels"]      = accels
-            state["_absorb"]      = absorbs
-            state["_sms"]         = sms
-            state["_alerts"]      = alerts_map
-            calc_top3()
-            iv = state["interval"]; state["current_interval"] = iv
-            state["status"] = f"✅ 正常監察中 · MQTT · {iv}s"
-
-            # ✅ SSE 推送
-            threading.Thread(target=push_sse, args=(build_data_payload(),), daemon=True).start()
-        else:
-            state["has_error"] = True
-            detail = state.get("last_error_detail","")
-            state["status"] = f"[{now}] 連接失敗 | {detail[:80]}"
-
-        time.sleep(state["interval"])
-
-    finalize_log(datetime.now().strftime("%H:%M:%S"))
-    state["status"] = "監察已停止"; state["has_error"] = False
-
-# ── Flask Routes ──────────────────────────────────────────────────────────────
-@app.route("/")
-def index(): return render_template("index.html")
-
-@app.route("/start", methods=["POST"])
-def start():
-    global monitor_thread
-    if state["running"]: return jsonify({"ok":False,"msg":"已在監察中"})
-    d = request.json
-    state["race_date"]  = d.get("date", datetime.now().strftime("%Y-%m-%d"))
-    state["venue"]      = d.get("venue","ST")
-    state["venue_name"] = VENUE_NAME_MAP.get(state["venue"], state["venue"])
-    state["race_no"]    = d.get("raceno","1")
-    state["interval"]   = max(int(d.get("interval",1)), 1)
-    state["url"] = f"https://bet.hkjc.com/ch/racing/wp/{state['race_date']}/{state['venue']}/{state['race_no']}"
-    for k,v in [
-        ("running",True),("has_error",False),("data",[]),
-        ("base_data",{}),("base_est_bet",{}),("prev_data",{}),
-        ("prev_est_bet",{}),("prev_flow",{}),("prev_pool",0.0),
-        ("prev_odds_drop",{}),("update_count",0),
-        ("top_down",[]),("top_up",[]),("top_acc",[]),("alerts",[]),
-        ("timestamps",[]),("win_pool",""),("win_pool_history",[]),
-        ("_accels",{}),("_absorb",{}),("_sms",{}),("_alerts",{}),
-        ("steady_scores",{}),("current_interval",1),
-        ("status","正在啟動..."),("last_error_detail",""),
-        ("race_info",{}),("qin_flow",{}),("qpl_flow",{}),
-        ("qin_history",[]),("qpl_history",[]),("last_upd_at",""),
-    ]: state[k] = v
-    state["trend_counter"]      = defaultdict(int)
-    state["cum_drop"]           = defaultdict(float)
-    state["cum_rise"]           = defaultdict(float)
-    state["cum_flow"]           = defaultdict(float)
-    state["history"]            = defaultdict(list)
-    state["bet_history"]        = defaultdict(list)
-    state["flow_history"]       = defaultdict(list)
-    state["absorb_history"]     = defaultdict(list)
-    state["sms_history"]        = defaultdict(list)
-    state["acc_history"]        = defaultdict(list)
-    state["e_history"]          = defaultdict(_deque10)
-    state["inflow_ts_history"]  = defaultdict(_deque60)
-    state["min_odds"]           = defaultdict(_inf)
-    state["alert_cooldown"]     = defaultdict(dict)
-    monitor_thread = threading.Thread(target=monitor_loop, daemon=True)
-    monitor_thread.start()
-    return jsonify({"ok":True})
-
-@app.route("/stop", methods=["POST"])
-def stop(): state["running"]=False; return jsonify({"ok":True})
-
-@app.route("/data")
-def get_data():
-    # 保留 REST fallback（瀏覽器首次載入用）
-    return jsonify(build_data_payload())
+    })
 
 @app.route("/qinflow")
 def get_qin_flow():
+    # ✅ FIX: 未啟動時不發請求
     if not state["race_date"] or not state["venue"] or not state["race_no"]:
         return jsonify({"ok":False,"error":"監察未啟動"})
     try:
-        qin_api = NODE_API.replace("/odds","/qin-qpl")
-        resp = requests.get(qin_api,
+        qin_api=NODE_API.replace("/odds","/qin-qpl")
+        resp=requests.get(
+            qin_api,
             params={"date":state["race_date"],"venue":state["venue"],"raceno":state["race_no"]},
-            timeout=4)
+            timeout=8,
+        )
         resp.raise_for_status()
-        data = resp.json()
+        data=resp.json()
         if not data.get("ok"): return jsonify({"ok":False,"error":data.get("error","")})
-        prev_qin = state["qin_flow"]; prev_qpl = state["qpl_flow"]
-        now_str  = datetime.now().strftime("%H:%M:%S")
+        prev_qin=state["qin_flow"]; prev_qpl=state["qpl_flow"]
+        now_str=datetime.now().strftime("%H:%M:%S")
         def process(pool_data, prev_map, history_key):
             entries=[]; curr_map={}
             for item in pool_data.get("odds",[]):
-                combo = item["combo"]
-                try: curr_inv = float(item.get("investment",0) or 0)
-                except: curr_inv = 0.0
-                curr_map[combo] = curr_inv
-                prev_inv = prev_map.get(combo)
+                combo=item["combo"]
+                # ✅ FIX: 用 investment 欄位（不是 odds 賠率）
+                try: curr_inv=float(item.get("investment",0) or 0)
+                except: curr_inv=0.0
+                curr_map[combo]=curr_inv
+                prev_inv=prev_map.get(combo)
                 if prev_inv is not None:
-                    flow = curr_inv - prev_inv
-                    if flow >= 10000:
+                    flow=curr_inv-prev_inv
+                    if flow>=10000:
                         entries.append({
                             "time":now_str,"combo":combo.replace("+","-"),
                             "odds":item.get("odds",""),"flow":flow,"raw":flow,
                         })
-            state[history_key] = (entries + state[history_key])[:200]
+            state[history_key]=(entries+state[history_key])[:200]
             return curr_map
-        state["qin_flow"] = process(data.get("qin",{}), prev_qin, "qin_history")
-        state["qpl_flow"] = process(data.get("qpl",{}), prev_qpl, "qpl_history")
+        state["qin_flow"]=process(data.get("qin",{}),prev_qin,"qin_history")
+        state["qpl_flow"]=process(data.get("qpl",{}),prev_qpl,"qpl_history")
         def tier(history):
             return {
                 "y":[x for x in history if x["raw"]<50000][:100],
@@ -636,10 +606,10 @@ def get_qin_flow():
 
 @app.route("/download_log")
 def download_log():
-    path = get_log_path()
-    if os.path.exists(path): return send_file(path, as_attachment=True)
-    return jsonify({"error":"Log 不存在，請先開始監察"}), 404
+    path=get_log_path()
+    if os.path.exists(path): return send_file(path,as_attachment=True)
+    return jsonify({"error":"Log 不存在，請先開始監察"}),404
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))
-    app.run(debug=False, host="0.0.0.0", port=port, threaded=True)
+if __name__=="__main__":
+    port=int(os.environ.get("PORT",5001))
+    app.run(debug=False,host="0.0.0.0",port=port)
